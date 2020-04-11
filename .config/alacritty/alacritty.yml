@@ -1,7 +1,7 @@
 background_opacity: 0.95
 colors:
   bright:
-    black: '0x4A4A4A'
+    black: '0x282a40'
     blue: '0x93bbff'
     cyan: '0x98e4ff'
     green: '0xcdea9f'
@@ -10,7 +10,7 @@ colors:
     white: '0xf1ffff'
     yellow: '0xffd47e'
   normal:
-    black: '0x353535'
+    black: '0x181a29'
     blue: '0x93bbff'
     cyan: '0x98e4ff'
     green: '0xcdea9f'

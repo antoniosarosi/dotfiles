@@ -13,15 +13,11 @@
 	/home/antonio/
 	..
 1584573751
-'z
-	/home/antonio/.config/vifm
-	..
-1584573751
 
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
 ov
@@ -76,8 +72,8 @@ d
 
 # Right window history (oldest to newest):
 D/home/antonio
-	..
-0
+	prueba.py
+13
 D
 
 # Command line history (oldest to newest):
