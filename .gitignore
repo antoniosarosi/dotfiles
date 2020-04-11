@@ -4,7 +4,7 @@
 
 # Except fot the files and folders we want to track
 !README.md
-!.scrot.png
+!.screenshot.png
 !.bashrc
 !.xsession
 !.Xresources
