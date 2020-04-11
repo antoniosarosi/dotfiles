@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+!.gitignore
+
+# Except fot the files and folders we want to track
+!gtk-2.0
+!gtk-3.0
+!alacritty
+!nvim
+!rofi
+!vifm
+!qtile
