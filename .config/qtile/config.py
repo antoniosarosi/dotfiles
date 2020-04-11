@@ -85,7 +85,7 @@ keys = [
 
 # Color Theme
 
-theme = "dracula"
+theme = "dracula" # name of the folder containing the theme
 
 theme_folder = path.join(
     path.expanduser("~"),  # home directory
