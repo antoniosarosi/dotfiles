@@ -1,26 +1,26 @@
 background_opacity: 0.95
 colors:
   bright:
-    black: '0x434758'
-    blue: '0x9cc4ff'
-    cyan: '0xa3f7ff'
-    green: '0xddffa7'
-    magenta: '0xe1acff'
-    red: '0xff8b92'
-    white: '0xffffff'
-    yellow: '0xffe585'
+    black: '0x4A4A4A'
+    blue: '0x93bbff'
+    cyan: '0x98e4ff'
+    green: '0xcdea9f'
+    magenta: '0xd3a7ee'
+    red: '0xF07178'
+    white: '0xf1ffff'
+    yellow: '0xffd47e'
   normal:
-    black: '0x101010'
-    blue: '0x82aaff'
-    cyan: '0x89ddff'
-    green: '0xc3e88d'
-    magenta: '0xc792ea'
-    red: '0xf07178'
-    white: '0xd0d0d0'
-    yellow: '0xffcb6b'
+    black: '0x353535'
+    blue: '0x93bbff'
+    cyan: '0x98e4ff'
+    green: '0xcdea9f'
+    magenta: '0xd3a7ee'
+    red: '0xF07178'
+    white: '0xbfd5de'
+    yellow: '0xffd47e'
   primary:
-    background: '0x292d3e'
-    foreground: '0xbbc5ff'
+    background: '0x0f101a'
+    foreground: '0xf1ffff'
 font:
   bold:
     family: Inconsolata

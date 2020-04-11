@@ -24,7 +24,11 @@ def main():
         print("Theme file {} does not exist".format(argv[1]))
         exit(0)
 
-    change_theme("alacritty.yml", argv[1])
+    alacritty_path = path.join(
+        path.expanduser("~"),
+        ".config/alacritty/alacritty.yml"
+    )
+    change_theme(alacritty_path, argv[1])
     print("Theme successfully changed")
 
 
