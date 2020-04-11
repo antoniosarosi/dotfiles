@@ -1,6 +1,6 @@
 Dotfiles & Configs
 
-https://www.youtube.com/channel/UCzTi9I3zApECTkukkMOpEEA
+https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 
 ![Screenshot](.screenshot.png)
 
