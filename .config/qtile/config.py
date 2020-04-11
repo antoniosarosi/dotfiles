@@ -100,8 +100,8 @@ theme_file.close()
 theme_img = {
     "main": path.join(theme_img_path, "main.png"),
     "secondary": path.join(theme_img_path, "secondary.png"),
-    "mainend": path.join(theme_img_path, "mainend.png"),
-    "secondaryend": path.join(theme_img_path, "secondaryend.png")
+    "mainstart": path.join(theme_img_path, "mainstart.png"),
+    "secondarystart": path.join(theme_img_path, "secondarystart.png")
 }
 
 widgets_list = [
@@ -161,7 +161,7 @@ widgets_list = [
     ),
     widget.Image(
         scale=True,
-        filename=theme_img["secondaryend"],
+        filename=theme_img["secondarystart"],
         background=colors["dark"]
     ),
     widget.TextBox(
