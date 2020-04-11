@@ -70,6 +70,10 @@ keys = [
 
     # Terminal
     Key([mod], "Return", lazy.spawn("alacritty")),
+    
+    # Redshift
+    Key([mod], "r", lazy.spawn("redshift -O 2400")),
+    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Hardware (for laptops)
 
@@ -235,7 +239,7 @@ widgets_list = [
 
 # Workspaces
 
-groups = [Group(i) for i in ["NET", "DEV", "TERM", "MEDIA", "MISC"]]
+groups = [Group(i) for i in ["NET", "DEV", "TERM", "FS", "MEDIA", "MISC"]]
 
 for i in range(len(groups)):
     # Each workspace is identified by a number starting at 1
