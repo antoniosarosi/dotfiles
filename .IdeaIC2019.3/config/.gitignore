@@ -2,6 +2,6 @@
 /*
 !.gitignore
 
-# Except fot the files and folders we want to track
+# Except for the files and folders we want to track
 !codestyles
 !colors
