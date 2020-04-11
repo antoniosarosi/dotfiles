@@ -62,6 +62,9 @@ keys = [
     # Menu
     Key([mod], "m", lazy.spawn("rofi -show run")),
 
+    # Windows
+    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
+
     # Browser
     Key([mod], "b", lazy.spawn("firefox")),
 
