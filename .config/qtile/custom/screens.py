@@ -21,6 +21,6 @@ def init_screens():
     # Check if HMDI is plugged in, if so initialize another screen
     check_hdmi = "xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'"
     if (subprocess.getoutput(check_hdmi) == "HDMI-1"):
-        screens.append(create_screen())
+        screens.append(Screen())
 
     return screens
