@@ -27,7 +27,7 @@ windows. A theme consists of a file named **colors.json** and a folder named
 }
 ```
 The **img** folder must have this content:
-- main.png
-- mainstart.png
+- primary.png
+- bg-to-primary.png
 - secondary.png
-- secondarystart.png
+- bg-to-secondary.png
