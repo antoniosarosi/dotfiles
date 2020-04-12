@@ -73,7 +73,7 @@ keys = [
 
     # Terminal
     Key([mod], "Return", lazy.spawn("alacritty")),
-    
+
     # Redshift
     Key([mod], "r", lazy.spawn("redshift -O 2400")),
     Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
@@ -120,17 +120,17 @@ widgets_list = [
     ),
     widget.GroupBox(
         font="Ubuntu Bold",
-        fontsize=9,
+        fontsize=10,
         margin_y=0,
         margin_x=0,
-        padding_y=9,
+        padding_y=8,
         padding_x=5,
         borderwidth=1,
         active=colors["light"],
         inactive=colors["light"],
         rounded=False,
         highlight_method="block",
-        this_current_screen_border=colors["main"],
+        this_current_screen_border=colors["primary"],
         this_screen_border=colors ["grey"],
         other_current_screen_border=colors["dark"],
         other_screen_border=colors["dark"],
@@ -144,9 +144,9 @@ widgets_list = [
         background=colors["dark"]
     ),
     widget.WindowName(
-        font="Ubuntu",
+        font="Ubuntu Bold",
         fontsize=11,
-        foreground=colors["main"],
+        foreground=colors["primary"],
         background=colors["dark"],
         padding=5
     ),
@@ -177,7 +177,7 @@ widgets_list = [
         padding=5,
         foreground=colors["light"],
         background=colors["secondary"],
-        fontsize=14
+        fontsize=15
     ),
     widget.Pacman(
         execute="alacritty",
@@ -193,27 +193,24 @@ widgets_list = [
     widget.TextBox(
         text=" ↯",
         foreground=colors["light"],
-        background=colors["main"],
+        background=colors["primary"],
         padding=5,
-        fontsize=14
+        fontsize=15
     ),
     widget.Net(
         interface="wlp2s0",
         foreground=colors["light"],
-        background=colors["main"],
+        background=colors["primary"],
     ),
     widget.Image(
         scale=True,
         filename=theme_img["secondary"],
         background=colors["dark"]
     ),
-    widget.TextBox(
-        font="Ubuntu Bold",
-        text=" ☵",
-        padding=5,
+    widget.CurrentLayoutIcon(
+        scale=0.65,
         foreground=colors["light"],
         background=colors["secondary"],
-        fontsize=14
     ),
     widget.CurrentLayout(
         foreground=colors["light"],
@@ -229,14 +226,14 @@ widgets_list = [
         font="Ubuntu Bold",
         text=" 🕒",
         foreground=colors["light"],
-        background=colors["main"],
+        background=colors["primary"],
         padding=5,
-        fontsize=14
+        fontsize=15
     ),
     widget.Clock(
         foreground=colors["light"],
-        background=colors["main"],
-        format="%A, %B %d - %H:%M"
+        background=colors["primary"],
+        format="%d / %m / %Y - %H:%M "
     ),
 ]
 
@@ -256,13 +253,13 @@ for i in range(len(groups)):
 
 layouts = [
     layout.Max(),
-    layout.MonadTall(border_focus=colors["main"][0], border_width=1, margin=4)
+    layout.MonadTall(border_focus=colors["primary"][0], border_width=1, margin=4)
 ]
 
 widget_defaults = dict(
-    font='sans',
-    fontsize=12,
-    padding=3,
+    font='Ubuntu Mono',
+    fontsize=13,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -275,7 +272,7 @@ screens = [
         ),
     ),
     Screen(
-    
+
     ),
 ]
 
