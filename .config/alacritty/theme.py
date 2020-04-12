@@ -11,7 +11,7 @@ def change_theme(alacritty_file, theme_file):
             theme = yaml.load(f, Loader=yaml.FullLoader)
 
         if "colors" not in theme:
-            print('Theme "{theme_file}" has no color configuration')
+            print('Theme "{}" has no color configuration'.format(theme_file))
             return False
 
         alacritty["colors"] = theme["colors"]
