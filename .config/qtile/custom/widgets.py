@@ -15,7 +15,7 @@ def group_box():
     return widget.GroupBox(
         font="Ubuntu Bold",
         fontsize=10,
-        margin_y=0,
+        margin_y=5,
         margin_x=0,
         padding_y=8,
         padding_x=5,
@@ -25,7 +25,7 @@ def group_box():
         rounded=False,
         highlight_method="block",
         this_current_screen_border=colors["primary"],
-        this_screen_border=colors ["grey"],
+        this_screen_border=colors["grey"],
         other_current_screen_border=colors["dark"],
         other_screen_border=colors["dark"],
         foreground=colors["light"],
