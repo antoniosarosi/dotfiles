@@ -10,7 +10,7 @@ from libqtile.command import lazy
 from libqtile import layout
 
 # Custom Conf
-from custom.bindings import mod_key, init_keys
+from custom.bindings import mod, init_keys
 from custom.theme import colors
 from custom.screens import init_screens
 from custom.groups import init_groups
@@ -19,7 +19,6 @@ from custom.widgets import defaults
 
 # Basic Config
 
-mod = mod_key
 keys = init_keys()
 widget_defaults = defaults
 extension_defaults = widget_defaults.copy()

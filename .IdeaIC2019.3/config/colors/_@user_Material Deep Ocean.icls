@@ -4,7 +4,7 @@
     <property name="created">2020-04-07T02:19:50</property>
     <property name="ide">Idea</property>
     <property name="ideVersion">2019.3.4.0.0</property>
-    <property name="modified">2020-04-10T02:37:55</property>
+    <property name="modified">2020-04-16T16:56:38</property>
     <property name="originalScheme">Material Deep Ocean</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.3" />
@@ -1106,7 +1106,8 @@
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="f78c6c" />
+        <option name="FOREGROUND" value="c792ea" />
+        <option name="FONT_TYPE" value="2" />
       </value>
     </option>
     <option name="IVAR">
@@ -1134,8 +1135,13 @@
     </option>
     <option name="JAVA_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="c792ea" />
+        <option name="FOREGROUND" value="f78c6c" />
         <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="JAVA_NUMBER">
+      <value>
+        <option name="FOREGROUND" value="f78c6c" />
       </value>
     </option>
     <option name="JFLEX_MACROS_REF">
