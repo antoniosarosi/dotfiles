@@ -50,4 +50,3 @@ setxkbmap es &
 # Wallpaper
 feh --bg-max Wallpapers/abstract.png &
 # Window Manager
-qtile

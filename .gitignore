@@ -6,8 +6,11 @@
 !Wallpapers
 !README.md
 !.screenshot.png
+
 !.screenlayout
 !.bashrc
+!.spectrwm.conf
+!baraction.sh
 !.xsession
 !.Xresources
 !.gtkrc-2.0
