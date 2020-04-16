@@ -16,7 +16,7 @@ dte() {
 # RAM
 mem() {
   mem=`free | awk '/Mem/ {printf "%d MiB/%d MiB\n", $3 / 1024.0, $2 / 1024.0 }'`
-  echo -e "MEM: $mem"
+  echo -e "Mem: $mem"
 }
 
 # CPU
@@ -27,19 +27,19 @@ cpu() {
   read cpu a b c idle rest < /proc/stat
   total=$((a+b+c+idle))
   cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-  echo -e "CPU: $cpu%"
+  echo -e "Cpu: $cpu%"
 }
 
-# Batery
+# Battery
 bat() {
   bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | sed 's/ *percentage: *//g'`
   echo -e "Battery: $bat"
 }
 
-# Bright
+# Brightness
 br() {
-  br=`brightnessctl | grep Current | sed "s/ *Current b/B/" | sed "s/\t//"`
-  echo -e "$br"
+  br=`brightnessctl | grep Current | cut -d"(" -f2 | sed "s/)//"`
+  echo -e "Brightness: $br"
 }
 
 # Volume
@@ -47,8 +47,6 @@ vol() {
   vol=`pamixer --get-volume`
   echo -e "Volume: $vol%"
 }
-
-
 
 SLEEP_SEC=5
 #loops forever outputting a line every SLEEP_SEC secs
