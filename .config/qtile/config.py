@@ -4,31 +4,171 @@
 # Antonio Sarosi
 # https://www.youtube.com/channel/UCzTi9I3zApECTkukkMOpEEA/featured
 
-# Qtile Conf
-from libqtile.config import Key, Group, Drag, Click
+# Copyright (c) 2010 Aldo Cortesi
+# Copyright (c) 2010, 2014 dequis
+# Copyright (c) 2012 Randall Ma
+# Copyright (c) 2012-2014 Tycho Andersen
+# Copyright (c) 2012 Craig Barnes
+# Copyright (c) 2013 horsik
+# Copyright (c) 2013 Tao Sauvage
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
+from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
-from libqtile import layout
+from libqtile import layout, bar, widget, hook
 
-# Custom Conf
-from custom.bindings import mod, init_keys
-from custom.theme import colors
-from custom.screens import init_screens
-from custom.groups import init_groups
-from custom.widgets import defaults
-from custom.autostart import autostart
+from os import listdir
+from os import path
+import subprocess
+import json
 
 
-# Basic Config
+# THEME
 
-keys = init_keys()
-widget_defaults = defaults
-extension_defaults = widget_defaults.copy()
+theme = "material-darker" # only if available in ~/.config/qtile/themes
 
-# Workspaces
+theme_path = path.join(
+    path.expanduser("~"), ".config", "qtile", "themes", theme
+)
 
-groups = init_groups(keys)
+# map color name to hex values
+with open(path.join(theme_path, "colors.json")) as f:
+    colors = json.load(f)
 
-# Layouts
+img = {}
+
+# map image name to its path
+img_path = path.join(theme_path, "img")
+for i in listdir(img_path):
+    img[i.split(".")[0]] = path.join(img_path, i)
+
+
+# AUTOSTART
+
+@hook.subscribe.startup_once
+def autostart():
+    script = path.join(
+        path.expanduser("~"), ".config", "qtile", "autostart.sh"
+    )
+    subprocess.call([script])
+
+
+# KEYS
+
+mod = "mod4"
+
+keys = [
+    # ------------ Window Configs ------------
+
+    # Switch between windows in current stack pane
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "k", lazy.layout.up()),
+    Key([mod], "h", lazy.layout.left()),
+    Key([mod], "l", lazy.layout.right()),
+
+    # Change window sizes (MonadTall)
+    Key([mod, "shift"], "l", lazy.layout.grow()),
+    Key([mod, "shift"], "h", lazy.layout.shrink()),
+
+    # Toggle floating
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+
+    # Move windows up or down in current stack
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+
+    # Toggle between different layouts as defined below
+    Key([mod], "Tab", lazy.next_layout()),
+
+    # Kill window
+    Key([mod], "w", lazy.window.kill()),
+
+    # Restart Qtile
+    Key([mod, "control"], "r", lazy.restart()),
+
+    Key([mod, "control"], "q", lazy.shutdown()),
+    Key([mod], "r", lazy.spawncmd()),
+
+    # Switch window focus to other pane(s) of stack
+    Key([mod], "space", lazy.layout.next()),
+
+    # Swap panes of split stack
+    Key([mod, "shift"], "space", lazy.layout.rotate()),
+
+    # ------------ Apps Configs ------------
+
+    # Menu
+    Key([mod], "m", lazy.spawn("rofi -show run")),
+
+    # Window Nav
+    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
+
+    # Browser
+    Key([mod], "b", lazy.spawn("firefox")),
+
+    # File Manager
+    Key([mod], "f", lazy.spawn("thunar")),
+
+    # Terminal
+    Key([mod], "Return", lazy.spawn("alacritty")),
+
+    # Redshift
+    Key([mod], "r", lazy.spawn("redshift -O 2400")),
+    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
+
+    # ------------ Hardware Configs ------------
+
+    # Volume
+    Key([], "XF86AudioLowerVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    )),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(
+        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    )),
+    Key([], "XF86AudioMute", lazy.spawn(
+        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    )),
+
+    #Brightness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+]
+
+
+# GROUPS
+
+groups = [Group(i) for i in ["NET", "DEV", "TERM", "FS", "MEDIA", "MISC"]]
+
+for i in range(len(groups)):
+    # Each workspace is identified by a number starting at 1
+    actual_key = i + 1
+    keys.extend([
+        # Switch to workspace N (actual_key)
+        Key([mod], str(actual_key), lazy.group[groups[i].name].toscreen()),
+        # Send window to workspace N (actual_key)
+        Key([mod, "shift"], str(actual_key), lazy.window.togroup(groups[i].name))
+    ])
+
+
+# LAYOUTS
 
 layouts = [
     layout.Max(),
@@ -36,26 +176,215 @@ layouts = [
         border_focus=colors["primary"][0],
         border_width=1,
         margin=4
-    )
+    ),
+    # layout.Bsp(),
+    # layout.Columns(),
+    # layout.Matrix(),
+    # layout.MonadTall(),
+    # layout.MonadWide(),
+    # layout.RatioTile(),
+    # layout.Tile(),
+    # layout.TreeTab(),
+    # layout.VerticalTile(),
+    # layout.Zoomy(),
 ]
 
-# Screens
 
-screens = init_screens()
+# WIDGETS
 
-# Drag floating layouts
+# Reusable configs for displaying different widgets on different screens
+
+def base(fg='light', bg='dark'):
+    return {
+        'foreground': colors[fg],
+        'background': colors[bg]
+    }
+
+
+separator = {
+    **base(),
+    'linewidth': 0,
+    'padding': 5,
+}
+
+group_box = {
+    **base(),
+    'font': 'Ubuntu Bold',
+    'fontsize': 10,
+    'margin_y': 5,
+    'margin_x': 0,
+    'padding_y': 8,
+    'padding_x': 5,
+    'borderwidth': 1,
+    'active': colors['light'],
+    'inactive': colors['light'],
+    'rounded': False,
+    'highlight_method': 'block',
+    'this_current_screen_border': colors['primary'],
+    'this_screen_border': colors['grey'],
+    'other_current_screen_border': colors['dark'],
+    'other_screen_border': colors['dark']
+}
+
+window_name = {
+    **base(fg='primary'),
+    'font': 'Ubuntu Bold',
+    'fontsize': 11,
+    'padding': 5
+}
+
+systray = {
+    'background': colors['dark'],
+    'padding': 5
+}
+
+text_box = {
+    'font': 'Ubuntu Bold',
+    'fontsize': 15,
+    'padding': 5
+}
+
+pacman = {
+    'execute': 'alacritty',
+    'update_interval': 1800
+}
+
+net = {
+    'interface': 'wlp2s0'
+}
+
+current_layout_icon = {
+    'scale': 0.65
+}
+
+current_layout = {
+    'padding': 5
+}
+
+clock = {
+    'format': '%d / %m / %Y - %H:%M '
+}
+
+
+def workspaces():
+    return [
+        widget.Sep(**separator),
+        widget.GroupBox(**group_box),
+        widget.Sep(**separator),
+        widget.WindowName(**window_name)
+    ]
+
+
+def powerline_base():
+    return [
+        widget.CurrentLayoutIcon(
+            **base(bg='secondary'),
+            **current_layout_icon
+        ),
+        widget.CurrentLayout(
+            **base(bg='secondary'),
+            **current_layout
+        ),
+        widget.Image(
+            filename=img['primary']
+        ),
+        widget.TextBox(
+            **base(bg='primary'),
+            **text_box,
+            text=' 🕒'
+        ),
+        widget.Clock(
+            **base(bg='primary'),
+            **clock
+        )
+    ]
+
+
+laptop_widgets = [
+    *workspaces(),
+
+    widget.Sep(
+        **separator
+    ),
+    widget.Systray(
+        **systray
+    ),
+    widget.Sep(
+        **separator
+    ),
+    widget.Image(
+        filename=img['bg-to-secondary']
+    ),
+    widget.TextBox(
+        **base(bg='secondary'),
+        **text_box,
+        text=' ⟳'
+    ),
+    widget.Pacman(
+        **base(bg='secondary'),
+        **pacman
+    ),
+    widget.Image(
+        filename=img['primary']
+    ),
+    widget.TextBox(
+        **base(bg='primary'),
+        **text_box,
+        text=' ↯'
+    ),
+    widget.Net(
+        **base(bg='primary'),
+        **net
+    ),
+    widget.Image(
+        filename=img['secondary']
+    ),
+    *powerline_base()
+ ]
+
+
+monitor_widgets = [
+    *workspaces(),
+    widget.Image(
+        filename=img['bg-to-secondary']
+    ),
+    *powerline_base()
+]
+
+widget_defaults = {
+    'font': 'Ubuntu Mono',
+    'fontsize': 13,
+    'padding': 2
+}
+extension_defaults = widget_defaults.copy()
+
+
+# SCREENS
+
+screens = [
+    Screen(top=bar.Bar(laptop_widgets, 24, opacity=0.95))
+]
+
+hdmi = "xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'"
+# Check if HMDI is plugged in, if so initialize another screen
+if subprocess.getoutput(hdmi) == "HDMI-1":
+    screens.append(
+        Screen(top=bar.Bar(monitor_widgets, 24, opacity=0.95))
+    )
+
+
+# MOUSE
 
 mouse = [
-    Drag(
-        [mod], "Button1", lazy.window.set_position_floating(),
-        start=lazy.window.get_position()
-    ),
-    Drag(
-        [mod], "Button3", lazy.window.set_size_floating(),
-        start=lazy.window.get_size()
-    ),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+        start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+        start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
+
+
+# OTHER STUFF
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
