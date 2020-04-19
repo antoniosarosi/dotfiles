@@ -41,13 +41,14 @@ import subprocess
 import json
 
 
+qtile_path = path.join(path.expanduser("~"), ".config", "qtile")
+
+
 # THEME
 
 theme = "material-darker" # only if available in ~/.config/qtile/themes
 
-theme_path = path.join(
-    path.expanduser("~"), ".config", "qtile", "themes", theme
-)
+theme_path = path.join(qtile_path, "themes", theme)
 
 # map color name to hex values
 with open(path.join(theme_path, "colors.json")) as f:
@@ -65,9 +66,7 @@ for i in listdir(img_path):
 
 @hook.subscribe.startup_once
 def autostart():
-    script = path.join(
-        path.expanduser("~"), ".config", "qtile", "autostart.sh"
-    )
+    script = path.join(qtile_path, "autostart.sh")
     subprocess.call([script])
 
 
@@ -170,18 +169,19 @@ for i in range(len(groups)):
 
 # LAYOUTS
 
+layout_conf = {
+    'border_focus': colors['primary'][0],
+    'border_width': 1,
+    'margin': 4
+}
+
 layouts = [
     layout.Max(),
-    layout.MonadTall(
-        border_focus=colors["primary"][0],
-        border_width=1,
-        margin=4
-    ),
+    layout.MonadTall(**layout_conf),
+    layout.MonadWide(**layout_conf),
+    layout.Matrix(columns=2, **layout_conf),
     # layout.Bsp(),
     # layout.Columns(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
