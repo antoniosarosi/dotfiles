@@ -1,156 +1,173 @@
+# Reusable configs for Widgets, necessary for displaying different
+# widgets on different screens
+
 from libqtile import widget
 from custom.theme import colors, img
 
 
-def sep(p):
-    return widget.Sep(
-        linewidth=0,
-        padding=p,
-        foreground=colors["light"],
-        background=colors["dark"]
-    )
+def base(fg='light', bg='dark'):
+    return {
+        'foreground': colors[fg],
+        'background': colors[bg]
+    }
 
 
-def group_box():
-    return widget.GroupBox(
-        font="Ubuntu Bold",
-        fontsize=10,
-        margin_y=5,
-        margin_x=0,
-        padding_y=8,
-        padding_x=5,
-        borderwidth=1,
-        active=colors["light"],
-        inactive=colors["light"],
-        rounded=False,
-        highlight_method="block",
-        this_current_screen_border=colors["primary"],
-        this_screen_border=colors["grey"],
-        other_current_screen_border=colors["dark"],
-        other_screen_border=colors["dark"],
-        foreground=colors["light"],
-        background=colors["dark"]
-    )
+# Custom configs for each widget
+
+separator = {
+    **base(),
+    'linewidth': 0,
+    'padding': 5,
+}
+
+group_box = {
+    **base(),
+    'font': 'Ubuntu Bold',
+    'fontsize': 10,
+    'margin_y': 5,
+    'margin_x': 0,
+    'padding_y': 8,
+    'padding_x': 5,
+    'borderwidth': 1,
+    'active': colors['light'],
+    'inactive': colors['light'],
+    'rounded': False,
+    'highlight_method': 'block',
+    'this_current_screen_border': colors['primary'],
+    'this_screen_border': colors['grey'],
+    'other_current_screen_border': colors['dark'],
+    'other_screen_border': colors['dark']
+}
+
+window_name = {
+    **base(fg='primary'),
+    'font': 'Ubuntu Bold',
+    'fontsize': 11,
+    'padding': 5
+}
+
+systray = {
+    'background': colors['dark'],
+    'padding': 5
+}
+
+text_box = {
+    'font': 'Ubuntu Bold',
+    'fontsize': 15,
+    'padding': 5
+}
+
+pacman = {
+    'execute': 'alacritty',
+    'update_interval': 1800
+}
+
+net = {
+    'interface': 'wlp2s0'
+}
+
+current_layout_icon = {
+    'scale': 0.65
+}
+
+current_layout = {
+    'padding': 5
+}
+
+clock = {
+    'format': '%d / %m / %Y - %H:%M '
+}
+
+defaults = {
+    'font': 'Ubuntu Mono',
+    'fontsize': 13,
+    'padding': 2
+}
 
 
-def window_name():
-    return widget.WindowName(
-        font="Ubuntu Bold",
-        fontsize=11,
-        foreground=colors["primary"],
-        background=colors["dark"],
-        padding=5
-    )
+def workspaces():
+    return [
+        widget.Sep(**separator),
+        widget.GroupBox(**group_box),
+        widget.Sep(**separator),
+        widget.WindowName(**window_name)
+    ]
 
 
-def systray():
-    return widget.Systray(
-        background=colors["dark"],
-        padding=5
-    )
-
-
-def image(image):
-    return widget.Image(
-        scale=True,
-        filename=img[image],
-        background=colors["dark"]
-    )
-
-
-def text_box(s, bgcolor):
-    return widget.TextBox(
-        font="Ubuntu Bold",
-        text=s,
-        padding=5,
-        foreground=colors["light"],
-        background=colors[bgcolor],
-        fontsize=15
-    )
-
-
-def pacman(bgcolor):
-    return widget.Pacman(
-        execute="alacritty",
-        update_interval=1800,
-        foreground=colors["light"],
-        background=colors[bgcolor]
-    )
-
-
-def net(bgcolor):
-    return widget.Net(
-        interface="wlp2s0",
-        foreground=colors["light"],
-        background=colors[bgcolor],
-    )
-
-
-def current_layout_icon(bgcolor):
-    return widget.CurrentLayoutIcon(
-        scale=0.65,
-        foreground=colors["light"],
-        background=colors[bgcolor],
-    )
-
-
-def current_layout(bgcolor):
-    return widget.CurrentLayout(
-        foreground=colors["light"],
-        background=colors[bgcolor],
-        padding=5
-    )
-
-
-def clock(bgcolor):
-    return widget.Clock(
-        foreground=colors["light"],
-        background=colors[bgcolor],
-        format="%d / %m / %Y - %H:%M "
-    )
+def powerline_base():
+    return [
+        widget.CurrentLayoutIcon(
+            **base(bg='secondary'),
+            **current_layout_icon
+        ),
+        widget.CurrentLayout(
+            **base(bg='secondary'),
+            **current_layout
+        ),
+        widget.Image(
+            filename=img['primary']
+        ),
+        widget.TextBox(
+            **base(bg='primary'),
+            **text_box,
+            text=' 🕒'
+        ),
+        widget.Clock(
+            **base(bg='primary'),
+            **clock
+        )
+    ]
 
 
 def init_laptop_widgets():
     return [
-        sep(5),
-        group_box(),
-        sep(5),
-        window_name(),
-        sep(5),
-        systray(),
-        sep(5),
-        image("bg-to-secondary"),
-        text_box(" ⟳", "secondary"),
-        pacman("secondary"),
-        image("primary"),
-        text_box(" ↯", "primary"),
-        net("primary"),
-        image("secondary"),
-        current_layout_icon("secondary"),
-        current_layout("secondary"),
-        image("primary"),
-        text_box(" 🕒", "primary"),
-        clock("primary")
+        *workspaces(),
+
+        widget.Sep(
+            **separator
+        ),
+        widget.Systray(
+            **systray
+        ),
+        widget.Sep(
+            **separator
+        ),
+        widget.Image(
+            filename=img['bg-to-secondary']
+        ),
+        widget.TextBox(
+            **base(bg='secondary'),
+            **text_box,
+            text=' ⟳'
+        ),
+        widget.Pacman(
+            **base(bg='secondary'),
+            **pacman
+        ),
+        widget.Image(
+            filename=img['primary']
+        ),
+        widget.TextBox(
+            **base(bg='primary'),
+            **text_box,
+            text=' ↯'
+        ),
+        widget.Net(
+            **base(bg='primary'),
+            **net
+        ),
+        widget.Image(
+            filename=img['secondary']
+        ),
+        *powerline_base()
      ]
 
 
 def init_monitor_widgets():
     return [
-        sep(5),
-        group_box(),
-        sep(5),
-        window_name(),
-        image("bg-to-secondary"),
-        current_layout_icon("secondary"),
-        current_layout("secondary"),
-        image("primary"),
-        text_box(" 🕒", "primary"),
-        clock("primary")
+        *workspaces(),
+        widget.Image(
+            filename=img['bg-to-secondary']
+        ),
+        *powerline_base()
     ]
-
-
-defaults = dict(
-    font='Ubuntu Mono',
-    fontsize=13,
-    padding=2,
-)

@@ -15,6 +15,7 @@ from custom.theme import colors
 from custom.screens import init_screens
 from custom.groups import init_groups
 from custom.widgets import defaults
+from custom.autostart import autostart
 
 
 # Basic Config
