@@ -74,82 +74,83 @@ def autostart():
 
 mod = "mod4"
 
-keys = [
+#          Special  KeyCap  Actions
+keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
     # Switch between windows in current stack pane
-    Key([mod], "j", lazy.layout.down()),
-    Key([mod], "k", lazy.layout.up()),
-    Key([mod], "h", lazy.layout.left()),
-    Key([mod], "l", lazy.layout.right()),
+    ([mod], "j", lazy.layout.down()),
+    ([mod], "k", lazy.layout.up()),
+    ([mod], "h", lazy.layout.left()),
+    ([mod], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    Key([mod, "shift"], "l", lazy.layout.grow()),
-    Key([mod, "shift"], "h", lazy.layout.shrink()),
+    ([mod, "shift"], "l", lazy.layout.grow()),
+    ([mod, "shift"], "h", lazy.layout.shrink()),
 
     # Toggle floating
-    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    ([mod, "shift"], "f", lazy.window.toggle_floating()),
 
     # Move windows up or down in current stack
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    ([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    ([mod, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
+    ([mod], "Tab", lazy.next_layout()),
 
     # Kill window
-    Key([mod], "w", lazy.window.kill()),
+    ([mod], "w", lazy.window.kill()),
 
     # Restart Qtile
-    Key([mod, "control"], "r", lazy.restart()),
+    ([mod, "control"], "r", lazy.restart()),
 
-    Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
+    ([mod, "control"], "q", lazy.shutdown()),
+    ([mod], "r", lazy.spawncmd()),
 
     # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next()),
+    ([mod], "space", lazy.layout.next()),
 
     # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate()),
+    ([mod, "shift"], "space", lazy.layout.rotate()),
 
     # ------------ Apps Configs ------------
 
     # Menu
-    Key([mod], "m", lazy.spawn("rofi -show run")),
+    ([mod], "m", lazy.spawn("rofi -show run")),
 
     # Window Nav
-    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
+    ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    Key([mod], "b", lazy.spawn("firefox")),
+    ([mod], "b", lazy.spawn("firefox")),
 
     # File Manager
-    Key([mod], "f", lazy.spawn("thunar")),
+    ([mod], "f", lazy.spawn("thunar")),
 
     # Terminal
-    Key([mod], "Return", lazy.spawn("alacritty")),
+    ([mod], "Return", lazy.spawn("alacritty")),
 
     # Redshift
-    Key([mod], "r", lazy.spawn("redshift -O 2400")),
-    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    ([mod], "r", lazy.spawn("redshift -O 2400")),
+    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # ------------ Hardware Configs ------------
 
     # Volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn(
+    ([], "XF86AudioLowerVolume", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ -5%"
     )),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(
+    ([], "XF86AudioRaiseVolume", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ +5%"
     )),
-    Key([], "XF86AudioMute", lazy.spawn(
+    ([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     )),
 
     #Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
-]
+    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+]]
 
 
 # GROUPS
