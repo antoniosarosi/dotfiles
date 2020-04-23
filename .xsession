@@ -47,6 +47,8 @@ picom &
 nm-applet &
 # Keyboard Layout
 setxkbmap es &
+# Automount Devices
+udiskie -t &
 # Wallpaper
 feh --bg-max Wallpapers/abstract.png &
-# Window Manager
+
