@@ -157,14 +157,14 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
 groups = [Group(i) for i in ["NET", "DEV", "TERM", "FS", "MEDIA", "MISC"]]
 
-for i in range(len(groups)):
+for i, group in enumerate(groups):
     # Each workspace is identified by a number starting at 1
-    actual_key = i + 1
+    actual_key = str(i + 1)
     keys.extend([
         # Switch to workspace N (actual_key)
-        Key([mod], str(actual_key), lazy.group[groups[i].name].toscreen()),
+        Key([mod], actual_key, lazy.group[group.name].toscreen()),
         # Send window to workspace N (actual_key)
-        Key([mod, "shift"], str(actual_key), lazy.window.togroup(groups[i].name))
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
     ])
 
 
