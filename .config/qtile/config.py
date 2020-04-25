@@ -366,9 +366,11 @@ screens = [
     Screen(top=bar.Bar(laptop_widgets, 24, opacity=0.95))
 ]
 
-hdmi = "xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'"
-# Check if HMDI is plugged in, if so initialize another screen
-if subprocess.getoutput(hdmi) == "HDMI-1":
+monitors_status=subprocess.run("xrandr | grep 'connected' | cut -d ' ' -f 2",
+    shell=True, stdout=subprocess.PIPE).stdout.decode("UTF-8").split("\n")[:-1]
+
+# Check if there is another monitor connected appart from the laptop screen.
+if monitor_status.count("connected") == 2:
     screens.append(
         Screen(top=bar.Bar(monitor_widgets, 24, opacity=0.95))
     )
