@@ -157,14 +157,14 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
 groups = [Group(i) for i in ["NET", "DEV", "TERM", "FS", "MEDIA", "MISC"]]
 
-for i in range(len(groups)):
+for i, group in enumerate(groups):
     # Each workspace is identified by a number starting at 1
-    actual_key = i + 1
+    actual_key = str(i + 1)
     keys.extend([
         # Switch to workspace N (actual_key)
-        Key([mod], str(actual_key), lazy.group[groups[i].name].toscreen()),
+        Key([mod], actual_key, lazy.group[group.name].toscreen()),
         # Send window to workspace N (actual_key)
-        Key([mod, "shift"], str(actual_key), lazy.window.togroup(groups[i].name))
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
     ])
 
 
@@ -366,9 +366,11 @@ screens = [
     Screen(top=bar.Bar(laptop_widgets, 24, opacity=0.95))
 ]
 
-hdmi = "xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'"
-# Check if HMDI is plugged in, if so initialize another screen
-if subprocess.getoutput(hdmi) == "HDMI-1":
+monitors_status=subprocess.run("xrandr | grep 'connected' | cut -d ' ' -f 2",
+    shell=True, stdout=subprocess.PIPE).stdout.decode("UTF-8").split("\n")[:-1]
+
+# Check if there is another monitor connected appart from the laptop screen.
+if monitor_status.count("connected") == 2:
     screens.append(
         Screen(top=bar.Bar(monitor_widgets, 24, opacity=0.95))
     )
