@@ -49,6 +49,8 @@ nm-applet &
 setxkbmap es &
 # Automount Devices
 udiskie -t &
+# Java Fonts
+xsettingsd &
 # Wallpaper
-feh --bg-max Wallpapers/abstract.png &
+feh --bg-scale Wallpapers/02.jpg &
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from sys import argv
 from os import path
 import yaml
@@ -32,7 +34,7 @@ def change_theme(alacritty_file, theme_file):
 
 def main():
     if len(argv) != 2:
-        print("Usage:\npython {} theme.yaml".format(argv[0]))
+        print("Usage:\n{} theme.yaml".format(argv[0]))
         exit(0)
 
     if not path.exists(argv[1]):
