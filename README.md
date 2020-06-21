@@ -12,11 +12,11 @@ cp -R /home/usuario/dotfiles /home/usuario
 ```
 
 # Paquetes usados
-<li>
-<ul>Picom (transparencias)</ul>
-<ul>Feh (fondo)</ul>
-<ul>Alacritty (terminal)</ul>
-<ul>Firefox (explorador)</ul>
-<ul>Thunder (gestor archivos)</ul>
-<ul>Rofi (gestor archivos #2)</ul>
-</li>
+<ul>
+<li>Picom (transparencias)</li>
+<li>Feh (fondo)</li>
+<li>Alacritty (terminal)</li>
+<li>Firefox (explorador)</li>
+<li>Thunder (gestor archivos)</li>
+<li>Rofi (gestor archivos #2)</li>
+</ul>
