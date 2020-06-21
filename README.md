@@ -19,4 +19,7 @@ cp -R /home/usuario/dotfiles /home/usuario
 <li>Firefox (explorador)</li>
 <li>Thunder (gestor archivos)</li>
 <li>Rofi (gestor archivos #2)</li>
+<li>Brightnessctl (control luminosidad)</li>
+<li>Redshift (colores pantalla)</li>
+<li>Neofetch (logo de arch linux en terminal + información del sistema)</li>
 </ul>
