@@ -8,17 +8,21 @@ https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 ```bash
 git clone https://github.com/antoniosarosi/dotfiles
 cd dotfiles
-cp -R /home/usuario/dotfiles /home/usuario
+sudo cp -R /home/usuario/dotfiles /home/usuario
 ```
 
 # Paquetes usados
 <ul>
+<li>xorg (gráficos)</li>
+<li>Qtile (ventanas)</li>
+<li>Sudo (permisos usuarios)</li>
+<li>Git (clonar repositorios, en concreto éste)</li>
 <li>Picom (transparencias)</li>
 <li>Feh (fondo)</li>
 <li>Alacritty (terminal)</li>
 <li>Firefox (explorador)</li>
 <li>Thunder (gestor archivos)</li>
-<li>Rofi (gestor archivos #2)</li>
+<li>Rofi (barra búsqueda)</li>
 <li>Brightnessctl (control luminosidad)</li>
 <li>Redshift (colores pantalla)</li>
 <li>Neofetch (logo de arch linux en terminal + información del sistema)</li>
