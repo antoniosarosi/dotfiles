@@ -21,7 +21,7 @@ sudo cp -R /home/usuario/dotfiles /home/usuario
 <li>Feh (fondo)</li>
 <li>Alacritty (terminal)</li>
 <li>Firefox (explorador)</li>
-<li>Thunder (gestor archivos)</li>
+<li>Thunar (gestor archivos)</li>
 <li>Rofi (barra búsqueda)</li>
 <li>Brightnessctl (control luminosidad)</li>
 <li>Redshift (colores pantalla)</li>
