@@ -13,7 +13,8 @@ sudo cp -R /home/usuario/dotfiles /home/usuario
 
 # Paquetes usados
 <ul>
-<li>xorg (gráficos)</li>
+<li>Grub (bootloader)</li>
+<li>Xorg (gráficos)</li>
 <li>Qtile (ventanas)</li>
 <li>Sudo (permisos usuarios)</li>
 <li>Git (clonar repositorios, en concreto éste)</li>
