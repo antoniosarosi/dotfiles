@@ -31,7 +31,6 @@ Although I do not recommend doing so, copy only the configs you need
 | **mod + w**         | kill window          |
 | **mod + ctrl + r**  | restart wm           |
 | **mod + ctrl + q**  | quit                 |
-| **mod + m**         | launch rofi          |
 
 ## Apps
 
@@ -40,7 +39,7 @@ Although I do not recommend doing so, copy only the configs you need
 | **mod + m**         | launch rofi         |
 | **mod + shift + m** | window nav (rofi)   |
 | **mod + b**         | launch browser      |
-| **mod + f**         | launch fire manager |
+| **mod + f**         | launch file manager |
 | **mod + return**    | launch terminal     |
 | **mod + r**         | redshift            |
 | **mod + shift + r** | stop redshift       |
