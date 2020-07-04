@@ -4,28 +4,43 @@ https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 
 ![Screenshot](.screenshot.png)
 
-# Tutorial
+If you wanna clone all the configs:
 ```bash
 git clone https://github.com/antoniosarosi/dotfiles
 cd dotfiles
-sudo cp -R /home/usuario/dotfiles /home/usuario
+sudo cp -R /home/user/dotfiles /home/user
 ```
+Although I do not recommend doing so, copy only the configs you need
 
-# Paquetes usados
-<ul>
-<li>Grub (bootloader)</li>
-<li>Xorg (gráficos)</li>
-<li>Qtile (ventanas)</li>
-<li>Sudo (permisos usuarios)</li>
-<li>Git (clonar repositorios, en concreto éste)</li>
-<li>Picom (transparencias)</li>
-<li>Feh (fondo)</li>
-<li>Alacritty (terminal)</li>
-<li>Firefox (explorador)</li>
-<li>Thunar (gestor archivos)</li>
-<li>Rofi (barra búsqueda)</li>
-<li>Brightnessctl (control luminosidad)</li>
-<li>Redshift (colores pantalla)</li>
-<li>Neofetch (logo de arch linux en terminal + información del sistema)</li>
-<li>Htop (monitor de recursos)</li>
-</ul>
+# Keybindings
+
+## Windows
+
+| Key                 | Action               |
+|---------------------|----------------------|
+| **mod + j**         | next window (down)   |
+| **mod + k**         | next window (up)     |
+| **mod + h**         | next window (left)   |
+| **mod + l**         | next window (right)  |
+| **mod + shift + l** | increase window size |
+| **mod + shift + h** | decrease window size |
+| **mod + shift + f** | toggle floating      |
+| **mod + shift + j** | move window down     |
+| **mod + shift + k** | move window up       |
+| **mod + tab**       | change layout        |
+| **mod + w**         | kill window          |
+| **mod + ctrl + r**  | restart wm           |
+| **mod + ctrl + q**  | quit                 |
+| **mod + m**         | launch rofi          |
+
+## Apps
+
+| Key                 | Action              |
+|---------------------|---------------------|
+| **mod + m**         | launch rofi         |
+| **mod + shift + m** | window nav (rofi)   |
+| **mod + b**         | launch browser      |
+| **mod + f**         | launch fire manager |
+| **mod + return**    | launch terminal     |
+| **mod + r**         | redshift            |
+| **mod + shift + r** | stop redshift       |

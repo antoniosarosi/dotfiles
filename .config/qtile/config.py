@@ -2,7 +2,7 @@
 # http://www.qtile.org/
 
 # Antonio Sarosi
-# https://www.youtube.com/channel/UCzTi9I3zApECTkukkMOpEEA/featured
+# https://www.youtube.com/c/antoniosarosi
 
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
@@ -46,7 +46,7 @@ qtile_path = path.join(path.expanduser("~"), ".config", "qtile")
 
 # THEME
 
-theme = "material-darker" # only if available in ~/.config/qtile/themes
+theme = "dark-grey" # only if available in ~/.config/qtile/themes
 
 theme_path = path.join(qtile_path, "themes", theme)
 
