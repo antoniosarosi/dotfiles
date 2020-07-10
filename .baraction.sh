@@ -20,15 +20,15 @@ mem() {
 }
 
 # CPU
-cpu() {
-  read cpu a b c previdle rest < /proc/stat
-  prevtotal=$((a+b+c+previdle))
-  sleep 0.5
-  read cpu a b c idle rest < /proc/stat
-  total=$((a+b+c+idle))
-  cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-  echo -e "Cpu: $cpu%"
-}
+# cpu() {
+#   read cpu a b c previdle rest < /proc/stat
+#   prevtotal=$((a+b+c+previdle))
+#   sleep 0.5
+#   read cpu a b c idle rest < /proc/stat
+#   total=$((a+b+c+idle))
+#   cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+#   echo -e "Cpu: $cpu%"
+# }
 
 # Battery
 bat() {
@@ -48,9 +48,9 @@ vol() {
   echo -e "Volume: $vol%"
 }
 
-SLEEP_SEC=5
+SLEEP_SEC=1
 #loops forever outputting a line every SLEEP_SEC secs
 while :; do
-    echo "$(cpu)    |    $(mem)    |    $(bat)    |    $(br)    |    $(vol)    |    $(dte)"
+    echo "$(bat)    |    $(br)    |    $(vol)    |    $(dte)"
 	sleep $SLEEP_SEC
 done
