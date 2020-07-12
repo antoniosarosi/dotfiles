@@ -74,7 +74,6 @@ def autostart():
 
 mod = "mod4"
 
-#          Special  KeyCap  Actions
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
 
@@ -180,10 +179,10 @@ layouts = [
     layout.Max(),
     layout.MonadTall(**layout_conf),
     layout.MonadWide(**layout_conf),
+    layout.Bsp(**layout_conf),
     layout.Matrix(columns=2, **layout_conf),
-    # layout.Bsp(),
+    layout.RatioTile(**layout_conf),
     # layout.Columns(),
-    # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
@@ -240,7 +239,7 @@ systray = {
 }
 
 text_box = {
-    'font': 'Ubuntu Bold',
+    'font': 'Ubuntu Mono',
     'fontsize': 15,
     'padding': 5
 }
@@ -263,7 +262,7 @@ current_layout = {
 }
 
 clock = {
-    'format': '%d / %m / %Y - %H:%M '
+    'format': '%d/%m/%Y - %H:%M '
 }
 
 
@@ -353,9 +352,9 @@ monitor_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'Ubuntu Mono',
-    'fontsize': 13,
-    'padding': 2
+    'font': 'UbuntuMono Nerd Font',
+    'fontsize': 14,
+    'padding': 1,
 }
 extension_defaults = widget_defaults.copy()
 
@@ -382,10 +381,18 @@ if monitors_status.count("connected") == 2:
 # MOUSE
 
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-        start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-        start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position()
+    ),
+    Drag(
+        [mod],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size()
+    ),
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 

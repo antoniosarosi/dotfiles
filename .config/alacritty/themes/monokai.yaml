@@ -1,7 +1,7 @@
 colors:
   # Default colors
   primary:
-    background: '0x272822'
+    background: '0x171714'
     foreground: '0xf8f8f2'
 
   # Normal colors
@@ -25,4 +25,3 @@ colors:
     magenta: '0xae81ff'
     cyan:    '0xa1efe4'
     white:   '0xf9f8f5'
-
