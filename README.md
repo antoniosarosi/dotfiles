@@ -2,15 +2,11 @@
 
 https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 
-![Screenshot](.screenshot.png)
+## Qtile, Dracula Theme
+![Qtile](.screenshots/qtile.png)
 
-If you wanna clone all the configs:
-```bash
-git clone https://github.com/antoniosarosi/dotfiles
-cd dotfiles
-sudo cp -R /home/user/dotfiles /home/user
-```
-Although I do not recommend doing so, copy only the configs you need
+## Spectrwm, Material Ocean Theme
+![Spectrwm](.screenshots/spectrwm.png)
 
 # Keybindings
 
