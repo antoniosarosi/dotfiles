@@ -1,0 +1,21 @@
+set number relativenumber
+set smartindent
+set autoindent
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set showtabline=4
+set formatoptions-=cro
+set hidden
+set nowrap
+set nobackup
+set nowritebackup
+set encoding=utf-8
+set fileencoding=utf-8
+set ruler
+set mouse=a
+set splitbelow
+set splitright
+set background=dark
+syntax enable
