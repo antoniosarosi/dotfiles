@@ -1,6 +1,0 @@
-# Ignore everything
-/*
-!.gitignore
-
-# Except for the files and folders we want to track
-!config
