@@ -6,8 +6,7 @@
         "graphql",
         "html",
         "yaml",
-        "json",
-        "python"
+        "json"
     ],
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
