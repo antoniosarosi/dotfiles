@@ -1,33 +1,24 @@
-Themes are based on two colors to create the power line and border focus on
-windows. A theme consists of a file named **colors.json** and a folder named
+A theme consists of a file named **colors.json** and a directory named
 **img**. The file must have the following format:
 
 ```json
 {
-    "dark": [
-        "#282a36",
-        "#282a36"
-    ],
-    "grey": [
-        "#434758",
-        "#434758"
-    ],
-    "light": [
-        "#ffffff",
-        "#ffffff"
-    ],
-    "main": [
-        "#A77AC4",
-        "#A77AC4"
-    ],
-    "secondary": [
-        "#7197E7",
-        "#7197E7"
-    ]
+    "dark":   ["#282C34", "#282C34"],
+    "grey":   ["#ABB2BF", "#ABB2BF"],
+    "light":  ["#ffffff"  "#ffffff"],
+    "text":   ["#282C34", "#282C34"],
+    "focus":  ["#E06C75", "#E06C75"],
+    "color1": ["#C678DD", "#C678DD"],
+    "color2": ["#E06C75", "#E06C75"],
+    "color3": ["#61AFEF", "#61AFEF"],
+    "color4": ["#98C379", "#98C379"]
 }
 ```
-The **img** folder must have this content:
-- primary.png
-- bg-to-primary.png
-- secondary.png
-- bg-to-secondary.png
+The **img** directory must have this content:
+- bar1.png
+- bar2.png
+- bar3.png
+- bar4.png
+
+You can reuse the images from a theme that's already available here and change
+the colors to create your own theme.
