@@ -57,6 +57,7 @@ based on before using any of the window manager configs.
 | **[Brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**    | Laptop screen brightness |
 | **[Udisks](https://wiki.archlinux.org/index.php/Udisks)**                                  | Storage devices          |
 | **[Feh](https://wiki.archlinux.org/index.php/Feh)**                                        | Manage Wallpapers        |
+| **[Libnotify](https://wiki.archlinux.org/index.php/Desktop_notifications)**                | Desktop notifications    |
 | **[Trayer](https://www.archlinux.org/packages/extra/x86_64/trayer/)**                      | Systray                  |
 | **[Udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                   | Automounter              |
 | **[Cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**            | Battery systray          |
