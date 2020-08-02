@@ -3,11 +3,10 @@ from os import path
 import subprocess
 import json
 
+from settings.path import home, qtile_path
+
 
 default_theme = "dark-grey"
-
-home = path.expanduser('~')
-qtile_path = path.join(home, ".config", "qtile")
 
 theme_setup_script = path.join(home, ".theme", "set-themes.py")
 if path.isfile(theme_setup_script):
