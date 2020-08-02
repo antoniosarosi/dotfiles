@@ -4,7 +4,7 @@ from settings.widgets import laptop_widgets, monitor_widgets
 import subprocess
 
 
-def status_bar(widgets): return bar.Bar(widgets, 24, opacity=0.95)
+status_bar = lambda widgets: bar.Bar(widgets, 24, opacity=0.95)
 
 
 screens = [Screen(top=status_bar(laptop_widgets))]

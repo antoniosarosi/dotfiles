@@ -7,6 +7,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias tree='tree -C'
 alias battery="upower -i `upower -e | grep BAT` | grep percentage | sed 's/ * / /g'"
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh

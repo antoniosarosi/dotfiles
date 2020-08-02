@@ -23,9 +23,9 @@ colors:
     foreground: '0xc5c9de'
 font:
   bold:
-    family: UbuntuMOno Nerd Font
+    family: UbuntuMono Nerd Font
   italic:
-    family: UbuntuMOno Nerd Font
+    family: UbuntuMono Nerd Font
   normal:
     family: UbuntuMono Nerd Font
     style: Regular
