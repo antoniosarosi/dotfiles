@@ -24,10 +24,12 @@ def change_theme(alacritty_file, theme_file):
         return True
 
     except yaml.YAMLError as e:
-        print("YAML error at parsing file, ", end="")
-        print("at line {0.problem_mark.line}, ".format(e), end="")
-        print("column {0.problem_mark.column}:".format(e))
-        print("{0.problem} {0.context}\n".format(e))
+        print((
+            "YAML error at parsing file, "
+            "at line {0.problem_mark.line}, "
+            "column {0.problem_mark.column}:\n"
+            "{0.problem} {0.context}\n"
+        ).format(e))
 
     return False
 

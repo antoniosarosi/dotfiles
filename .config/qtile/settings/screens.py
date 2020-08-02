@@ -6,7 +6,6 @@ import subprocess
 
 status_bar = lambda widgets: bar.Bar(widgets, 24, opacity=0.95)
 
-
 screens = [Screen(top=status_bar(laptop_widgets))]
 
 connected_monitors = subprocess.run(
