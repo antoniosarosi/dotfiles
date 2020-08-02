@@ -20,6 +20,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'alvan/vim-closetag'
     " Comment code
     Plug 'tpope/vim-commentary'
+    " Ranger
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+    " Fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'airblade/vim-rooter'
+    " Prettier
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
     " Themes
     Plug 'joshdick/onedark.vim'
