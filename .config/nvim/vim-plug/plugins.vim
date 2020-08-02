@@ -32,4 +32,5 @@ call plug#begin('~/.config/nvim/plugged')
     " Themes
     Plug 'joshdick/onedark.vim'
     Plug 'kaicataldo/material.vim'
+    Plug 'tomasiser/vim-code-dark'
 call plug#end()
