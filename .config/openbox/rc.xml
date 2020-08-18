@@ -120,15 +120,18 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>6</number>
+    <number>9</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>NET</name>
-      <name>DEV</name>
-      <name>TERM</name>
-      <name>FS</name>
-      <name>MEDIA</name>
-      <name>MISC</name>
+      <name></name>
+      <name></name>
+      <name></name>
+      <name></name>
+      <name></name>
+      <name></name>
+      <name></name>
+      <name> </name>
+      <name> </name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -205,9 +208,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <!-- Custom Keybindings  -->
-
     <!-- Switch Workspaces -->
     <keybind key="W-1">
       <action name="GoToDesktop">
@@ -242,7 +243,6 @@
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-
     <!-- Send Window to Workspace N -->
     <keybind key="W-S-1">
       <action name="SendToDesktop">
@@ -280,7 +280,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <!-- Close Window -->
     <keybind key="W-w">
       <action name="Close"/>
@@ -346,9 +345,7 @@
         <direction>down</direction>
       </action>
     </keybind>
-
     <!-- Keybindings for window tiling -->
-
     <!-- Full Screen -->
     <keybind key="W-Up">
       <action name="Maximize"/>
@@ -423,10 +420,7 @@
         <width>50%</width>
       </action>
     </keybind>
-
-
     <!-- Keybindings for running applications -->
-
     <!-- Menu  -->
     <keybind key="W-m">
       <action name="Execute">
@@ -446,7 +440,6 @@
         <command>rofi -show</command>
       </action>
     </keybind>
-
     <!-- Browser -->
     <keybind key="W-b">
       <action name="Execute">
@@ -457,18 +450,16 @@
         <command>firefox</command>
       </action>
     </keybind>
-
-    <!-- File Manager -->
-    <keybind key="W-f">
+    <!-- File Explorer -->
+    <keybind key="W-e">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>File Manager</name>
+          <name>File Explorer</name>
         </startupnotify>
         <command>thunar</command>
       </action>
     </keybind>
-
     <!-- Redshift -->
     <keybind key="W-r">
       <action name="Execute">
@@ -488,7 +479,6 @@
         <command>redshift -x</command>
       </action>
     </keybind>
-
     <!-- Terminal  -->
     <keybind key="W-Return">
       <action name="Execute">
@@ -499,7 +489,6 @@
         <command>alacritty</command>
       </action>
     </keybind>
-    
     <!-- Hardware -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
@@ -546,7 +535,6 @@
         <command>brightnessctl set 10%-</command>
       </action>
     </keybind>
-
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -568,7 +556,6 @@
         <action name="Resize"/>
       </mousebind>
     </context>
-    
     <context name="Titlebar">
       <mousebind button="Left" action="Drag">
         <action name="Move"/>
