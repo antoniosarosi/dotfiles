@@ -19,6 +19,14 @@
         "#A77AC4",
         "#A77AC4"
     ],
+    "active": [
+        "#f1ffff",
+        "#f1ffff"
+    ],
+    "inactive": [
+        "#4c566a",
+        "#4c566a"
+    ],
     "color1": [
         "#ff5555",
         "#ff5555"

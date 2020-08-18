@@ -16,8 +16,16 @@
         "#282C34"
     ],
     "focus": [
-        "#E06C75",
-        "#E06C75"
+        "#61AFEF",
+        "#61AFEF"
+    ],
+    "active": [
+        "#f1ffff",
+        "#f1ffff"
+    ],
+    "inactive": [
+        "#4c566a",
+        "#4c566a"
     ],
     "color1": [
         "#C678DD",
