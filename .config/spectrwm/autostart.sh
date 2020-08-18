@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Spectrwm autostart script
+
 trayer \
     --edge top \
     --monitor 1 \
@@ -8,13 +10,13 @@ trayer \
     --heighttype pixel \
     --height 18 \
     --align right \
-    --margin 390 \
+    --margin 455 \
     --transparent true \
     --alpha 0 \
     --tint 0x0F101A \
-    --iconspacing 3 &
+    --iconspacing 3 \
+    --distance 1 &
 
 if [ -f ~/.theme/set-themes.py ]; then
     python ~/.theme/set-themes.py "spectrwm" &
 fi
-

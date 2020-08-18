@@ -1,5 +1,11 @@
 #!/bin/bash
+
 # baraction.sh for spectrwm status bar
+# https://github.com/conformal/spectrwm
+
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
 
 icon() {
     echo -n "+@fg=1;$1+@fg=0;"
@@ -18,64 +24,41 @@ percentage() {
     fi
 }
 
-# Date
-dte() {
-    dte="$(date +"$(icon  ) %d/%m/%Y $(icon  ) %H:%M")"
-    echo -e "$dte"
-}
+sleep_sec=2
+i=0
+while :; do
+    # Updates
+    if (( $i % 60 == 0 )); then
+        updates=`checkupdates | wc -l`
+    fi
+    echo -n "$(icon  ) $updates "
 
-# Disk
-# hdd() {
-#     hdd="$(df -h | awk 'NR==4{print $3, $5}')"
-#     echo -e "HDD: $hdd"
-# }
+    # Brightness
+    (( br = $(brightnessctl get) * 100 / 255 ))
+    echo -n "$(percentage $br        ) $br% "
 
-# Ram
-# mem() {
-#     mem=`free | awk '/Mem/ {printf "%d MiB/%d MiB\n", $3 / 1024.0, $2 / 1024.0 }'`
-#     echo -e "Mem: $mem"
-# }
-
-# Cpu
-# cpu() {
-#     read cpu a b c previdle rest < /proc/stat
-#     prevtotal=$((a + b + c + previdle))
-#     sleep 0.5
-#     read cpu a b c idle rest < /proc/stat
-#     total=$((a + b + c + idle))
-#     cpu=$((100 * ((total - prevtotal) - (idle - previdle) ) / (total - prevtotal)))
-#     echo -e "Cpu: $cpu%"
-# }
-
-# Battery
-bat() {
-    bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 | 
-        grep percentage |
-        sed 's/ *percentage: *//g'`
-    echo -n "$(percentage $bat            )  $bat"
-}
-
-# Brightness
-br() {
-    br=`brightnessctl | grep Current | cut -d"(" -f2 | sed "s/)//"`
-    echo -n "$(percentage $br        ) $br"
-}
-
-# Volume
-vol() {
+    # Volume
     vol=`pamixer --get-volume`
     if [[ `pamixer --get-mute` == "true" ]]; then
-        echo -n "$(icon ﱝ ) $vol"
+        echo -n "$(icon ﱝ ) $vol% "
     else
-        echo -n "$(percentage $vol   奔 墳   ) $vol%"
+        echo -n "$(percentage $vol   奔 墳   ) $vol% "
     fi
-}
 
-SLEEP_SEC=1
-while :; do
-    echo -n "$(br) "
-    echo -n "$(vol) "
-    echo -n "$(bat) "
-    echo "$(dte)"
-	sleep $SLEEP_SEC
+    # Battery
+    if (( $i % 60 == 0 )); then
+        bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+            grep percentage |
+            sed 's/ *percentage: *//g'`
+    fi
+    echo -n "$(percentage $bat            )  $bat "
+
+    # Date
+    if (( $i % 60 == 0 )); then
+        dte="$(date +"$(icon  ) %d/%m/%Y $(icon  ) %H:%M")"
+    fi
+    echo -e "$dte"
+
+	sleep $sleep_sec
+    (( i += $sleep_sec ))
 done
