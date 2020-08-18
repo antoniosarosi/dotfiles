@@ -31,19 +31,19 @@ workspaces = lambda: [
         padding_x=5,
         borderwidth=1,
         active=colors['light'],
-        inactive=colors['light'],
+        inactive=colors['grey'],
         rounded=False,
         highlight_method='block',
         this_current_screen_border=colors['focus'],
         this_screen_border=colors['grey'],
         other_current_screen_border=colors['dark'],
-        other_screen_border=colors['dark']
+        other_screen_border=colors['dark'],
+        disable_drag=True
     ),
     widget.Sep(**separator),
     widget.WindowName(
         **base(fg='focus'),
-        font='Ubuntu Bold',
-        fontsize=11,
+        fontsize=14,
         padding=5
     ),
     widget.Sep(**separator),
@@ -97,8 +97,8 @@ laptop_widgets = [
     ),
     widget.TextBox(
         **base(bg='color1'),
-        **text_box(fontsize=27),
-        text=''  # Icon: nf-fa-clock_o
+        **text_box(27),
+        text=' '# Icon: nf-mdi-calendar_clock
     ),
     widget.Clock(
         **base(bg='color1'),
@@ -123,7 +123,7 @@ monitor_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'UbuntuMono Nerd Font',
+    'font': 'UbuntuMono Nerd Font Bold',
     'fontsize': 14,
     'padding': 1,
 }

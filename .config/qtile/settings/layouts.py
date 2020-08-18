@@ -1,5 +1,11 @@
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
 from libqtile import layout
 from settings.theme import colors
+
+# Layouts and layout rules
 
 
 layout_conf = {

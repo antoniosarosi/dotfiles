@@ -1,3 +1,9 @@
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+# Qtile workspaces
+
 from libqtile.config import Key, Group
 from libqtile.command import lazy
 from settings.keys import mod, keys
@@ -8,11 +14,16 @@ from settings.keys import mod, keys
 # nf-fa-firefox, 
 # nf-fa-code_fork, 
 # nf-dev-terminal, 
+# nf-fa-code, 
+# nf-seti-config, 
 # nf-mdi-folder, 
 # nf-mdi-image, 
+# nf-fa-video_camera, 
 # nf-mdi-layers
 
-groups = [Group(i) for i in ["   ", "  ", "   ", "   ", "   ", "   "]]
+groups = [Group(i) for i in [
+    "   ", "  ", "   ", "   ", "   ", "   ", "   ", "   ", "   ",
+]]
 
 for i, group in enumerate(groups):
     actual_key = str(i + 1)

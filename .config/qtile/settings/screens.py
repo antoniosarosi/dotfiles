@@ -1,3 +1,9 @@
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+# Multimonitor support
+
 from libqtile.config import Screen
 from libqtile import bar
 from settings.widgets import laptop_widgets, monitor_widgets

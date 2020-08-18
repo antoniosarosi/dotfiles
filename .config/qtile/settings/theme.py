@@ -1,3 +1,9 @@
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+# Theming for Qtile
+
 from os import listdir
 from os import path
 import subprocess
