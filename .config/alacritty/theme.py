@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
+# Simple script for changing your terminal theme with one command
+
 from sys import argv
 from os import path
 import yaml
@@ -36,15 +42,15 @@ def change_theme(alacritty_file, theme_file):
 
 def main():
     if len(argv) != 2:
-        print("Usage:\n{} theme".format(argv[0]))
+        print(f"Usage:\n{argv[0]} theme")
         exit(0)
 
     alacritty_path = path.join(path.expanduser("~"), ".config", "alacritty")
     alacritty_file = path.join(alacritty_path, "alacritty.yml")
-    theme_file = path.join(alacritty_path, "themes", "{}.yaml".format(argv[1]))
+    theme_file = path.join(alacritty_path, "themes", f"{argv[1]}.yaml")
 
     if not path.exists(theme_file):
-        print("Theme file {} does not exist".format(theme_file))
+        print(f"Theme file {theme_file} does not exist")
         exit(0)
 
     if change_theme(alacritty_file, theme_file):
