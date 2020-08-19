@@ -16,7 +16,3 @@ trayer \
     --tint 0x0F101A \
     --iconspacing 3 \
     --distance 1 &
-
-if [ -f ~/.theme/set-themes.py ]; then
-    python ~/.theme/set-themes.py "spectrwm" &
-fi

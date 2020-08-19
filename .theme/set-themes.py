@@ -8,6 +8,10 @@ import json
 
 
 def main():
+    if len(argv) < 2:
+        print("Missing argument, specify window manager name")
+        exit(1)
+
     wm = argv[1]
     home = path.expanduser("~")
 

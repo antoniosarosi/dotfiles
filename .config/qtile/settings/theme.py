@@ -9,14 +9,10 @@ from os import path
 import subprocess
 import json
 
-from settings.path import home, qtile_path
+from settings.path import qtile_path
 
 
 default_theme = "dark-grey"
-
-theme_setup_script = path.join(home, ".theme", "set-themes.py")
-if path.isfile(theme_setup_script):
-    subprocess.call([theme_setup_script, "qtile"])
 
 with open(path.join(qtile_path, "config.json")) as f:
     theme = json.load(f)["theme"]
