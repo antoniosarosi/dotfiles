@@ -33,4 +33,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'kaicataldo/material.vim'
     Plug 'tomasiser/vim-code-dark'
+    Plug 'crusoexia/vim-monokai'
+    Plug 'ayu-theme/ayu-vim'
 call plug#end()
