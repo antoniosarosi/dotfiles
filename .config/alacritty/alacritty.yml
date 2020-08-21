@@ -22,6 +22,8 @@ colors:
     background: '0x0f101a'
     foreground: '0xc5c9de'
 font:
+  offset:
+    y: 3
   bold:
     family: UbuntuMono Nerd Font
   italic:
@@ -29,8 +31,7 @@ font:
   normal:
     family: UbuntuMono Nerd Font
     style: Regular
-  size: 12.0
+  size: 12
 window:
   padding:
-    x: 5
-    y: 5
+    x: 3
