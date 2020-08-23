@@ -193,11 +193,11 @@ myKeys =
     -- Volume
     ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%"),
     ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-    ("XF86AudioMute", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle" ), -- Doesn't work
+    ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle" ), -- Doesn't work
 
     -- Brightness
-    ("XF86MonBrightnessUp", spawn "brightnessctl set +10%"), -- Doesn't work
-    ("XF86MonBrightnessDown", spawn "brightnessctl set -10%") -- Doesn't work
+    ("<XF86MonBrightnessUp>", spawn "brightnessctl set +10%"), -- Doesn't work
+    ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-") -- Doesn't work
     ]
 
 main :: IO ()

@@ -2,7 +2,7 @@ bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
     grep percentage |
     sed 's/ *percentage: *//g'`
 
-percentage=`echo bat | sed 's/%//'`
+percentage=`echo $bat | sed 's/%//'`
 
 if (( $percentage <= 25 )); then
     echo -n "  $bat" 
