@@ -5,10 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias tree='tree -C'
-alias cat='ccat -G Plaintext="blink" -G Keyword="purple"  -G String="darkgreen" -G Punctuation="brown"'
+alias cat='ccat -G Plaintext="blink" -G Keyword="purple" -G String="darkgreen" -G Punctuation="brown" -G Comment="faint"'
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
 
