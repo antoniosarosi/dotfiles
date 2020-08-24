@@ -35,4 +35,5 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomasiser/vim-code-dark'
     Plug 'crusoexia/vim-monokai'
     Plug 'ayu-theme/ayu-vim'
+    Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
