@@ -8,6 +8,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias tree='tree -C'
+alias cat='ccat -G Plaintext="blink" -G Keyword="purple"  -G String="darkgreen" -G Punctuation="brown"'
+alias ls='exa --group-directories-first'
+alias tree='exa -T'
 
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 . ~/.git-prompt.sh
