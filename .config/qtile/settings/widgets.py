@@ -1,5 +1,5 @@
 from libqtile import widget
-from settings.theme import colors, img
+from settings.theme import colors
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
@@ -20,7 +20,7 @@ icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
 powerline = lambda fg="light", bg="dark": widget.TextBox(
    **base(fg, bg),
     text="", # Icon: nf-oct-triangle_left
-    fontsize="37",
+    fontsize=37,
     padding=-2
 )
 
