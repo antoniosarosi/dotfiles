@@ -159,9 +159,9 @@ myKeys =
     -- Toggles noborder
     ("M-S-n", sendMessage $ MT.Toggle NOBORDERS),
     -- Shrink horizontal window width
-    ("M-h", sendMessage Shrink),
+    ("M-S-h", sendMessage Shrink),
     -- Expand horizontal window width
-    ("M-l", sendMessage Expand),
+    ("M-S-l", sendMessage Expand),
     -- Shrink vertical window width
     ("M-C-j", sendMessage MirrorShrink),
     -- Exoand vertical window width

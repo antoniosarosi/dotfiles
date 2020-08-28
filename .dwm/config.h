@@ -47,7 +47,7 @@ static const char *colors[][3]      = {
 
 // -------------------------------- Workspaces ---------------------------------
 
-static const char *tags[] = { "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ", "   " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -132,7 +132,7 @@ static Key keys[] = {
     { MODKEY, XK_g, setgaps, {.i = -1 } },
     { MODKEY|ShiftMask, XK_g, setgaps, {.i = +1 } },
 
-    // Foucs next - prev monitor
+    // Focus next - prev monitor
     { MODKEY, XK_period, focusmon, {.i = +1 } },
     { MODKEY, XK_comma, focusmon, {.i = -1 } },
 
