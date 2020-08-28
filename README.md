@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 
 # Table of Contents
 
+- [Dotfiles & Configs](#dotfiles--configs)
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Arch installation](#arch-installation)
 - [Login and window manager](#login-and-window-manager)
@@ -593,6 +595,14 @@ preview themes to see how they look.
 sudo pacman -S lxappearance
 ```
 
+Finally, if you want tranparency and fancy looking things, install a compositor:
+
+```bash
+sudo pacman -S picom
+# Run it like so, place it in ~/.xsession
+picom &
+```
+
 ## Multimedia
 
 There are dozens of programs for multimedia stuff, check
@@ -627,6 +637,8 @@ which are located in this repository and have their own documentation:
 
 # Keybindings
 
+These are common keybindings to all my window managers.
+
 ## Windows
 
 | Key                     | Action                           |
@@ -641,11 +653,22 @@ which are located in this repository and have their own documentation:
 | **mod + shift + k**     | move window up                   |
 | **mod + shift + f**     | toggle floating                  |
 | **mod + tab**           | change layout                    |
-| **mod + [1-6]**         | Switch to workspace N (1-6)      |
-| **mod + shift + [1-6]** | Send Window to workspace N (1-6) |
+| **mod + [1-9]**         | Switch to workspace N (1-9)      |
+| **mod + shift + [1-9]** | Send Window to workspace N (1-9) |
 | **mod + w**             | kill window                      |
 | **mod + ctrl + r**      | restart wm                       |
 | **mod + ctrl + q**      | quit                             |
+
+The following keybindings will only work if you install all programs needed:
+
+```bash
+sudo pacman -S rofi thunar firefox alacritty redshift scrot
+```
+
+Too set up *rofi*,
+[check this README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi),
+and for *alacritty*, [this one](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty).
+
 
 ## Apps
 
