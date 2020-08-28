@@ -46,18 +46,12 @@ workspaces = lambda: [
         disable_drag=True
     ),
     separator(),
-    widget.WindowName(
-        **base(fg='focus'),
-        fontsize=14,
-        padding=5
-    ),
+    widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
     separator(),
 ]
 
 laptop_widgets = [
     *workspaces(),
-
-    widget.Systray(background=colors['dark'], padding=5),
 
     separator(),
 
@@ -65,11 +59,7 @@ laptop_widgets = [
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
     
-    widget.Pacman(
-        **base(bg='color4'),
-        execute='alacritty',
-        update_interval=1800
-    ),
+    widget.Pacman(**base(bg='color4'), update_interval=1800),
 
     powerline('color3', 'color4'),
 
@@ -88,6 +78,11 @@ laptop_widgets = [
     icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
+
+    powerline('dark', 'color1'),
+
+    widget.Systray(background=colors['dark'], padding=5),
+
 ]
 
 monitor_widgets = [
@@ -97,14 +92,9 @@ monitor_widgets = [
 
     powerline('color1', 'dark'),
 
-    widget.CurrentLayoutIcon(
-        **base(bg='color1'),
-        scale=0.65
-    ),
-    widget.CurrentLayout(
-        **base(bg='color1'),
-        padding=5
-    ),
+    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
+
+    widget.CurrentLayout(**base(bg='color1'), padding=5),
 ]
 
 widget_defaults = {
