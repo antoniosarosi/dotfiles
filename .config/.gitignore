@@ -6,6 +6,8 @@
 !gtk-2.0
 !gtk-3.0
 !alacritty
+!fish
+!omf
 !nvim
 !rofi
 !vifm
