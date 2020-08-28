@@ -8,6 +8,7 @@ import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Actions.CycleWS (nextScreen, prevScreen)
 import XMonad.Actions.MouseResize
 import XMonad.Actions.WithAll (sinkAll)
+import XMonad.Actions.UpdatePointer
 
 -- Hooks
 import XMonad.Hooks.DynamicLog (PP (..), dynamicLogWithPP, shorten, wrap, xmobarColor, xmobarPP)
@@ -231,5 +232,5 @@ main = do
             -- Number of windows in current workspace
             ppExtras = [windowCount],
             ppOrder = \(ws : l : t : ex) -> [ws, l] ++ ex ++ [t]
-        }
+        } >> updatePointer (0.5, 0.5) (0.5, 0.5) 
 } `additionalKeysP` myKeys
