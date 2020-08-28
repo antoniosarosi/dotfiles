@@ -56,7 +56,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 100 --heighttype pixel --height 18 --align right --margin 360 --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 &"
+    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 40 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 &"
     setWMName "LG3D"
 
 
