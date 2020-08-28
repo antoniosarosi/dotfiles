@@ -21,7 +21,7 @@ import XMonad.Hooks.WorkspaceHistory
 -- Layouts
 import XMonad.Layout.GridVariants (Grid (Grid))
 import XMonad.Layout.LayoutModifier
-import XMonad.Layout.LimitWindows (decreaseLimit, increaseLimit, limitWindows)
+import XMonad.Layout.LimitWindows (limitWindows)
 import XMonad.Layout.MultiToggle ((??), EOT (EOT), mkToggle, single)
 import qualified XMonad.Layout.MultiToggle as MT (Toggle (..))
 import XMonad.Layout.MultiToggle.Instances (StdTransformers (MIRROR, NBFULL, NOBORDERS))
@@ -49,7 +49,7 @@ myBorderWidth = 1 :: Dimension
 
 myNormColor = "#292d3e" :: String
 
-myFocusColor = "#bbc5ff" :: String
+myFocusColor = "#c792ea" :: String
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -115,12 +115,6 @@ myWorkspaces = clickable . (map xmobarEscape)
     $ ["www", "dev", "term", "ref", "sys", "fs", "img", "vid", "misc"]
   where
     clickable l = ["<action=xdotool key super+" ++ show (i) ++ "> " ++ ws ++ "</action>" | (i, ws) <- zip [1 .. 9] l]
-
-myLogHook :: X ()
-myLogHook = fadeInactiveLogHook fadeAmount
-  where
-    fadeAmount = 1.0
-
 
 myKeys :: [(String, X ())]
 myKeys = 
@@ -218,7 +212,7 @@ main = do
         normalBorderColor = myNormColor,
         focusedBorderColor = myFocusColor,
         -- Log hook
-        logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP {
+        logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP {
             ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor x,
             -- Current workspace in xmobar
             ppCurrent = xmobarColor "#c3e88d" "" . wrap "[" " ]",
