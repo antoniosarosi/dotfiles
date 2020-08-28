@@ -3,7 +3,7 @@ configuration {
 	width: 50;
 	lines: 15;
 	columns: 1;
-	font: "mono 12";
+	font: "UbuntuMono Nerd Font 14";
 	bw: 1;
 	location: 0;
 	padding: 5;
