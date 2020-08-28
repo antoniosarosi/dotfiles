@@ -1,26 +1,31 @@
 from libqtile import widget
 from settings.theme import colors, img
 
+# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 base = lambda fg='text', bg='dark': {
     'foreground': colors[fg],
     'background': colors[bg]
 }
 
-separator = {
-    **base(),
-    'linewidth': 0,
-    'padding': 5,
-}
+separator = lambda: widget.Sep(**base(), linewidth=0, padding=5)
 
-text_box = lambda fontsize=20: {
-    'font': 'Ubuntu Mono',
-    'fontsize': fontsize,
-    'padding': 5
-}
+icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
+    **base(fg, bg),
+    fontsize=fontsize,
+    text=text,
+    padding=3
+)
+
+powerline = lambda fg="light", bg="dark": widget.TextBox(
+   **base(fg, bg),
+    text="", # Icon: nf-oct-triangle_left
+    fontsize="37",
+    padding=-2
+)
 
 workspaces = lambda: [
-    widget.Sep(**separator),
+    separator(),
     widget.GroupBox(
         **base(fg='light'),
         font='UbuntuMono Nerd Font',
@@ -40,84 +45,64 @@ workspaces = lambda: [
         other_screen_border=colors['dark'],
         disable_drag=True
     ),
-    widget.Sep(**separator),
+    separator(),
     widget.WindowName(
         **base(fg='focus'),
         fontsize=14,
         padding=5
     ),
-    widget.Sep(**separator),
+    separator(),
 ]
-
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 laptop_widgets = [
     *workspaces(),
-    widget.Systray(
-        background=colors['dark'],
-        padding=5
-    ),
-    widget.Sep(**separator),
-    widget.Image(filename=img['bar4']),
-    widget.TextBox(
-        **base(bg='color4'),
-        **text_box(25),
-        text=' '  # Icon: nf-fa-download
-    ),
+
+    widget.Systray(background=colors['dark'], padding=5),
+
+    separator(),
+
+    powerline('color4', 'dark'),
+
+    icon(bg="color4", text=' '), # Icon: nf-fa-download
+    
     widget.Pacman(
         **base(bg='color4'),
         execute='alacritty',
         update_interval=1800
     ),
-    widget.Image(
-        filename=img['bar3']
-    ),
-    widget.TextBox(
-        **base(bg='color3'),
-        **text_box(25),
-        text=' '  # Icon: nf-fa-feed
-    ),
-    widget.Net(
-        **base(bg='color3'),
-        interface='wlp2s0'
-    ),
-    widget.Image(
-        filename=img['bar2']
-    ),
-    widget.CurrentLayoutIcon(
-        **base(bg='color2'),
-        scale=0.65
-    ),
-    widget.CurrentLayout(
-        **base(bg='color2'),
-        padding=5
-    ),
-    widget.Image(
-        filename=img['bar1']
-    ),
-    widget.TextBox(
-        **base(bg='color1'),
-        **text_box(27),
-        text=' '# Icon: nf-mdi-calendar_clock
-    ),
-    widget.Clock(
-        **base(bg='color1'),
-        format='%d/%m/%Y - %H:%M '
-    ),
+
+    powerline('color3', 'color4'),
+
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    
+    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+
+    powerline('color2', 'color3'),
+
+    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+
+    widget.CurrentLayout(**base(bg='color2'), padding=5),
+
+    powerline('color1', 'color2'),
+
+    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+
+    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 ]
 
 monitor_widgets = [
     *workspaces(),
-    widget.Sep(**separator),
-    widget.Image(
-        filename=img['bar4']
-    ),
+
+    separator(),
+
+    powerline('color1', 'dark'),
+
     widget.CurrentLayoutIcon(
-        **base(bg='color4'),
+        **base(bg='color1'),
         scale=0.65
     ),
     widget.CurrentLayout(
-        **base(bg='color4'),
+        **base(bg='color1'),
         padding=5
     ),
 ]
