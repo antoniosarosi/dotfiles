@@ -32,6 +32,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Toggle between different layouts as defined below
     ([mod], "Tab", lazy.next_layout()),
+    ([mod, "shift"], "Tab", lazy.prev_layout()),
 
     # Kill window
     ([mod], "w", lazy.window.kill()),
