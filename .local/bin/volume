@@ -1,0 +1,17 @@
+#!/bin/bash
+
+percentage=`pamixer --get-volume`
+
+if [[ `pamixer --get-mute` == "true" ]]; then
+    echo -n "ﱝ  $percentage% "
+else
+    if (( $percentage <= 25 )); then
+        echo -n " $percentage%%" 
+    elif (( $percentage <= 50 )); then
+        echo -n "奔 $percentage%%"
+    elif (( $percentage <= 75 )); then
+        echo -n "墳 $percentage%%" 
+    else
+        echo -n " $percentage%%"
+    fi
+fi
