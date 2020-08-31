@@ -18,6 +18,7 @@ import XMonad.Hooks.ManageDocks (ToggleStruts (..), avoidStruts, docksEventHook,
 import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
+import XMonad.Hooks.InsertPosition
 
 -- Layouts
 import XMonad.Layout.GridVariants (Grid (Grid))
@@ -202,7 +203,7 @@ main = do
     xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/monitor.hs"
     -- Xmonad
     xmonad $ ewmh def {
-        manageHook = (isFullscreen --> doFullFloat) <+> manageDocks,
+        manageHook = (isFullscreen --> doFullFloat) <+> manageDocks <+> insertPosition Below Newer,
         handleEventHook = docksEventHook,
         modMask = myModMask,
         terminal = myTerminal,
