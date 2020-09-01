@@ -1,4 +1,8 @@
-This is how to setup Xmonad using this config:
+Language
+[🇪🇸](./README.es.md)
+🇺🇸
+
+This is how to setup *Xmonad* using this config:
 
 ```bash
 # First, install packages and dependencies
@@ -31,11 +35,25 @@ main = do
     xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/monitor.hs"
 ```
 
-You also need to modify the following line if you need a third *Xmobar*
+For example, if you only need one bar then remove the line with *xmobarMonitor*.
+If you want 3 bars, copy and paste that line and change the name of the third
+bar. You also need to modify the following line if you need a third *Xmobar*
 or if you want to remove the second one.
 
 ```haskell
 ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor x,
+```
+
+Only one bar:
+
+```haskell
+ppOutput = \x -> hPutStrLn xmobarLaptop x
+```
+
+Three bars:
+
+```haskell
+ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor1 x >> hPutStrLn xmobarMonitor2 x,
 ```
 
 Once that's done, you can login. But keep in mind keybindings will not work
