@@ -1,11 +1,11 @@
-# Spectrwm
+# Openbox
 
-![Spectrwm](../../.screenshots/spectrwm.png)
+![Openbox](../../.screenshots/openbox.png)
 
-Install spectrwm and dependencies:
+Install openbox and dependencies:
 
 ```
-sudo pacman -S spectrwm pacman-contrib
+sudo pacman -S openbox tint2
 yay -S nerd-fonts-ubuntu-mono
 ```
 
@@ -13,15 +13,8 @@ Clone this repository and copy my configs:
 
 ```bash
 git clone https://github.com/antoniosarosi/dotfiles.git
-cp -r dotfiles/.config/spectrwm ~/.config
-cp dotfiles/.spectrwm.conf ~/.spectrwm.conf
-```
-
-Test it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
-
-```bash
-Xephyr -br -ac -noreset -screen 1280x720 :1 &
-DISPLAY=:1 spectrwm
+cp -r dotfiles/.config/openbox ~/.config
+cp -r dotfiles/.config/tint2 ~/.config
 ```
 
 Once that's done, you can login. But keep in mind keybindings will not work

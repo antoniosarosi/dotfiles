@@ -1,9 +1,10 @@
-Idioma
-🇪🇸
-[🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+# Xmonad
 
 ![Xmonad](../.screenshots/xmonad.png)
 
+Idioma
+🇪🇸
+[🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
 
 Esta es la forma de usar mis configuraciones de *Xmonad*:
 

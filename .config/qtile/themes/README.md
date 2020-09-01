@@ -1,5 +1,5 @@
-A theme consists of a file named **colors.json** and a directory named
-**img**. The file must have the following format:
+A theme consists of a simple json file. You can create your own by copying this
+json object and changing values:
 
 ```json
 {
@@ -20,8 +20,8 @@ A theme consists of a file named **colors.json** and a directory named
         "#0f101a"
     ],
     "focus": [
-        "#F07178",
-        "#F07178"
+        "#a151d3",
+        "#a151d3"
     ],
     "active": [
         "#f1ffff",
@@ -30,6 +30,10 @@ A theme consists of a file named **colors.json** and a directory named
     "inactive": [
         "#4c566a",
         "#4c566a"
+    ],
+    "urgent": [
+        "#F07178",
+        "#F07178"
     ],
     "color1": [
         "#a151d3",
@@ -48,12 +52,5 @@ A theme consists of a file named **colors.json** and a directory named
         "#ffd47e"
     ]
 }
-```
-The **img** directory must have this content:
-- bar1.png
-- bar2.png
-- bar3.png
-- bar4.png
 
-You can reuse images from a theme that's already available here and change
-the colors to create your own theme.
+```

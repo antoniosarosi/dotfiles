@@ -1,10 +1,10 @@
 ![Dwm](../.screenshots/dwm.png)
 
-Language
-[🇪🇸](./README.es.md)
-🇺🇸
+Idioma
+🇪🇸
+[🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 
-My custom and patched build of **[dwm](https://dwm.suckless.org/)**.
+Mi versión personalizada de **[dwm](https://dwm.suckless.org/)**.
 
 Patches:
 - [autostart](https://dwm.suckless.org/patches/autostart/dwm-autostart-20200610-cb3f58a.diff)
@@ -20,18 +20,18 @@ Patches:
 - [columns](https://dwm.suckless.org/patches/columns/dwm-columns-6.0.diff)
 - [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff)
 
-To install this on your system, first you need the following dependencies:
+Para instalarlo en tu sistema, primer necesitas una dependencias:
 
 ```bash
 sudo pacman -S pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```
 
-I always use that font for icons. *pacman-contrib* is used for checking updates.
-You will also need my custom
+Siempre uso esa fuente para iconos. *pacman-contrib* sirve para comprobar
+actualizaciones. También necesitarás mi
 **[dwmblocks](https://github.com/antoniosarosi/dotfiles/tree/master/.config/dwmblocks)**
-and **[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**
-scripts.
+y scripts situados en
+**[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**.
 
 ```bash
 git clone https://github.com/antoniosarosi/dotfiles.git
@@ -42,13 +42,13 @@ cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
 ```
 
-Place this in your **~/.xprofile**:
+Escribe esto en tu **~/.xprofile**:
 
 ```bash
 export PATH=$HOME/.local/bin:$PATH
 ```
 
-Build *dwm* and *dwmblocks* and create a new *xsession*:
+Compila *dwm* y *dwmblocks* y crea una nueva *xsession*:
 
 ```bash
 cd ~/.dwm
@@ -58,15 +58,16 @@ sudo make clean install
 sudo cp ~/.dwm/dwm.desktop /usr/share/xsessions
 ```
 
-Test it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
+Testealo con **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 dwm
 ```
 
-Once that's done, you can login. But keep in mind keybindings will not work
-unless you have the same programs that I use and the same configs. You can
-either change keybindings or install the software I use and my config files,
-check out [this section](https://github.com/antoniosarosi/dotfiles#keybindings)
-for instructions.
+Una vez eso está hecho, puedes iniciar sesión. Pero recuerda que los atajos de
+teclado no funcionarán a no ser que tengas todos los programas que uso yo y las
+mismas configuraciones. Puedes cambiar los atajos de teclado o bien instalar el
+software que uso yo, mira
+[esta sección](https://github.com/antoniosarosi/dotfiles#keybindings)
+para las instrucciones.

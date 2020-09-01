@@ -2,9 +2,9 @@
 
 ![Qtile](.screenshots/qtile.png)
 
-Where it all started...
-
-https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
+Language
+[🇪🇸](./README.es.md)
+🇺🇸
 
 # Table of Contents
 
@@ -126,9 +126,6 @@ thinking about desktop environments is installing **[Xorg](https://wiki.archlinu
 ```bash
 sudo pacman -S xorg
 ```
-
-
-
 
 # Login and window manager
 

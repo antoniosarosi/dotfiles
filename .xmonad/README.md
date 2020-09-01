@@ -1,8 +1,10 @@
+# Xmonad
+
+![Xmonad](../.screenshots/xmonad.png)
+
 Language
 [🇪🇸](./README.es.md)
 🇺🇸
-
-![Xmonad](../.screenshots/xmonad.png)
 
 This is how to setup *Xmonad* using this config:
 
