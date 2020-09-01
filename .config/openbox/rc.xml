@@ -392,6 +392,16 @@
         <command>alacritty</command>
       </action>
     </keybind>
+    <!-- Scrot -->
+    <keybind key="W-s">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Scrot</name>
+        </startupnotify>
+        <command>scrot</command>
+      </action>
+    </keybind>
     <!-- Hardware -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">

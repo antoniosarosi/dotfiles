@@ -8,8 +8,6 @@ https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 
 # Table of Contents
 
-- [Dotfiles & Configs](#dotfiles--configs)
-- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Arch installation](#arch-installation)
 - [Login and window manager](#login-and-window-manager)
@@ -33,6 +31,9 @@ https://www.youtube.com/watch?v=VoJOOx2WLy0&t=255s
 - [Gallery](#gallery)
   - [Qtile](#qtile)
   - [Spectrwm](#spectrwm)
+  - [Openbox](#openbox)
+  - [Xmonad](#xmonad)
+  - [Dwm](#dwm)
 - [Keybindings](#keybindings)
   - [Windows](#windows)
   - [Apps](#apps)
@@ -161,7 +162,7 @@ reboot
 Now that you're in qtile, you should know some of the default keybindings.
 
 | Key                  | Action                     |
-|--------------------- |----------------------------|
+| -------------------- | -------------------------- |
 | **mod + return**     | launch xterm               |
 | **mod + k**          | next window                |
 | **mod + j**          | previous window            |
@@ -171,7 +172,7 @@ Now that you're in qtile, you should know some of the default keybindings.
 | **mod + ctrl + q**   | logout                     |
 
 Before doing anything else, if you dont't have a US keyboard, you should
-change it using *setxkbmap*. To open xterm use **mod + return**. For example to 
+change it using *setxkbmap*. To open xterm use **mod + return**. For example to
 change your layout to spanish:
 
 ```bash
@@ -243,7 +244,7 @@ battery, mounting drives, etc.
 # Basic system utilities
 
 In this section we will cover some software that almost everybody needs on their
-system. Keep in mind though that the changes we are going to make 
+system. Keep in mind though that the changes we are going to make
 will not be permanent. [This subsection](#xsession) describes how to accomplish
 that.
 
@@ -370,7 +371,7 @@ save that layout, which will basically give you a shell script with the exact
 yet.
 
 For a multi-monitor system, it's recommended to create an instance of a
-*Screen* object for each monitor in your Qtile config. 
+*Screen* object for each monitor in your Qtile config.
 
 You'll find an array called *screens* which contains only one object
 initialized with a bar at the bottom. Inside that bar you can see the default
@@ -635,6 +636,15 @@ which are located in this repository and have their own documentation:
 ## Spectrwm
 ![Spectrwm](.screenshots/spectrwm.png)
 
+## Openbox
+![Spectrwm](.screenshots/openbox.png)
+
+## Xmonad
+![Spectrwm](.screenshots/xmonad.png)
+
+## Dwm
+![Spectrwm](.screenshots/dwm.png)
+
 # Keybindings
 
 These are common keybindings to all my window managers.
@@ -642,19 +652,19 @@ These are common keybindings to all my window managers.
 ## Windows
 
 | Key                     | Action                           |
-|-------------------------|----------------------------------|
-| **mod + h**             | next window (left)               |
+| ----------------------- | -------------------------------- |
 | **mod + j**             | next window (down)               |
 | **mod + k**             | next window (up)                 |
-| **mod + l**             | next window (right)              |
-| **mod + shift + h**     | decrease window size             |
-| **mod + shift + l**     | increase window size             |
+| **mod + shift + h**     | decrease master                  |
+| **mod + shift + l**     | increase master                  |
 | **mod + shift + j**     | move window down                 |
 | **mod + shift + k**     | move window up                   |
 | **mod + shift + f**     | toggle floating                  |
 | **mod + tab**           | change layout                    |
 | **mod + [1-9]**         | Switch to workspace N (1-9)      |
 | **mod + shift + [1-9]** | Send Window to workspace N (1-9) |
+| **mod + period**        | Focus next monitor               |
+| **mod + comma**         | Focus previous monitor           |
 | **mod + w**             | kill window                      |
 | **mod + ctrl + r**      | restart wm                       |
 | **mod + ctrl + q**      | quit                             |
@@ -672,21 +682,21 @@ and for *alacritty*, [this one](https://github.com/antoniosarosi/dotfiles/tree/m
 
 ## Apps
 
-| Key                 | Action               |
-|---------------------|----------------------|
-| **mod + m**         | launch rofi          |
-| **mod + shift + m** | window nav (rofi)    |
-| **mod + b**         | launch browser       |
-| **mod + e**         | launch file explorer |
-| **mod + return**    | launch terminal      |
-| **mod + r**         | redshift             |
-| **mod + shift + r** | stop redshift        |
-| **mod + s**         | screenshot (scrot)   |
+| Key                 | Action                        |
+| ------------------- | ----------------------------- |
+| **mod + m**         | launch rofi                   |
+| **mod + shift + m** | window nav (rofi)             |
+| **mod + b**         | launch browser (firefox)      |
+| **mod + e**         | launch file explorer (thunar) |
+| **mod + return**    | launch terminal (alacritty)   |
+| **mod + r**         | redshift                      |
+| **mod + shift + r** | stop redshift                 |
+| **mod + s**         | screenshot (scrot)            |
 
 # Software
 
 | Software                                                                                   | Utility                  |
-|--------------------------------------------------------------------------------------------|--------------------------|
+| ------------------------------------------------------------------------------------------ | ------------------------ |
 | **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                    | Compositor for Xorg      |
 | **[NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager)**                  | Self explanatory         |
 | **[PulseAudio](https://wiki.archlinux.org/index.php/PulseAudio)**                          | Self explanatory         |

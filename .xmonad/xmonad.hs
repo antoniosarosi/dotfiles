@@ -101,7 +101,7 @@ myLayoutHook = avoidStruts
     $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
   where
     myDefaultLayout = 
-        monocle
+        noBorders monocle
         ||| tall
         ||| threeCol
         ||| grid
