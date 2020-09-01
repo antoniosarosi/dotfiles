@@ -2,4 +2,4 @@
 !.gitignore
 
 !xmonad.hs
-!README.md
+!README*.md
