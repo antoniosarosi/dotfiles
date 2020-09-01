@@ -2,6 +2,8 @@ Idioma
 🇪🇸
 [🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
 
+[Xmonad](../.screenshots/xmonad.png)
+
 
 Esta es la forma de usar mis configuraciones de *Xmonad*:
 
