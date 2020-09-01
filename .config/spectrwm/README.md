@@ -4,8 +4,8 @@
 
 Install spectrwm and dependencies:
 
-```
-sudo pacman -S spectrwm pacman-contrib
+```bash
+sudo pacman -S spectrwm pacman-contrib trayer
 yay -S nerd-fonts-ubuntu-mono
 ```
 

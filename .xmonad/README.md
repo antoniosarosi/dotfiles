@@ -10,7 +10,7 @@ This is how to setup *Xmonad* using this config:
 
 ```bash
 # First, install packages and dependencies
-sudo pacman -S xmonad xmonad-contrib xmobar
+sudo pacman -S xmonad xmonad-contrib xmobar trayer
 yay -S nerd-fonts-ubuntu-mono
 
 # Clone this respository and copy my configs

@@ -1,7 +1,7 @@
 Dependencies:
 
 ```bash
-sudo pacman -S papirus-icons
+sudo pacman -S papirus-icon-theme
 git clone https://github.com/davatorium/rofi-themes.git
 sudo cp rofi-themes/User\ Themes/onedark.rasi /usr/share/rofi/themes
 ```

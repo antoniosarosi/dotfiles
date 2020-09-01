@@ -433,14 +433,13 @@ make them permanent, we need a couple things. First, install
 sudo pacman -S xorg-xinit
 ```
 
-Now you can use *~/.xsession* to run programs before your window manager starts:
+Now you can use *~/.xprofile* to run programs before your window manager starts:
 
 ```bash
-touch ~/.xsession
-chmod u+x ~/.xsession
+touch ~/.xprofile
 ```
 
-For example, if you place this in *.xsession*:
+For example, if you place this in *.xprofile*:
 
 ```bash
 xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI-1 --mode 1920x1080 --pos 0x0 &
@@ -604,7 +603,8 @@ picom &
 ## Multimedia
 
 There are dozens of programs for multimedia stuff, check
-[this page](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia).
+[this page](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia)
+(I will link some later).
 
 ## Start Hacking
 
