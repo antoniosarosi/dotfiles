@@ -1,8 +1,8 @@
 ![Dwm](../.screenshots/dwm.png)
 
-Language
-[🇪🇸](./README.es.md)
-🇺🇸
+***Language***
+- [🇪🇸 Español](./README.es.md)
+- 🇺🇸 English
 
 My custom and patched build of **[dwm](https://dwm.suckless.org/)**.
 
@@ -23,23 +23,28 @@ Patches:
 To install this on your system, first you need the following dependencies:
 
 ```bash
-sudo pacman -S pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```
 
-I always use that font for icons. *pacman-contrib* is used for checking updates.
+I always use that font for icons.
 You will also need my custom
 **[dwmblocks](https://github.com/antoniosarosi/dotfiles/tree/master/.config/dwmblocks)**
 and **[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**
 scripts.
 
 ```bash
+# dwm & dwmblocks
 git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.dwm ~
 cp -r dotfiles/.config/dwmblocks ~/.config/
+
+# scripts
 cp dotfiles/.local/bin/battery ~/.local/bin/
 cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
+
+# These scripts have some dependencies
+sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
 Place this in your **~/.xprofile**:
@@ -58,11 +63,33 @@ sudo make clean install
 sudo cp ~/.dwm/dwm.desktop /usr/share/xsessions
 ```
 
+For *autostart*, check **~/.dwm/autostart.sh**.
 Test it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 dwm
+```
+
+If you want to modify bar icons, open **~/.config/dwmblocks/config.h**
+and change these lines:
+
+```cpp
+static const Block blocks[] = {
+//   Icon    Command                          Update Interval     Update Signal
+    { "  ", "checkupdates | wc -l",                 60,               0 },
+    { "",    "brightness",                           2,                0 },
+    { "",    "volume",                               2,                0 },
+    { "",    "battery",                              60,               0 },
+	{ "",    "date '+ %d/%m/%Y   %H:%M%p'",        5,                0 },
+};
+```
+
+Then recompile *dwmblocks* and restart *dwm* using **mod + control + r**.
+
+```bash
+cd ~/.config/dwmblocks
+sudo make clean install
 ```
 
 Once that's done, you can login. But keep in mind keybindings will not work

@@ -1,8 +1,8 @@
 ![Dwm](../.screenshots/dwm.png)
 
-Idioma
-🇪🇸
-[🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+***Idioma***
+- 🇪🇸 Español
+- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 
 Mi versión personalizada de **[dwm](https://dwm.suckless.org/)**.
 
@@ -23,23 +23,27 @@ Patches:
 Para instalarlo en tu sistema, primer necesitas una dependencias:
 
 ```bash
-sudo pacman -S pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```
 
-Siempre uso esa fuente para iconos. *pacman-contrib* sirve para comprobar
-actualizaciones. También necesitarás mi
+Siempre uso esa fuente para iconos. También necesitarás mi
 **[dwmblocks](https://github.com/antoniosarosi/dotfiles/tree/master/.config/dwmblocks)**
 y scripts situados en
 **[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**.
 
 ```bash
+# dwm & dwmblocks
 git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.dwm ~
 cp -r dotfiles/.config/dwmblocks ~/.config/
+
+# scripts
 cp dotfiles/.local/bin/battery ~/.local/bin/
 cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
+
+# Dependencias de los scripts
+sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
 Escribe esto en tu **~/.xprofile**:
@@ -58,11 +62,34 @@ sudo make clean install
 sudo cp ~/.dwm/dwm.desktop /usr/share/xsessions
 ```
 
-Testealo con **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
+Para el *autostart* abre **~/.dwm/autostart.sh**.
+Pruébalo con **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 dwm
+```
+
+Para añadir o quitar iconos en la barra, abre **~/.config/dwmblocks/config.h**
+y modifica estas líneas:
+
+```cpp
+static const Block blocks[] = {
+//   Icon    Command                          Update Interval     Update Signal
+    { "  ", "checkupdates | wc -l",                 60,               0 },
+    { "",    "brightness",                           2,                0 },
+    { "",    "volume",                               2,                0 },
+    { "",    "battery",                              60,               0 },
+	{ "",    "date '+ %d/%m/%Y   %H:%M%p'",        5,                0 },
+};
+```
+
+Después, recompila *dwmblocks* y vuelve a lanzar *dwm* con
+**mod + control + r**.
+
+```bash
+cd ~/.config/dwmblocks
+sudo make clean install
 ```
 
 Una vez eso está hecho, puedes iniciar sesión. Pero recuerda que los atajos de
