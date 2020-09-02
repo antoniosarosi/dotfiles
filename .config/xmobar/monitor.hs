@@ -14,7 +14,7 @@ Config {
         Run Cpu ["-t", " (<total>%)","-H","50","--high","red"] 20,
         Run Memory ["-t", "  <used>M (<usedratio>%)"] 20,
         Run Com "pamixer" ["--get-volume-human"] "volume" 1,
-        Run Com "/home/antonio/.config/xmobar/updates.sh" [] "updates" 3600,
+        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
         Run UnsafeStdinReader
     ],
     sepChar = "%",

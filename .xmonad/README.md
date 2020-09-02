@@ -21,6 +21,23 @@ cp -r dotfiles/.xmonad ~
 cp -r dotfiles/.config/xmobar ~/.config
 ```
 
+*Xmobar* will not work if you don't have my
+**[~/.local/bin](https://github.com/antoniosarosi/dotfiles/tree/master/.local/bin)**
+scripts.
+
+```bash
+cp dotfiles/.local/bin/percentage ~/.local/bin/
+cp dotfiles/.local/bin/battery ~/.local/bin/
+cp dotfiles/.local/bin/brightness ~/.local/bin/
+cp dotfiles/.local/bin/volume ~/.local/bin/
+```
+
+Place this in your **~/.xprofile**:
+
+```bash
+export PATH=$HOME/.local/bin:$PATH
+```
+
 Compile *Xmonad* and you should be able to login or test it with
 **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
 

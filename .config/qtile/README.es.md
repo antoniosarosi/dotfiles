@@ -10,7 +10,7 @@
 
 Instala qtile y las dependencias:
 
-```
+```bash
 sudo pacman -S qtile pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```

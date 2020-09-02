@@ -11,8 +11,8 @@ Config {
     commands = [ 
         Run Date "  %d %b %Y %H:%M " "date" 60,
         Run Com "pamixer" ["--get-volume-human"] "volume" 1,
-        Run Com "/home/antonio/.config/xmobar/battery.sh" [] "battery" 60,
-        Run Com "/home/antonio/.config/xmobar/updates.sh" [] "updates" 3600,
+        Run Com "battery" [] "battery" 60,
+        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
         Run Com "/home/antonio/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20,
         Run UnsafeStdinReader
     ],

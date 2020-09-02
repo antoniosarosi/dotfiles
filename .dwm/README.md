@@ -39,6 +39,7 @@ cp -r dotfiles/.dwm ~
 cp -r dotfiles/.config/dwmblocks ~/.config/
 
 # scripts
+cp dotfiles/.local/bin/percentage ~/.local/bin/
 cp dotfiles/.local/bin/battery ~/.local/bin/
 cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
