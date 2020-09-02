@@ -6,6 +6,11 @@
 - Español 🇪🇸
 - [English 🇺🇸](https://github.com/antoniosarosi/dotfiles)
 
+***Enlaces Rápidos***
+- [Configuraciones para mis gestores de ventanas](#galería)
+- [Atajos de teclado comunes en mis configuraciones](#atajos-de-teclado)
+- [Software que utilizo](#software)
+
 # Índice
 
 - [Resumen](#resumen)
@@ -669,19 +674,20 @@ cada uno tiene su documentación propia:
 - [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 
 # Galería
-## Qtile
+
+## [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
 ![Qtile](.screenshots/qtile.png)
 
-## Spectrwm
+## [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
 ![Spectrwm](.screenshots/spectrwm.png)
 
-## Openbox
+## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
 ![Spectrwm](.screenshots/openbox.png)
 
-## Xmonad
+## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
 ![Spectrwm](.screenshots/xmonad.png)
 
-## Dwm
+## [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 ![Spectrwm](.screenshots/dwm.png)
 
 # Atajos de teclado

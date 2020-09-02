@@ -6,6 +6,11 @@
 - [Español 🇪🇸](./README.es.md)
 - English 🇺🇸
 
+***Quick Links***
+- [Window manager configs](#gallery)
+- [Common keybindings for my configs](#keybindings)
+- [Software I use](#software)
+
 # Table of Contents
 
 - [Overview](#overview)
@@ -659,19 +664,20 @@ which are located in this repository and have their own documentation:
 - [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 
 # Gallery
-## Qtile
+
+## [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
 ![Qtile](.screenshots/qtile.png)
 
-## Spectrwm
+## [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
 ![Spectrwm](.screenshots/spectrwm.png)
 
-## Openbox
+## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
 ![Spectrwm](.screenshots/openbox.png)
 
-## Xmonad
+## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
 ![Spectrwm](.screenshots/xmonad.png)
 
-## Dwm
+## [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
 ![Spectrwm](.screenshots/dwm.png)
 
 # Keybindings
