@@ -2,7 +2,11 @@
 
 ![Openbox](../../.screenshots/openbox.png)
 
-Install openbox and dependencies:
+***Language***
+- [🇪🇸 Español](./README.es.md)
+- 🇺🇸 English
+
+Install *openbox* and dependencies:
 
 ```
 sudo pacman -S openbox tint2
