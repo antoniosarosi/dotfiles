@@ -20,7 +20,8 @@ Idioma
   - [Almacenamiento](#almacenamiento)
   - [Redes](#redes)
   - [Systray](#systray)
-  - [Xsession](#xsession)
+  - [Notificaciones](#notificaciones)
+  - [Xprofile](#xprofile)
 - [Otras configuraciones y herramientas](#otras-configuraciones-y-herramientas)
   - [AUR helper](#aur-helper)
   - [Media Transfer Protocol](#media-transfer-protocol)
@@ -41,14 +42,15 @@ Idioma
 
 # Resumen
 
-Esta guía te llevará por todos los pasos necesarios para construir un entorno de
-escritorio a partir de una instalación limpia basada en Arch Linux. Voy a asumir
-que te manejas bien con sistemas operativos basados en Linux y sus líneas de
-comandos. Ya que estás leyendo esto, asumiré también que has visto algunos
-vídeos de "*tiling window managers*" en Youtube, porque ahí es donde empieza el
-sinfín. Puedes elegir el gestor de ventanas que quieras, pero aquí usaremos
-Qtile, dado que fue con el que empecé yo. Esta guía es básicamente una
-descripción de cómo he construido mi entorno de escritorio desde 0.
+Esta guía es una recopilación de todos los pasos necesarios para construir un
+entorno de escritorio a partir de una instalación limpia basada en Arch Linux.
+Voy a asumir que te manejas bien con sistemas operativos basados en Linux y sus
+líneas de comandos. Ya que estás leyendo esto, asumiré también que has visto
+algunos vídeos de "*tiling window managers*" en Youtube, porque ahí es donde
+empieza el sinfín. Puedes elegir el gestor de ventanas que quieras, pero aquí
+usaremos Qtile como primer "*tiling window manager*", dado que fue con el que
+empecé yo. Esta guía es básicamente una descripción de cómo he construido mi
+entorno de escritorio desde 0.
 
 # Instalación de Arch Linux
 
@@ -89,7 +91,7 @@ Para tener privilegios de superusuario necesitamos sudo:
 pacman -S sudo
 ```
 
-Edita **/etc/sudoers** con nano o vim y descomenta esta línea:
+Edita **/etc/sudoers** con *nano* o *vim* y descomenta la línea con "wheel":
 
 ```bash
 ## Uncomment to allow members of group wheel to execute any command
@@ -99,7 +101,7 @@ Edita **/etc/sudoers** con nano o vim y descomenta esta línea:
 Ahora ya puedes reiniciar:
 
 ```bash
-# Sal de la imagen ISO, desmontala y extráela
+# Sal de la imagen ISO, desmóntala y extráela
 exit
 umount -R /mnt
 reboot
@@ -177,16 +179,16 @@ teclado que vienen por defecto.
 | **mod + ctrl + r**   | reiniciar qtile                     |
 | **mod + ctrl + q**   | cerrar sesión                       |
 
-Antes de hacer nada, si no la distribución del teclado en inglés, deberías
-cambiarla usando *setxkbmap*. Abre *xterm* con **mod + enter**, y cambia la
-distribución a español:
+Antes de hacer nada, si no tienes la distribución del teclado en inglés,
+deberías cambiarla usando *setxkbmap*. Abre *xterm* con **mod + enter**, y
+cambia la distribución a español:
 
 ```bash
 setxkbmap es
 ```
 
 Ten en cuenta que este cambio no es permanente, si reinicias el PC tendrás que
-esribir el comando anterior de nuevo. Consulta [esta sección](#xsession) para
+esribir el comando anterior de nuevo. Consulta [esta sección](#xprofile) para
 hacer cambios permanentes o sigue el orden natural de esta guía si tienes
 tiempo suficiente.
 
@@ -251,7 +253,7 @@ montaje de unidades de almacenamiento, etc.
 
 En esta sección vamos a ver algunos programas que casi todo el mundo necesita en
 su sistema. Pero recuerda que los cambios que haremos no son permanentes,
-[esta sección](#xsession) describe cómo conseguir que lo sean.
+[esta sección](#xprofile) describe cómo conseguir que lo sean.
 
 ## Fondo de pantalla
 
@@ -379,9 +381,9 @@ le des al botón de aplicar.
 Para un sistema con múltiples monitores deberías crear una instancia de *Screen*
 por cada uno de ellos en la configuración de Qtile.
 
-Encontrarás una lista llamada *screens* que contiene solo un objeto inicializado
-con una barra en la parte de abajo. Dentro de esa barra puedes ver los widgets
-con los que viene por defecto.
+Encontrarás una lista llamada *screens* en la configuración de Qtile que
+contiene solo un objeto inicializado con una barra en la parte de abajo.
+Dentro de esa barra puedes ver los widgets con los que viene por defecto.
 
 Añade tantas pantallas como necesites y copia-pega los widgets, más adelante
 podrás personalizarlos. Ahora puedes volver a *arandr*, darle click en "apply"
@@ -434,7 +436,36 @@ volumeicon &
 cbatticon &
 ```
 
-## Xsession
+## Notificaciones
+
+Me gusta tener notificaciones en el escritorio también, para ello tienes que
+instalar
+[**libnotify**](https://wiki.archlinux.org/index.php/Desktop_notifications#Libnotify)
+y [**notification-daemon**](https://www.archlinux.org/packages/community/x86_64/notification-daemon/):
+
+```bash
+sudo pacman -S libnotify notification-daemon
+```
+
+En nuestro caso,
+[esto es lo que tenemos que hacer para tener notificaciones](https://wiki.archlinux.org/index.php/Desktop_notifications#Standalone):
+
+```bash
+# Crea este fichero con nano o vim
+sudo nano /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+# Pega estas líneas
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/usr/lib/notification-daemon-1.0/notification-daemon
+```
+
+Pruébalo:
+
+```bash
+notification-send "Hola Mundo"
+```
+
+## Xprofile
 
 Como he mencionado antes, estos cambios no son permanentes. Para que lo sean
 necesitamos un par de cosas. Primero instala
@@ -445,13 +476,13 @@ sudo pacman -S xorg-xinit
 ```
 
 Ahora puedes usar *~/.xprofile* para lanzar programas antes de que se ejecute
-el gestor de venatnas:
+el gestor de ventanas:
 
 ```bash
 touch ~/.xprofile
 ```
 
-Por ejemplo, si escribes esto en tu *.xprofile*:
+Por ejemplo, si escribes esto en tu *~/.xprofile*:
 
 ```bash
 xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI-1 --mode 1920x1080 --pos 0x0 &
@@ -483,7 +514,7 @@ cd yay-git
 makepkg -si
 ```
 
-Ahora que tienes un *Arch User Repository helper*, puedes instalar prácticamente
+Con acceso al *Arch User Repository*, puedes instalar prácticamente
 todo el software de este planeta que haya sido pensado para correr en Linux.
 
 ## Media Transfer Protocol
@@ -498,15 +529,15 @@ yay -S simple-mtpfs
 
 # Lista todos los dispositivos conectados
 simple-mtpfs -l
-# Monta el primer dispsitivo de la lista anterior
+# Monta el primer dispositivo de la lista anterior
 simple-mtpfs --device 1 /mount/point
 ```
 
 ## Explorador de archivos
 
 Hasta ahora siempre hemos manejado los ficheros a través de la terminal, pero
-puedes instalar explorador de archivos. Para uno gráfico, recomiendo
-**[thunar](https://wiki.archlinux.org/index.php/Thunar)**
+puedes instalar un explorador de archivos. Para uno gráfico, recomiendo
+**[thunar](https://wiki.archlinux.org/index.php/Thunar)**,
 y para uno basado en terminal,
 **[ranger](https://wiki.archlinux.org/index.php/Ranger)**, aunque este último
 está pensado para usuarios de vim, usalo solo si sabes moverte en vim.
@@ -552,9 +583,9 @@ gtk-icon-theme-name = Material-Black-Blueberry-Suru
 
 La próxima vez que inicies sesión verás los cambios aplicados. Puedes instalar
 también un tema de cursor distinto, para ello necesitas
-**[xcb-util-cursor](https://www.archlinux.org/packages/extra/x86_64/xcb-util-cursor/)**
+**[xcb-util-cursor](https://www.archlinux.org/packages/extra/x86_64/xcb-util-cursor/)**.
 El tema que yo uso es
-[Breeze](https://www.gnome-look.org/p/999927/), descargalo, y después:
+[Breeze](https://www.gnome-look.org/p/999927/), descárgalo, y después:
 
 ```bash
 sudo pacman -S xcb-util-cursor
@@ -570,7 +601,7 @@ Edita **/usr/share/icons/default/index.theme** añadiendo esto:
 Inherits = Breeze
 ```
 
-Ahora vuelve a editat **~/.gtkrc-2.0** y **~/.config/gtk-3.0/settings.ini**:
+Ahora vuelve a editar **~/.gtkrc-2.0** y **~/.config/gtk-3.0/settings.ini**:
 
 ```ini
 # ~/.gtkrc-2.0
@@ -600,11 +631,11 @@ tarea, y te permie previsualizar los temas.
 sudo pacman -S lxappearance
 ```
 
-Finalmente, si quieres transparencia y demás azúcal visual instala un compositor:
+Finalmente, si quieres transparencia y demás instala un compositor:
 
 ```bash
 sudo pacman -S picom
-# Pon esot en ~/.xprofile
+# Pon esto en ~/.xprofile
 picom &
 ```
 
@@ -612,17 +643,17 @@ picom &
 
 Hay docenas de programas para multimedia, consulta
 [esta página](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia)
-(Enlazaré algunos más adelante).
+(enlazaré algunos más adelante).
 
 ## Empieza a hackear
 
 Con todo lo que has hecho hasta ahora ya tienes todas las herramientas para
 empezar a trastear con las configuraciones y hacer de tu entorno de escritorio,
 bueno, *tu* entorno de escritorio. Lo que recomiendo es empezar añadiendo
-atajaos de teclado para programas típicos como firefox, un editor de texto,
+atajaos de teclado para programas típicos como *firefox*, un editor de texto,
 explorador de archivos, etc.
 
-Una vez te sientas cómo con Qtile, puedes instalar otros gestores de ventanas
+Una vez te sientas cómodo con Qtile, puedes instalar otros gestores de ventanas
 y tendrás más sesiones disponibles al iniciar sesión con *lightdm*.
 
 Aqui tienes una lista con las configuraciones de mis gestores de ventanas,
@@ -669,8 +700,8 @@ Estos son algunos atajos de teclado comunes a todos mis gestores de ventanas:
 | **mod + tab**           | cambiar la disposición de las ventanas       |
 | **mod + [1-9]**         | cambiar al espacio de trabajo N (1-9)        |
 | **mod + shift + [1-9]** | mandar ventana al espacio de trabajo N (1-9) |
-| **mod + punto**         | Enfocar siguiente monitor                    |
-| **mod + coma**          | Enfocar monitor previo                       |
+| **mod + punto**         | enfocar siguiente monitor                    |
+| **mod + coma**          | enfocar monitor previo                       |
 | **mod + w**             | cerrar ventana                               |
 | **mod + ctrl + r**      | reiniciar gestor de ventana                  |
 | **mod + ctrl + q**      | cerrar sesión                                |

@@ -20,7 +20,8 @@ Language
   - [Storage](#storage)
   - [Network](#network)
   - [Systray](#systray)
-  - [Xsession](#xsession)
+  - [Notifications](#notifications)
+  - [Xprofile](#xprofile)
 - [Further configuration and tools](#further-configuration-and-tools)
   - [AUR helper](#aur-helper)
   - [Media Transfer Protocol](#media-transfer-protocol)
@@ -45,7 +46,7 @@ This guide will walk you through the process of building a desktop environment
 starting with a fresh Arch based installation. I will assume that you are
 comfortable with Linux based operating systems and command line interfaces.
 Because you are reading this, I will also assume that you've looked through some
-tiling window manager videos on Youtube, because that's where the rabbit hole
+"tiling window manager" videos on Youtube, because that's where the rabbit hole
 starts. You can pick any window managers you want, but I'm going to use Qtile
 as a first tiling window manager because that's what I started with. This is
 basically a description of how I made my desktop environment from scratch.
@@ -146,8 +147,8 @@ we need a browser.
 sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm code firefox
 ```
 
-Enable lightdm service and restart your computer, you should be able to log in
-to qtile through lightdm.
+Enable *lightdm* service and restart your computer, you should be able to log into
+Qtile through *lightdm*.
 
 ```bash
 sudo systemctl enable lightdm
@@ -156,7 +157,7 @@ reboot
 
 # Basic qtile configuration
 
-Now that you're in qtile, you should know some of the default keybindings.
+Now that you're in Qtile, you should know some of the default keybindings.
 
 | Key                  | Action                     |
 | -------------------- | -------------------------- |
@@ -168,7 +169,7 @@ Now that you're in qtile, you should know some of the default keybindings.
 | **mod + ctrl + r**   | restart qtile              |
 | **mod + ctrl + q**   | logout                     |
 
-Before doing anything else, if you dont't have a US keyboard, you should
+Before doing anything else, if you don't have a US keyboard, you should
 change it using *setxkbmap*. To open xterm use **mod + return**. For example to
 change your layout to spanish:
 
@@ -177,7 +178,7 @@ setxkbmap es
 ```
 
 Note that this change is not permanent, if you reboot you have to type that
-command again. See [this section](#xsession) for making it permanent, or
+command again. See [this section](#xprofile) for making it permanent, or
 follow the natural order of this guide if you have enough time.
 
 There is no menu by default, you have to launch programs through xterm. At this
@@ -223,7 +224,7 @@ Key([mod], "m", lazy.spawn("rofi -show run")),
 Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
 ```
 
-Now restart qtile with **mod + control + r**. You should be able to open your
+Now restart Qtile with **mod + control + r**. You should be able to open your
 menu and terminal emulator with keybindings. If you picked rofi, you can
 change its theme like so:
 
@@ -232,8 +233,8 @@ sudo pacman -S which
 rofi-theme-selector
 ```
 
-That's it for qtile, now you can start hacking on it and make it your own.
-Checkout my custom qtile config
+That's it for Qtile, now you can start hacking on it and make it your own.
+Checkout my custom Qtile config
 [here](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile).
 But before that I would recommend configuring basic utilities like audio,
 battery, mounting drives, etc.
@@ -242,15 +243,15 @@ battery, mounting drives, etc.
 
 In this section we will cover some software that almost everybody needs on their
 system. Keep in mind though that the changes we are going to make
-will not be permanent. [This subsection](#xsession) describes how to accomplish
+will not be permanent. [This subsection](#xprofile) describes how to accomplish
 that.
 
 ## Wallpaper
 
 First things first, your screen looks empty and black, so you might want to have
-a wallpaper not to feel so depressed. You can open firefox through *rofi* using
-**mod + m** and download one. Then
-install **[feh](https://wiki.archlinux.org/index.php/Feh)** or
+a wallpaper not to feel so depressed. You can open *firefox* through *rofi*
+using **mod + m** and download one. Then install
+**[feh](https://wiki.archlinux.org/index.php/Feh)** or
 **[nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)**
 and and set your wallpaper:
 
@@ -262,7 +263,7 @@ feh --bg-scale path/to/wallpaper
 ## Fonts
 
 Fonts in Arch Linux are basically a meme, before you run into any problems
-you can just use the simple aproach of installing these packages:
+you can just use the simple approach of installing these packages:
 
 ```bash
 sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
@@ -292,7 +293,7 @@ but you might need to reboot in order for it to actually start. After rebooting,
 you can open *pavucontrol* through *rofi*, unmute the audio, and you should be
 just fine.
 
-Now you can setup keybindings for pulseaudio, open Qtile's config.py and add
+Now you can set up keybindings for *pulseaudio*, open Qtile's config.py and add
 these keys:
 
 ```python
@@ -354,7 +355,7 @@ xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI-1 --
 ```
 
 We need to specify the position for each output, otherwise it will default to
-0x0, and all your outputs will be overlaped. Now if you don't want to calculate pixels
+0x0, and all your outputs will be overlapped. Now if you don't want to calculate pixels
 and stuff you need a GUI like
 **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**:
 
@@ -364,7 +365,7 @@ sudo pacman -S arandr
 
 Open it with *rofi*, arrange your screens however you want, and then you can
 save that layout, which will basically give you a shell script with the exact
-*xrandr* command that you need. Save that script, but don't click *apply* just
+*xrandr* command that you need. Save that script, but don't click "apply" just
 yet.
 
 For a multi-monitor system, it's recommended to create an instance of a
@@ -405,7 +406,7 @@ sudo pacman -S network-manager-applet
 
 ## Systray
 
-By default, you have a system tray in Qtile, but there is nothing running in it.
+By default, you have a system tray in Qtile, but there's nothing running in it.
 You can launch the programs we've just installed like so:
 
 ```bash
@@ -422,9 +423,37 @@ volumeicon &
 cbatticon &
 ```
 
-## Xsession
+## Notifications
 
-As I have mentioned before, all those changes are not permanent. In order to
+I like having desktop notifications as well, for that you need to install
+[**libnotify**](https://wiki.archlinux.org/index.php/Desktop_notifications#Libnotify)
+and [**notification-daemon**](https://www.archlinux.org/packages/community/x86_64/notification-daemon/):
+
+```bash
+sudo pacman -S libnotify notification-daemon
+```
+
+For a tiling window manager,
+[this is how you can get notifications](https://wiki.archlinux.org/index.php/Desktop_notifications#Standalone):
+
+```bash
+# Create this file with nano or vim
+sudo nano /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+# Paste these lines
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/usr/lib/notification-daemon-1.0/notification-daemon
+```
+
+Test it like so:
+
+```bash
+notification-send "Hello World"
+```
+
+## Xprofile
+
+As I have mentioned before, all these changes are not permanent. In order to
 make them permanent, we need a couple things. First, install
 **[xinit](https://wiki.archlinux.org/index.php/Xinit)**:
 
@@ -439,7 +468,7 @@ Now you can use *~/.xprofile* to run programs before your window manager starts:
 touch ~/.xprofile
 ```
 
-For example, if you place this in *.xprofile*:
+For example, if you place this in *~.xprofile*:
 
 ```bash
 xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --output HDMI-1 --mode 1920x1080 --pos 0x0 &
@@ -471,7 +500,7 @@ cd yay-git
 makepkg -si
 ```
 
-Now that you have an *Arch User Repository helper*, you can basically install
+With an *Arch User Repository helper*, you can basically install
 any piece of software on this planet that was meant to run on Linux.
 
 ## Media Transfer Protocol
@@ -544,7 +573,7 @@ gtk-icon-theme-name = Material-Black-Blueberry-Suru
 
 Next time you log in, these changes will be visible. You can also install a
 different cursor theme, for that you need
-**[xcb-util-cursor](https://www.archlinux.org/packages/extra/x86_64/xcb-util-cursor/)**
+**[xcb-util-cursor](https://www.archlinux.org/packages/extra/x86_64/xcb-util-cursor/)**.
 The theme I use is
 [Breeze](https://www.gnome-look.org/p/999927/), download it and then:
 
@@ -586,7 +615,7 @@ There are also graphical frontends for changing themes, I just prefer the
 traditional way of editing files though, but you can use
 **[lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/)**,
 which is a desktop environment independent GUI for this task, and it lets you
-preview themes to see how they look.
+preview themes.
 
 ```bash
 sudo pacman -S lxappearance
@@ -596,7 +625,7 @@ Finally, if you want tranparency and fancy looking things, install a compositor:
 
 ```bash
 sudo pacman -S picom
-# Run it like so, place it in ~/.xsession
+# Run it like so, place it in ~/.xrofile
 picom &
 ```
 
@@ -610,8 +639,8 @@ There are dozens of programs for multimedia stuff, check
 
 With all you've done so far, you got all the tools to start playing with configs
 and make your desktop environment, well, yours. What I recommend is hacking
-on Qtile to add keybindings for common programs like firefox, a text editor,
-file manager, etc.
+on Qtile to adding keybindings for common programs like *firefox*,
+a text editor, file manager, etc.
 
 Once you feel comfortable with Qtile, you can install other
 tiling window managers, and you will have more sessions available when logging
