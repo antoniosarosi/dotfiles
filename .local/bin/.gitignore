@@ -1,6 +1,7 @@
 /*
 !.gitignore
 
+!percentage
 !volume
 !battery
 !brightness

@@ -1,13 +1,5 @@
 #!/bin/bash
 
-(( percentage = $(brightnessctl get) * 100 / 255 ))
+(( br = $(brightnessctl get) * 100 / 255 ))
 
-if (( $percentage <= 25 )); then
-    echo -n " $percentage%%" 
-elif (( $percentage <= 50 )); then
-    echo -n " $percentage%%"
-elif (( $percentage <= 75 )); then
-    echo -n " $percentage%%" 
-else
-    echo -n " $percentage%%"
-fi
+ echo -n "$(percentage $br        ) $br% "
