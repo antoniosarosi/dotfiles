@@ -2,9 +2,11 @@
 
 ![Xmonad](../.screenshots/xmonad.png)
 
-Idioma
-🇪🇸
-[🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+***Idioma***
+- 🇪🇸 Español
+- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+
+## Instalación
 
 Esta es la forma de usar mis configuraciones de *Xmonad*:
 
@@ -27,6 +29,8 @@ xmonad --recompile
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
 DISPLAY=:1 xmonad
 ```
+
+## Xmobar
 
 Si ves que lanza *Xmobar*, sabes que la configuración es correcta. Modifica
 las instancias de *Xmobar* según la cantidad de monitores que tienes. Así es
@@ -66,3 +70,32 @@ mismas configuraciones. Puedes cambiar los atajos de teclado o bien instalar el
 software que uso yo, mira
 [esta sección](https://github.com/antoniosarosi/dotfiles#keybindings)
 para las instrucciones.
+
+## Autostart
+
+Puedes encontrar estas líneas en **./xmonad.hs**:
+
+```haskell
+myStartupHook :: X ()
+myStartupHook = do
+    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 40 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 &"
+    setWMName "LG3D"
+```
+
+No tengo un script aparte para lanzar programas, solo uso *trayer*, pero si
+necesitas uno, puedes hacer algo como esto:
+
+```bash
+touch ~/.xmonad/autostart.sh
+echo "#!/bin/bash" > ~/.xmonad/autostart.sh
+chmod u+x ~/.xmonad/autostart.sh
+```
+
+Ahora escribe lo que necesitas en el script, y cambia las líneas anteriores por:
+
+```haskell
+myStartupHook :: X ()
+myStartupHook = do
+    spawnOnce "/home/username/.xmonad/autostart.sh &"
+    setWMName "LG3D"
+```
