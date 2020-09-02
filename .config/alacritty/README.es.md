@@ -4,7 +4,7 @@
 
 ***Idioma***
 - Español 🇪🇸
-- English [🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty)
+- [English 🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty)
 
 Instala *alacritty* y las dependencias:
 

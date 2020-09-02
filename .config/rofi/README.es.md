@@ -3,8 +3,8 @@
 ![Rofi](./rofi.png)
 
 ***Idioma***
-- Español 🇪🇸
-- English [🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi)
+- 🇪🇸 Español
+- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi)
 
 Instala *rofi* y las dependencias:
 
