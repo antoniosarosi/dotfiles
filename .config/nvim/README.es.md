@@ -29,7 +29,7 @@ Abre *neovim* y ejecuta *:PlugInstall*. Cierra *neovim*, y la próxima vez
 que lo abras, las configuraciones se habrán aplicado. Estos son algunos atajos
 de teclado que tengo aparte de los que vienen por defecto:
 
-| Key                    | Action                                  |
+| Atajo                  | Acción                                  |
 | ---------------------- | --------------------------------------- |
 | **jk** o **kj**        | Cambiar a modo normal (desde insertar)  |
 | **alt + [hjkl]**       | Cambiar split de tamaño                 |
@@ -44,7 +44,7 @@ de teclado que tengo aparte de los que vienen por defecto:
 
 ***Plugins***:
 
-| Key           | Action                                  |
+| Atajo         | Acción                                  |
 | ------------- | --------------------------------------- |
 | **space + f** | Búsqueda                                |
 | **space + /** | Comentar la línea o bloque seleccionado |

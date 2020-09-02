@@ -68,7 +68,7 @@ Una vez eso está hecho, puedes iniciar sesión. Pero recuerda que los atajos de
 teclado no funcionarán a no ser que tengas todos los programas que uso yo y las
 mismas configuraciones. Puedes cambiar los atajos de teclado o bien instalar el
 software que uso yo, mira
-[esta sección](https://github.com/antoniosarosi/dotfiles#keybindings)
+[esta sección](https://github.com/antoniosarosi/dotfiles/blob/master/README.es.md#atajos-de-teclado)
 para las instrucciones.
 
 ## Autostart

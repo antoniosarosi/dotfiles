@@ -8,11 +8,11 @@
 
 ***Enlaces Rápidos***
 - *Configs para los gestores de ventanas*
-  - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
-  - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
-  - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
-  - [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
-  - [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+  - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile/README.es.md)
+  - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm/README.es.md)
+  - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox/README.es.md)
+  - [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad/README.es.md)
+  - [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm/README.es.md)
 - [Galería (previsualiza mis configuraciones)](#galería)
 - [Atajos de teclado comunes en mis configuraciones](#atajos-de-teclado)
 - [Software que utilizo](#software)
@@ -704,11 +704,11 @@ y tendrás más sesiones disponibles al iniciar sesión con *lightdm*.
 Aqui tienes una lista con las configuraciones de mis gestores de ventanas,
 cada uno tiene su documentación propia:
 
-- [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
-- [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
-- [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
-- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
-- [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+- [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile/README.es.md)
+- [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm/README.es.md)
+- [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox/README.es.md)
+- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad/README.es.md)
+- [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm/README.es.md)
 
 # Galería
 
@@ -734,7 +734,7 @@ Estos son algunos atajos de teclado comunes a todos mis gestores de ventanas:
 
 ## Ventanas
 
-| Key                     | Action                                       |
+| Atajo                   | Acción                                       |
 | ----------------------- | -------------------------------------------- |
 | **mod + j**             | siguiente ventana                            |
 | **mod + k**             | ventana previa                               |
@@ -765,7 +765,7 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 
 ## Apps
 
-| Key                 | Action                                 |
+| Atajo               | Acción                                 |
 | ------------------- | -------------------------------------- |
 | **mod + m**         | lanzar rofi                            |
 | **mod + shift + m** | navegación (rofi)                      |
@@ -780,7 +780,7 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 
 ## Utilidades básicas
 
-| Software                                                                                            | Utility                                       |
+| Software                                                                                            | Utilidad                                      |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------- |
 | **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                           | Autoexplicativo                               |
 | **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | *NetworkManager* systray                      |
@@ -799,7 +799,7 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 
 ## Fuentes, temas y GTK
 
-| Software                                                                               | Utility                                |
+| Software                                                                               | Utilidad                               |
 | -------------------------------------------------------------------------------------- | -------------------------------------- |
 | **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                | Compositor para Xorg                   |
 | **[UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono/)** | Nerd Font para iconos                  |
@@ -810,7 +810,7 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 
 ## Apps
 
-| Software                                                              | Utility                            |
+| Software                                                              | Utilidad                           |
 | --------------------------------------------------------------------- | ---------------------------------- |
 | **[alacritty](https://wiki.archlinux.org/index.php/Alacritty)**       | Emulador de Terminal               |
 | **[thunar](https://wiki.archlinux.org/index.php/Thunar)**             | Gestor de archivos gráfico         |
