@@ -760,8 +760,8 @@ sudo pacman -S rofi thunar firefox alacritty redshift scrot
 ```
 
 Para configurar *rofi*,
-[lee este README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi),
-y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty).
+[lee este README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi/README.es.md),
+y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty/README.es.md).
 
 ## Apps
 
