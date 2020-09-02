@@ -2,11 +2,11 @@
 
 ![Qtile](.screenshots/qtile.png)
 
-Idioma
-🇪🇸
-[🇺🇸](https://github.com/antoniosarosi/dotfiles)
+***Idioma***
+- Español 🇪🇸
+- [English 🇺🇸](https://github.com/antoniosarosi/dotfiles)
 
-# Table of Contents
+# Índice
 
 - [Resumen](#resumen)
 - [Instalación de Arch Linux](#instalación-de-arch-linux)
@@ -39,6 +39,9 @@ Idioma
   - [Ventanas](#ventanas)
   - [Apps](#apps)
 - [Software](#software)
+  - [Utilidades básicas](#utilidades-básicas)
+  - [Fuentes, temas y GTK](#fuentes-temas-y-gtk)
+  - [Apps](#apps-1)
 
 # Resumen
 
@@ -731,3 +734,46 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 | **mod + s**         | captura de pantalla (scrot)            |
 
 # Software
+
+## Utilidades básicas
+
+| Software                                                                                            | Utility                                       |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager)**                           | Autoexplicativo                               |
+| **[network-manager-applet](https://wiki.archlinux.org/index.php/NetworkManager#nm-applet)**         | *NetworkManager* systray                      |
+| **[pulseaudio](https://wiki.archlinux.org/index.php/PulseAudio)**                                   | Autoexplicativo                               |
+| **[pavucontrol](https://www.archlinux.org/packages/extra/x86_64/pavucontrol/)**                     | *pulseaudio* GUI                              |
+| **[pamixer](https://www.archlinux.org/packages/community/x86_64/pamixer/)**                         | *pulseaudio* CLI                              |
+| **[brightnessctl](https://www.archlinux.org/packages/community/x86_64/brightnessctl/)**             | Brillo para portátiles                        |
+| **[xinit](https://wiki.archlinux.org/index.php/Xinit)**                                             | Inicia programas antes del gestor de ventanas |
+| **[libnotify](https://wiki.archlinux.org/index.php/Desktop_notifications)**                         | Notificaciones de escritorio                  |
+| **[notification-daemon](https://www.archlinux.org/packages/community/x86_64/notification-daemon/)** | Autoexplicativo                               |
+| **[udiskie](https://www.archlinux.org/packages/community/any/udiskie/)**                            | Montar discos automáticamente                 |
+| **[ntfs-3g](https://wiki.archlinux.org/index.php/NTFS-3G)**                                         | Leer y escribir NTFS                          |
+| **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI para *xrandr*                             |
+| **[cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**                     | Systray para la batería                       |
+| **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Systray para el volumen                       |
+
+## Fuentes, temas y GTK
+
+| Software                                                                               | Utility                                |
+| -------------------------------------------------------------------------------------- | -------------------------------------- |
+| **[Picom](https://wiki.archlinux.org/index.php/Picom)**                                | Compositor para Xorg                   |
+| **[UbuntuMono Nerd Font](https://aur.archlinux.org/packages/nerd-fonts-ubuntu-mono/)** | Nerd Font para iconos                  |
+| **[Material Black](https://www.gnome-look.org/p/1316887/)**                            | Tema e iconos para GTK                 |
+| **[lxappearance](https://www.archlinux.org/packages/community/x86_64/lxappearance/)**  | GUI para cambiar temas                 |
+| **[nitrogen](https://wiki.archlinux.org/index.php/Nitrogen)**                          | GUI para establecer fondos de pantalla |
+| **[feh](https://wiki.archlinux.org/index.php/Feh)**                                    | CLI para establecer fondos de pantalla |
+
+## Apps
+
+| Software                                                              | Utility                            |
+| --------------------------------------------------------------------- | ---------------------------------- |
+| **[alacritty](https://wiki.archlinux.org/index.php/Alacritty)**       | Emulador de Terminal               |
+| **[thunar](https://wiki.archlinux.org/index.php/Thunar)**             | Gestor de archivos gráfico         |
+| **[ranger](https://wiki.archlinux.org/index.php/Ranger)**             | Gestor de archivos de terminal     |
+| **[neovim](https://wiki.archlinux.org/index.php/Neovim)**             | Editor de texto basado en terminal |
+| **[rofi](https://wiki.archlinux.org/index.php/Rofi)**                 | Menú y navegación                  |
+| **[scrot](https://wiki.archlinux.org/index.php/Screen_capture)**      | Captura de pantalla                |
+| **[redshift](https://wiki.archlinux.org/index.php/Redshift)**         | Cuida tus ojos                     |
+| **[trayer](https://www.archlinux.org/packages/extra/x86_64/trayer/)** | Systray                            |
