@@ -3,8 +3,8 @@
 ![Qtile](../../.screenshots/qtile.png)
 
 ***Idioma***
-- Español 🇪🇸
-- [English 🇺🇸](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
+- 🇪🇸 Español
+- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
 
 ## Instalación
 
