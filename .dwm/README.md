@@ -81,7 +81,7 @@ static const Block blocks[] = {
     { "",    "brightness",                           2,                0 },
     { "",    "volume",                               2,                0 },
     { "",    "battery",                              60,               0 },
-	{ "",    "date '+ %d/%m/%Y   %H:%M%p'",        5,                0 },
+    { "",    "date '+ %d/%m/%Y   %H:%M%p'",        5,                0 },
 };
 ```
 

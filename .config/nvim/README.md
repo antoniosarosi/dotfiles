@@ -1,4 +1,11 @@
-To use this config, firs download some dependencies:
+![Neovim](./neovim.png)
+
+***Language***
+- [🇪🇸 Español](./README.es.md)
+- 🇺🇸 English
+
+
+To use this config, first download some dependencies:
 
 ```bash
 # Vim-plug
@@ -22,27 +29,20 @@ Now open *neovim* and execute *:PlugInstall*. Close *neovim*, and next time
 you open it all my configs should be applied. This are some keybingins besides
 default ones:
 
-***Normal mode:***
+| Key                    | Action                                 |
+| ---------------------- | -------------------------------------- |
+| **jk** or **kj**       | Go to normal mode (from insert)        |
+| **alt + [hjkl]**       | Resize split                           |
+| **control + [hjkl]**   | Navigate splits                        |
+| **control + s**        | Save                                   |
+| **control + q**        | Save and quit                          |
+| **tab**                | Next buffer                            |
+| **shift + tab**        | Previous buffer                        |
+| **control + b**        | Close buffer                           |
+| **shift + <** or **>** | Indent one level or remove it (visual) |
+| **shift + k** or **j** | Move selected line down or up (visual) |
 
-| Key                  | Action            |
-| -------------------- | ----------------- |
-| **jk** or **kj**     | Go to normal mode |
-| **alt + [hjkl]**     | Resize split      |
-| **control + [hjkl]** | Navigate splits   |
-| **control + s**      | Save              |
-| **control + q**      | Save and quit     |
-| **tab**              | Next buffer       |
-| **shift + tab**      | Previous buffer   |
-| **control + b**      | Close buffer      |
-
-***Visual mode***:
-
-| Key                    | Action                        |
-| ---------------------- | ----------------------------- |
-| **shift + <** or **>** | Indent one level or remove it |
-| **shift + k** or **j** | Move selected line down or up |
-
-***Plugin keybindings (normal mode)***:
+***Plugin keybindings***:
 
 | Key           | Action                                        |
 | ------------- | --------------------------------------------- |
