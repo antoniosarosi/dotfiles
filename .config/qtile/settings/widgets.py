@@ -52,7 +52,7 @@ workspaces = lambda: [
     separator(),
 ]
 
-laptop_widgets = [
+primary_widgets = [
     *workspaces(),
 
     separator(),
@@ -87,7 +87,7 @@ laptop_widgets = [
 
 ]
 
-monitor_widgets = [
+secondary_widgets = [
     *workspaces(),
 
     separator(),

@@ -11,15 +11,25 @@ import json
 from settings.path import qtile_path
 
 
-default_theme = "dark-grey"
+def load_theme():
+    theme = "dark-grey"
 
-with open(path.join(qtile_path, "config.json")) as f:
-    theme = json.load(f)["theme"]
+    config = path.join(qtile_path, "config.json")
+    if path.isfile(config):
+        with open(config) as f:
+            theme = json.load(f)["theme"]
+    else:
+        f = open(path.join(qtile_path, "config.json"), "w")
+        f.write(f'{{"theme": "{theme}"}}\n')
 
-theme_file = path.join(qtile_path, "themes", f'{theme}.json')
-if not path.isfile(theme_file):
-    theme_file = path.join(qtile_path, "themes", f'{default_theme}.json')
 
-# Map color name to hex values
-with open(path.join(theme_file)) as f:
-    colors = json.load(f)
+    theme_file = path.join(qtile_path, "themes", f'{theme}.json')
+    if not path.isfile(theme_file):
+        raise Exception(f'"{theme_file}" does not exist')
+
+    with open(path.join(theme_file)) as f:
+        return json.load(f)
+
+
+if __name__ == "settings.theme":
+    colors = load_theme()
