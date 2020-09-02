@@ -7,7 +7,13 @@
 - English 🇺🇸
 
 ***Quick Links***
-- [Window manager configs](#gallery)
+- *Window manager configs*
+  - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
+  - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
+  - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
+  - [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+  - [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+- [Gallery (see how my configs look)](#gallery)
 - [Common keybindings for my configs](#keybindings)
 - [Software I use](#software)
 
@@ -32,6 +38,7 @@
   - [Media Transfer Protocol](#media-transfer-protocol)
   - [File Manager](#file-manager)
   - [GTK Theming](#gtk-theming)
+  - [Lightdm theming](#lightdm-theming)
   - [Multimedia](#multimedia)
   - [Start Hacking](#start-hacking)
 - [Gallery](#gallery)
@@ -636,6 +643,36 @@ sudo pacman -S picom
 # Run it like so, place it in ~/.xrofile
 picom &
 ```
+
+## Lightdm theming
+
+We can also change the theme of *lightdm* and make it look cooler, because why
+not? We need another greeter, and some theme, namely
+**[lightdm-webkit2-greeter](https://www.archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/)**
+and  **[lightdm-webkit-theme-aether](https://aur.archlinux.org/packages/lightdm-webkit-theme-aether/)**:
+
+```bash
+sudo pacman -S lightdm-webkit2-greeter
+yay -S lightdm-webkit-theme-aether
+```
+
+These are the configs you need to make:
+
+```ini
+# /etc/lightdm/lightdm.conf
+[Seat:*]
+# ...
+# Uncomment this line and set this value
+greeter-session = lightdm-webkit2-greeter
+# ...
+
+# /etc/lightdm/lightdm-webkit2-greeter.conf
+[greeter]
+# ...
+webkit_theme = lightdm-webkit-theme-aether
+```
+
+Ready to go.
 
 ## Multimedia
 
