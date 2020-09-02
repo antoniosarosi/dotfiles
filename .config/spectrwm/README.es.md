@@ -11,7 +11,7 @@
 Instala Spectrwm y las dependencias:
 
 ```bash
-sudo pacman -S spectrwm trayer
+sudo pacman -S spectrwm trayer upower pamixer brightnessctl pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```
 

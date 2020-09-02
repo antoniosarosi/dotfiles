@@ -20,7 +20,7 @@ Patches:
 - [columns](https://dwm.suckless.org/patches/columns/dwm-columns-6.0.diff)
 - [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff)
 
-Para instalarlo en tu sistema, primer necesitas una dependencias:
+Para instalarlo en tu sistema, primero necesitas unas dependencias:
 
 ```bash
 yay -S nerd-fonts-ubuntu-mono

@@ -12,7 +12,7 @@ This is how to setup *Xmonad* using this config:
 
 ```bash
 # First, install packages and dependencies
-sudo pacman -S xmonad xmonad-contrib xmobar trayer
+sudo pacman -S xmonad xmonad-contrib xmobar trayer pamixer upower brightnessctl
 yay -S nerd-fonts-ubuntu-mono
 
 # Clone this respository and copy my configs
@@ -30,6 +30,9 @@ cp dotfiles/.local/bin/percentage ~/.local/bin/
 cp dotfiles/.local/bin/battery ~/.local/bin/
 cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
+
+# These scripts have some dependencies
+sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
 Place this in your **~/.xprofile**:
@@ -79,6 +82,21 @@ Three bars:
 
 ```haskell
 ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor1 x >> hPutStrLn xmobarMonitor2 x,
+```
+
+If the battery doesn't work (if you're on a laptop, obviously), look for this
+line in **~/.local/bin/battery**:
+
+```bash
+bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+    grep percentage |
+    sed 's/ *percentage: *//g'`
+```
+
+You might need to change *battery_BAT1* to the value you see in this output:
+
+```bash
+upower -d
 ```
 
 Once that's done, you can login. But keep in mind keybindings will not work

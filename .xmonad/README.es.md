@@ -29,6 +29,9 @@ cp dotfiles/.local/bin/percentage ~/.local/bin/
 cp dotfiles/.local/bin/battery ~/.local/bin/
 cp dotfiles/.local/bin/brightness ~/.local/bin/
 cp dotfiles/.local/bin/volume ~/.local/bin/
+
+# Dependencias de estos scripts
+sudo pacman -S pacman-contrib brightnessctl pamixer upower
 ```
 
 Pon esto en tu **~/.xprofile**:
@@ -78,6 +81,21 @@ Tres barras:
 
 ```haskell
 ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor1 x >> hPutStrLn xmobarMonitor2 x,
+```
+
+Si la batería no funciona (si estás en un portátil, claro),  busca esta línea en
+**~/.local/bin/battery**:
+
+```bash
+bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+    grep percentage |
+    sed 's/ *percentage: *//g'`
+```
+
+Puede que necesites cambiar *battery_BAT1* por el valor que veas en esta salida:
+
+```bash
+upower -d
 ```
 
 Una vez eso está hecho, puedes iniciar sesión. Pero recuerda que los atajos de

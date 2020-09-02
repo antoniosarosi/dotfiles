@@ -8,7 +8,7 @@
 
 ## Instalación
 
-Instala qtile y las dependencias:
+Instala Qtile y las dependencias:
 
 ```bash
 sudo pacman -S qtile pacman-contrib

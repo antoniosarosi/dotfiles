@@ -11,7 +11,7 @@
 Install Spectrwm and dependencies:
 
 ```bash
-sudo pacman -S spectrwm trayer
+sudo pacman -S spectrwm trayer upower pamixer brightnessctl pacman-contrib
 yay -S nerd-fonts-ubuntu-mono
 ```
 
@@ -95,8 +95,8 @@ In **~/.spectrwm.conf** you can find this line:
 bar_format = +|L+@fn=2; +@fn=0;+@fg=1; +D+@fn=1;+@fg=2;+3<+W+|R+@fn=2;+A
 ```
 
-It has a weird syntax, but basically each time you se "*+@fn=X;*" it uses a
-different font, and "*+@fg=X;*" means a different foreground. This is how fonts
+It has a weird syntax, but basically each time you see *"+@fn=X;"* it uses a
+different font, and *"+@fg=X;"* means a different foreground. This is how fonts
 and colors are defined:
 
 ```ini
