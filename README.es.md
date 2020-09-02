@@ -3,8 +3,8 @@
 ![Qtile](.screenshots/qtile.png)
 
 ***Idioma***
-- Español 🇪🇸
-- [English 🇺🇸](https://github.com/antoniosarosi/dotfiles)
+- 🇪🇸 Español
+- [🇺🇸 English](https://github.com/antoniosarosi/dotfiles)
 
 ***Enlaces Rápidos***
 - *Configs para los gestores de ventanas*

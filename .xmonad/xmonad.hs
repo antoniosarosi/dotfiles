@@ -183,6 +183,8 @@ myKeys =
     -- Redshift
     ("M-r", spawn "redshift -O 2400"),
     ("M-S-r", spawn "redshift -x"),
+    -- Scrot
+    ("M-s", spawn "scrot"),
 
     --------------------- Hardware ---------------------
 

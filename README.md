@@ -3,8 +3,8 @@
 ![Qtile](.screenshots/qtile.png)
 
 ***Language***
-- [Español 🇪🇸](./README.es.md)
-- English 🇺🇸
+- [🇪🇸 Español](./README.es.md)
+- 🇺🇸 English
 
 ***Quick Links***
 - *Window manager configs*
