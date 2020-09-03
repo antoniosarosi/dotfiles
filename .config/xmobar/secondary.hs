@@ -13,7 +13,7 @@ Config {
         Run Network "wlp2s0" ["-t", " <rx>kb  <tx>kb"] 30,
         Run Cpu ["-t", " (<total>%)","-H","50","--high","red"] 20,
         Run Memory ["-t", "  <used>M (<usedratio>%)"] 20,
-        Run Com "pamixer" ["--get-volume-human"] "volume" 1,
+        Run Com "volume" [] "volume" 1,
         Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
         Run UnsafeStdinReader
     ],
@@ -23,7 +23,7 @@ Config {
         \<fc=#e1acff> %updates% </fc>\
         \<fc=#FFB86C> %cpu% </fc>\
         \<fc=#FF5555> %memory% </fc>\
-        \<fc=#c3e88d> %wlp2s0%  </fc>\
-        \<fc=#82AAFF>  %volume% </fc>\
+        \<fc=#c3e88d> %wlp2s0% </fc>\
+        \<fc=#82AAFF> %volume% </fc>\
         \<fc=#8BE9FD> %date% </fc>"
 }

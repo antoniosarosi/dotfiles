@@ -12,7 +12,7 @@ Esta es la forma de usar mis configuraciones de *Xmonad*:
 
 ```bash
 # Primero, instala las dependencias
-sudo pacman -S xmonad xmonad-contrib xmobar trayer
+sudo pacman -S xmonad xmonad-contrib xmobar trayer xdotool
 yay -S nerd-fonts-ubuntu-mono
 
 # Clona este repositorio y copia mis configuraciones
