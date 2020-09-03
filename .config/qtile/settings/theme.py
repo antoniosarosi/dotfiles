@@ -19,8 +19,8 @@ def load_theme():
         with open(config) as f:
             theme = json.load(f)["theme"]
     else:
-        f = open(path.join(qtile_path, "config.json"), "w")
-        f.write(f'{{"theme": "{theme}"}}\n')
+        with open(path.join(qtile_path, "config.json"), "w") as f:
+            f.write(f'{{"theme": "{theme}"}}\n')
 
 
     theme_file = path.join(qtile_path, "themes", f'{theme}.json')

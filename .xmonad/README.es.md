@@ -58,8 +58,8 @@ como los tengo yo:
 ```haskell
 main = do
     -- Xmobar
-    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/laptop.hs"
-    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/monitor.hs"
+    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
 ```
 
 Por ejemplo, si solo quieres una barra, borra la línea de *xmobarMonitor*. Si

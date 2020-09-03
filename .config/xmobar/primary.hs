@@ -10,8 +10,9 @@ Config {
     persistent = True,
     commands = [ 
         Run Date "  %d %b %Y %H:%M " "date" 60,
-        Run Com "pamixer" ["--get-volume-human"] "volume" 1,
+        Run Com "volume" [] "volume" 1,
         Run Com "battery" [] "battery" 60,
+        Run Com "brightness" [] "brightness" 1,
         Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
         Run Com "/home/antonio/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20,
         Run UnsafeStdinReader
@@ -19,8 +20,9 @@ Config {
     alignSep = "}{",
     template = "<fc=#b303ff>  </fc>%UnsafeStdinReader% }{ \
         \<fc=#e1acff> %updates% </fc>\
-        \<fc=#c3e88d> %battery% </fc>\
-        \<fc=#82AAFF>  %volume% </fc>\
+        \<fc=#FFB86C> %brightness%</fc>\
+        \<fc=#c3e88d> %battery%</fc>\
+        \<fc=#82AAFF> %volume% </fc>\
         \<fc=#8BE9FD> %date% </fc>\
         \%trayerpad%"
 }

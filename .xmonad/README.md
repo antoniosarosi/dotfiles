@@ -59,8 +59,8 @@ I set them up:
 ```haskell
 main = do
     -- Xmobar
-    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/laptop.hs"
-    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/monitor.hs"
+    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
 ```
 
 For example, if you only need one bar then remove the line with *xmobarMonitor*.

@@ -201,8 +201,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Xmobar
-    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/laptop.hs"
-    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/monitor.hs"
+    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
     -- Xmonad
     xmonad $ ewmh def {
         manageHook = (isFullscreen --> doFullFloat) <+> manageDocks <+> insertPosition Below Newer,
