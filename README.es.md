@@ -41,6 +41,8 @@
   - [Tema de GTK](#tema-de-gtk)
   - [Tema de lightdm](#tema-de-lightdm)
   - [Multimedia](#multimedia)
+    - [Imágenes](#imágenes)
+    - [Vídeo y audio](#vídeo-y-audio)
   - [Empieza a hackear](#empieza-a-hackear)
 - [Galería](#galería)
   - [Qtile](#qtile)
@@ -710,9 +712,40 @@ Listo.
 
 ## Multimedia
 
-Hay docenas de programas para multimedia, consulta
+Consulta
 [esta página](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia)
-(enlazaré algunos más adelante).
+para ver la variedad de programas multimedia disponibles.
+
+### Imágenes
+
+Para ver imágenes, de los programas gráficos que he probado
+[geeqie](https://www.archlinux.org/packages/extra/x86_64/geeqie/) es el mejor:
+
+```bash
+sudo pacman -S geeqie
+```
+
+### Vídeo y audio
+
+Aquí sin duda el clásico
+[vlc](https://wiki.archlinux.org/index.php/VLC_media_player_(Espa%C3%B1ol))
+es lo que necesitamos:
+
+```bash
+sudo pacman -S vlc
+```
+
+Eso sí, quizás quieras cambiarle el tema.
+
+```bash
+yay -S vlc-arc-dark-git
+```
+
+Después, abre *vlc*, herramientas, preferencias, "use custom skin", y
+navega hasta este fichero: **/usr/share/vlc/skins2/Arc-Dark-Fixed-Size.vlt**
+
+Después simplemente guarda los cambios, y ya puedes usar *vlc* para reproducir
+música y vídeo.
 
 ## Empieza a hackear
 
