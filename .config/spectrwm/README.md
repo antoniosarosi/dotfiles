@@ -20,7 +20,6 @@ Clone this repository and copy my configs:
 ```bash
 git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.config/spectrwm ~/.config
-cp dotfiles/.spectrwm.conf ~/.spectrwm.conf
 ```
 
 ## Autostart
@@ -89,7 +88,7 @@ for instructions.
 
 ## Bar format
 
-In **~/.spectrwm.conf** you can find this line:
+In **spectrwm.conf** you can find this line:
 
 ```ini
 bar_format = +|L+@fn=2; +@fn=0;+@fg=1; +D+@fn=1;+@fg=2;+3<+W+|R+@fn=2;+A
@@ -113,5 +112,5 @@ Read the man page for specific documentation:
 man spectrwm
 ```
 
-Read **~/.spectrwm.conf** and **~/.config/spectrwm/baraction.sh** to understand
+Read **spectrwm.conf** and **~/.config/spectrwm/baraction.sh** to understand
 the rest of the config.
