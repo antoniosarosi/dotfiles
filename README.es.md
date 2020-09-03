@@ -37,6 +37,7 @@
   - [AUR helper](#aur-helper)
   - [Media Transfer Protocol](#media-transfer-protocol)
   - [Explorador de archivos](#explorador-de-archivos)
+  - [Basura](#basura)
   - [Tema de GTK](#tema-de-gtk)
   - [Tema de lightdm](#tema-de-lightdm)
   - [Multimedia](#multimedia)
@@ -557,6 +558,29 @@ y para uno basado en terminal,
 **[ranger](https://wiki.archlinux.org/index.php/Ranger)**, aunque este último
 está pensado para usuarios de vim, usalo solo si sabes moverte en vim.
 
+## Basura
+
+Si no quieres usar *rm* constantemente y arriesgarte a perder ficheros,
+necesitas un sistema de basura. Por suerte, es bastante sencillio de hacer
+[usando alguna de estas herramientas](https://wiki.archlinux.org/index.php/Trash_management#Trash_creation)
+como **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**,
+y para interfaces gráficas como *thunar* necesitas **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**:
+
+```bash
+sudo pacman -S glib2 gvfs
+# Uso
+gio trash path/to/file
+# Vaciar papelera
+gio trash --empty
+```
+
+Con *thunar* puedes abrir la basura desde el panel izquierdo, pero desde la
+línea de comandos puedes hacer:
+
+```bash
+ls ~/.local/share/Trash/files
+```
+
 ## Tema de GTK
 
 El momento que has estado esperando ha llegado, finalmente vas a instalar un
@@ -796,6 +820,8 @@ y para *alacritty*, [este](https://github.com/antoniosarosi/dotfiles/tree/master
 | **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI para *xrandr*                             |
 | **[cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**                     | Systray para la batería                       |
 | **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Systray para el volumen                       |
+| **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**                                  | Basura                                        |
+| **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**                                   | Basura para GUIs                              |
 
 ## Fuentes, temas y GTK
 

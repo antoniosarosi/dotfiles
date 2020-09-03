@@ -37,6 +37,7 @@
   - [AUR helper](#aur-helper)
   - [Media Transfer Protocol](#media-transfer-protocol)
   - [File Manager](#file-manager)
+  - [Trash](#trash)
   - [GTK Theming](#gtk-theming)
   - [Lightdm theming](#lightdm-theming)
   - [Multimedia](#multimedia)
@@ -548,6 +549,29 @@ is very vim-like, only use it if you know how to move in vim.
 sudo pacman -S thunar ranger
 ```
 
+## Trash
+
+If you don't want to *rm* all the time and potentially lose files, you need a
+trashing system. Luckily, that's pretty easy to do, using
+[some of these tools](https://wiki.archlinux.org/index.php/Trash_management#Trash_creation)
+such as **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**,
+and for GUIs like *thunar* you need **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**:
+
+```bash
+sudo pacman -S glib2 gvfs
+# CLI usage
+gio trash path/to/file
+# Empty trash
+gio trash --empty
+```
+
+With *thunar* you can open the trash clicking on the left panel, but on the command
+line you can use:
+
+```bash
+ls ~/.local/share/Trash/files
+```
+
 ## GTK Theming
 
 The moment you have been wating for has arrived, you are finally going to
@@ -747,7 +771,7 @@ The following keybindings will only work if you install all programs needed:
 sudo pacman -S rofi thunar firefox alacritty redshift scrot
 ```
 
-Too set up *rofi*,
+To set up *rofi*,
 [check this README](https://github.com/antoniosarosi/dotfiles/tree/master/.config/rofi),
 and for *alacritty*, [this one](https://github.com/antoniosarosi/dotfiles/tree/master/.config/alacritty).
 
@@ -785,6 +809,8 @@ and for *alacritty*, [this one](https://github.com/antoniosarosi/dotfiles/tree/m
 | **[arandr](https://www.archlinux.org/packages/community/any/arandr/)**                              | GUI for *xrandr*                 |
 | **[cbatticon](https://www.archlinux.org/packages/community/x86_64/cbatticon/)**                     | Battery systray                  |
 | **[volumeicon](https://www.archlinux.org/packages/community/x86_64/volumeicon/)**                   | Volume systray                   |
+| **[glib2](https://www.archlinux.org/packages/core/x86_64/glib2/)**                                  | Trash                            |
+| **[gvfs](https://www.archlinux.org/packages/extra/x86_64/gvfs/)**                                   | Trash for GUIs                   |
 
 ## Fonts, theming and GTK
 
