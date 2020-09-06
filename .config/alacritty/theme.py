@@ -43,7 +43,7 @@ def change_theme(alacritty_file, theme_file):
 def main():
     if len(argv) != 2:
         print(f"Usage:\n{argv[0]} theme")
-        exit(0)
+        exit(1)
 
     alacritty_path = path.join(path.expanduser("~"), ".config", "alacritty")
     alacritty_file = path.join(alacritty_path, "alacritty.yml")
@@ -51,7 +51,7 @@ def main():
 
     if not path.exists(theme_file):
         print(f"Theme file {theme_file} does not exist")
-        exit(0)
+        exit(1)
 
     if change_theme(alacritty_file, theme_file):
         print("Theme successfully changed")

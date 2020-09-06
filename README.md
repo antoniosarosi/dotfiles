@@ -705,7 +705,7 @@ Ready to go.
 There are dozens of programs for multimedia stuff, check
 [this page](https://wiki.archlinux.org/index.php/List_of_applications/Multimedia).
 
-### Imágenes
+### Images
 
 For image previews, one of the best that I could find is
 [geeqie](https://www.archlinux.org/packages/extra/x86_64/geeqie/):

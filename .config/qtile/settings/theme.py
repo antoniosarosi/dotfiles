@@ -19,7 +19,7 @@ def load_theme():
         with open(config) as f:
             theme = json.load(f)["theme"]
     else:
-        with open(path.join(qtile_path, "config.json"), "w") as f:
+        with open(config, "w") as f:
             f.write(f'{{"theme": "{theme}"}}\n')
 
 

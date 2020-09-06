@@ -1,4 +1,5 @@
 background_opacity: 1
+
 colors:
   bright:
     black: '0x282a40'
@@ -9,6 +10,7 @@ colors:
     red: '0xeb7f84'
     white: '0xd1e5ed'
     yellow: '0xffee7e'
+
   normal:
     black: '0x181a29'
     blue: '0x93bbff'
@@ -18,9 +20,11 @@ colors:
     red: '0xF07178'
     white: '0xbfd5de'
     yellow: '0xffd47e'
+
   primary:
     background: '0x0f101a'
     foreground: '0xc5c9de'
+
 font:
   offset:
     y: 3
@@ -32,6 +36,7 @@ font:
     family: UbuntuMono Nerd Font
     style: Regular
   size: 12
+
 window:
   padding:
     x: 3

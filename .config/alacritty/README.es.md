@@ -20,6 +20,17 @@ git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.config/alacritty ~/.config
 ```
 
+Copia el fichero de configuración a otro llamado *alacritty.yml*:
+
+```bash
+cd ~/.config/alacritty
+cp config.yml alacritty.yml
+```
+
+La razón por la que lo tengo hecho de esta manera es porque de otra forma Git
+me avisaría de archivos modificados cada vez que cambio el tema de colores, pero
+así el tema es independiente del archivo de configuración.
+
 Uso del script automático para temas:
 
 ```bash

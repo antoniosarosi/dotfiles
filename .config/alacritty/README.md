@@ -20,6 +20,17 @@ git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.config/alacritty ~/.config
 ```
 
+Now, copy the config file and name it *alacritty.yml*:
+
+```bash
+cd ~/.config/alacritty
+cp config.yml alacritty.yml
+```
+
+The reason I have it set like this is because I don't want Git telling me about
+modified files every time I change my theme, this way the theme is independent
+of the configuration.
+
 Theme script usage:
 
 ```bash
