@@ -18,7 +18,7 @@ Config {
         Run UnsafeStdinReader
     ],
     alignSep = "}{",
-    template = "<fc=#b303ff>  </fc>%UnsafeStdinReader% }{ \
+    template = "<fc=#b303ff>   </fc>%UnsafeStdinReader% }{ \
         \<fc=#e1acff> %updates% </fc>\
         \<fc=#FFB86C> %brightness%</fc>\
         \<fc=#c3e88d> %battery%</fc>\

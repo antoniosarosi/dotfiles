@@ -155,6 +155,8 @@ myKeys =
     ("M-,", prevScreen),
     -- Switch to next layout
     ("M-<Tab>", sendMessage NextLayout),
+    -- Switch to first layout
+    ("M-S-<Tab>", sendMessage FirstLayout),
     -- Toggles noborder/full
     ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts),
     -- Toggles noborder

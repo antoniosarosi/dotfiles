@@ -18,6 +18,7 @@ Patches:
 - [fullgaps](https://dwm.suckless.org/patches/fullgaps/dwm-fullgaps-20200508-7b77734.diff)
 - [gridmode](https://dwm.suckless.org/patches/gridmode/dwm-gridmode-20170909-ceac8c9.diff)
 - [columns](https://dwm.suckless.org/patches/columns/dwm-columns-6.0.diff)
+- [pertag](https://dwm.suckless.org/patches/pertag/)
 - [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/dwm-cyclelayouts-20180524-6.2.diff)
 
 To install this on your system, first you need the following dependencies:
