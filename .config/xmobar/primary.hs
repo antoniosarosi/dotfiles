@@ -9,12 +9,12 @@ Config {
     allDesktops = True,
     persistent = True,
     commands = [ 
-        Run Date "  %d %b %Y %H:%M " "date" 60,
-        Run Com "volume" [] "volume" 1,
-        Run Com "battery" [] "battery" 60,
-        Run Com "brightness" [] "brightness" 1,
-        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
-        Run Com "/home/antonio/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 20,
+        Run Date "  %d %b %Y %H:%M " "date" 600,
+        Run Com "volume" [] "volume" 10,
+        Run Com "battery" [] "battery" 600,
+        Run Com "brightness" [] "brightness" 10,
+        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
+        Run Com "/home/antonio/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
         Run UnsafeStdinReader
     ],
     alignSep = "}{",

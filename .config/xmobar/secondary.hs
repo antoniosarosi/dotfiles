@@ -9,12 +9,12 @@ Config {
     allDesktops = True,
     persistent = True,
     commands = [ 
-        Run Date "  %d %b %Y %H:%M " "date" 60,
-        Run Network "wlp2s0" ["-t", " <rx>kb  <tx>kb"] 30,
-        Run Cpu ["-t", " (<total>%)","-H","50","--high","red"] 20,
-        Run Memory ["-t", "  <used>M (<usedratio>%)"] 20,
-        Run Com "volume" [] "volume" 1,
-        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 60,
+        Run Date "  %d %b %Y %H:%M " "date" 600,
+        Run Network "wlp2s0" ["-t", " <rx>kb  <tx>kb"] 150,
+        Run Cpu ["-t", " (<total>%)","-H","50","--high","red"] 150,
+        Run Memory ["-t", "  <used>M (<usedratio>%)"] 150,
+        Run Com "volume" [] "volume" 10,
+        Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
         Run UnsafeStdinReader
     ],
     sepChar = "%",
