@@ -50,8 +50,16 @@ while :; do
         bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
             grep percentage |
             sed 's/ *percentage: *//g'`
+
+        state=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
+            grep state |
+            sed 's/ *state: *//'`
     fi
-    echo -n "$(percentage $bat            )  $bat "
+    echo -n "$(percentage $bat            )  "
+    if [[ $state == "charging" ]]; then
+        echo -n "$(icon  ) "
+    fi
+    echo -n "$bat "
 
     # Date
     if (( $i % 60 == 0 )); then
