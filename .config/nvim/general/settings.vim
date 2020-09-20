@@ -1,4 +1,6 @@
-let g:mapleader = "\<Space>"
+if !exists('g:vscode')
+    let g:mapleader = "\<Space>"
+endif
 
 set number relativenumber
 set colorcolumn=81
