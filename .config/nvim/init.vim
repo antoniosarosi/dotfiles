@@ -18,4 +18,4 @@ source $HOME/.config/nvim/plug-config/prettier.vim
 " Themes
 source $HOME/.config/nvim/general/colors.vim
 source $HOME/.config/nvim/themes/airline.vim
-source $HOME/.config/nvim/themes/dracula.vim
+source $HOME/.config/nvim/themes/material.vim
