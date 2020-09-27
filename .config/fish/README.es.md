@@ -11,7 +11,6 @@ Instala *fish* y las dependencias:
 ```bash
 sudo pacman -S fish
 curl -L https://get.oh-my.fish | fish
-omf install spacefish
 ```
 
 Copia mis configs:
@@ -21,6 +20,12 @@ git clone https://github.com/antoniosarosi/dotfiles.git
 cp -r dotfiles/.config/fish ~/.config
 ```
 
+Instala los paquetes de *omf*:
+
+```bash
+omf install
+```
+
 Cambia tu shell:
 
 ```bash
@@ -28,4 +33,11 @@ Cambia tu shell:
 chsh -l
 # Cambia tu shell
 chsh -s /bin/fish
+```
+
+Temas:
+
+```bash
+omf theme agnoster
+omf theme spacefish
 ```
