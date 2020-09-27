@@ -55,9 +55,10 @@ while :; do
             grep state |
             sed 's/ *state: *//'`
     fi
-    echo -n "$(percentage $bat            )  "
-    if [[ $state == "charging" ]]; then
+    if [ $state == "charging" -o $state == "fully-charged" ]; then
         echo -n "$(icon  ) "
+    else
+        echo -n "$(percentage $bat            )  "
     fi
     echo -n "$bat "
 

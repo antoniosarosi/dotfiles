@@ -41,7 +41,7 @@
   - [GTK Theming](#gtk-theming)
   - [Lightdm theming](#lightdm-theming)
   - [Multimedia](#multimedia)
-    - [Imágenes](#imágenes)
+    - [Images](#images)
     - [Video and audio](#video-and-audio)
   - [Start Hacking](#start-hacking)
 - [Gallery](#gallery)
