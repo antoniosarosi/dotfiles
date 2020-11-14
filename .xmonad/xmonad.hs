@@ -179,7 +179,7 @@ myKeys =
     -- Browser
     ("M-b", spawn "firefox"),
     -- File explorer
-    ("M-e", spawn "thunar"),
+    ("M-e", spawn "pcmanfm"),
     -- Terminal
     ("M-<Return>", spawn myTerminal),
     -- Redshift
