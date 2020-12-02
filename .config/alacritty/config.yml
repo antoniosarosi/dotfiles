@@ -28,12 +28,24 @@ colors:
 font:
   bold:
     family: UbuntuMono Nerd Font
+    # family: mononoki Nerd Font
+    # family: agave Nerd Font
+    # family: Caskaydia Cove Nerd Font
+    # family: JetBrains Mono ExtraBold Nerd Font 
   italic:
     family: UbuntuMono Nerd Font
+    # family: mononoki Nerd Font
+    # family: agave Nerd Font
+    # family: Caskaydia Cove Nerd Font
+    # family: JetBrains Mono Medium Nerd Font
   normal:
     family: UbuntuMono Nerd Font
+    # family: mononoki Nerd Font
+    # family: agave Nerd Font
+    # family: Caskaydia Cove Nerd Font
+    # family: JetBrains Mono Medium Nerd Font
     style: Regular
-  size: 12.5
+  size: 14
 
 window:
   padding:
