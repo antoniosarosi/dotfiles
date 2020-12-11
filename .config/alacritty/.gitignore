@@ -1,1 +1,6 @@
-alacritty.yml
+/*
+!.gitignore
+
+!README.md
+!alacritty.png
+!config.yaml
