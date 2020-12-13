@@ -1,3 +1,6 @@
 [submodule ".config/alacritty/pycritty"]
 	path = .config/alacritty/pycritty
 	url = https://github.com/antoniosarosi/pycritty
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = https://github.com/antoniosarosi/dwm
