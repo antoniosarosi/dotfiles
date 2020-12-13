@@ -776,13 +776,13 @@ cada uno tiene su documentación propia:
 ![Spectrwm](.screenshots/spectrwm.png)
 
 ## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
-![Spectrwm](.screenshots/openbox.png)
+![Openbox](.screenshots/openbox.png)
 
 ## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
-![Spectrwm](.screenshots/xmonad.png)
+![Xmonad](.screenshots/xmonad.png)
 
-## [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
-![Spectrwm](.screenshots/dwm.png)
+## [Dwm](https://github.com/antoniosarosi/dwm)
+![Dwm](.screenshots/dwm.png)
 
 # Atajos de teclado
 
