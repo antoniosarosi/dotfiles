@@ -17,7 +17,7 @@ yay -S nerd-fonts-ubuntu-mono
 
 # Clona este repositorio y copia mis configuraciones
 git clone https://github.com/antoniosarosi/dotfiles.git
-cp -r dotfiles/.xmonad ~
+cp -r dotfiles/.config/xmonad ~/.config
 cp -r dotfiles/.config/xmobar ~/.config
 ```
 
