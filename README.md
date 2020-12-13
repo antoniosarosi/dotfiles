@@ -752,8 +752,8 @@ which are located in this repository and have their own documentation:
 - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile)
 - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm)
 - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
-- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
-- [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm)
+- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.config/xmonad)
+- [Dwm](https://github.com/antoniosarosi/dwm)
 
 # Gallery
 
@@ -766,7 +766,7 @@ which are located in this repository and have their own documentation:
 ## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
 ![Openbox](.screenshots/openbox.png)
 
-## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.config/xmonad)
 ![Xmonad](.screenshots/xmonad.png)
 
 ## [Dwm](https://github.com/antoniosarosi/dwm)

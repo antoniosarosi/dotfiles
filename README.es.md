@@ -764,8 +764,8 @@ cada uno tiene su documentación propia:
 - [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile/README.es.md)
 - [Spectrwm](https://github.com/antoniosarosi/dotfiles/tree/master/.config/spectrwm/README.es.md)
 - [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox/README.es.md)
-- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad/README.es.md)
-- [Dwm](https://github.com/antoniosarosi/dotfiles/tree/master/.dwm/README.es.md)
+- [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.config/xmonad/README.es.md)
+- [Dwm](https://github.com/antoniosarosi/dwm)
 
 # Galería
 
@@ -778,7 +778,7 @@ cada uno tiene su documentación propia:
 ## [Openbox](https://github.com/antoniosarosi/dotfiles/tree/master/.config/openbox)
 ![Openbox](.screenshots/openbox.png)
 
-## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.xmonad)
+## [Xmonad](https://github.com/antoniosarosi/dotfiles/tree/master/.config/xmonad)
 ![Xmonad](.screenshots/xmonad.png)
 
 ## [Dwm](https://github.com/antoniosarosi/dwm)
