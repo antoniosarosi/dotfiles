@@ -23,3 +23,6 @@ udiskie -t &
 xsettingsd &
 # Wallpaper
 nitrogen --restore &
+# Overlay Bar
+xob-pulse-py &
+
