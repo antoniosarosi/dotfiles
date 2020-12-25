@@ -39,6 +39,7 @@
   - [File Manager](#file-manager)
   - [Trash](#trash)
   - [GTK Theming](#gtk-theming)
+  - [Qt](#qt)
   - [Lightdm theming](#lightdm-theming)
   - [Multimedia](#multimedia)
     - [Images](#images)
@@ -670,6 +671,17 @@ sudo pacman -S picom
 picom &
 ```
 
+## Qt
+
+GTK themes will not be applied to Qt programs, but you can use
+[**Kvantum**](https://archlinux.org/packages/?name=kvantum-qt5) to change the
+default theme:
+
+```bash
+sudo pacman -S kvantum-qt5
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+```
+
 ## Lightdm theming
 
 We can also change the theme of *lightdm* and make it look cooler, because why
@@ -723,17 +735,6 @@ is exactly what you need:
 ```bash
 sudo pacman -S vlc
 ```
-
-You might want a dark theme though.
-
-```bash
-yay -S vlc-arc-dark-git
-```
-
-Open *vlc*, tools, preferences, "use custom skin", and choose this file:
-**/usr/share/vlc/skins2/Arc-Dark-Fixed-Size.vlt**
-
-Then save changes, and you can use *vlc* for audio and video playing.
 
 ## Start Hacking
 

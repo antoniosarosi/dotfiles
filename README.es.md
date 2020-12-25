@@ -39,6 +39,8 @@
   - [Explorador de archivos](#explorador-de-archivos)
   - [Basura](#basura)
   - [Tema de GTK](#tema-de-gtk)
+  - [Tema de Qt](#tema-de-qt)
+  - [Qt](#qt)
   - [Tema de lightdm](#tema-de-lightdm)
   - [Multimedia](#multimedia)
     - [Imágenes](#imágenes)
@@ -680,6 +682,19 @@ sudo pacman -S picom
 picom &
 ```
 
+## Tema de Qt
+
+## Qt
+
+Los temas de GTK no se aplican a programas Qt, pero puedes usar
+[**Kvantum**](https://archlinux.org/packages/?name=kvantum-qt5) para cambiar
+los temas por defecto:
+
+```bash
+sudo pacman -S kvantum-qt5
+echo "export QT_STYLE_OVERRIDE=kvantum" >> ~/.profile
+```
+
 ## Tema de lightdm
 
 También podemos cambiar el tema de *lightdm* para que mole más, ¿por qué no?
@@ -734,18 +749,6 @@ es lo que necesitamos:
 ```bash
 sudo pacman -S vlc
 ```
-
-Eso sí, quizás quieras cambiarle el tema.
-
-```bash
-yay -S vlc-arc-dark-git
-```
-
-Después, abre *vlc*, herramientas, preferencias, "use custom skin", y
-navega hasta este fichero: **/usr/share/vlc/skins2/Arc-Dark-Fixed-Size.vlt**
-
-Después simplemente guarda los cambios, y ya puedes usar *vlc* para reproducir
-música y vídeo.
 
 ## Empieza a hackear
 
