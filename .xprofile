@@ -24,5 +24,6 @@ xsettingsd &
 # Wallpaper
 nitrogen --restore &
 # Overlay Bar
-xob-pulse-py &
+xob-pulse-py | xob -s main &
+
 
