@@ -23,4 +23,6 @@ set SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
 set SPACEFISH_USER_SHOW always
 set SPACEFISH_USER_COLOR green
 set SPACEFISH_HOST_SHOW always
+set SPACEFISH_HOST_COLOR cyan
+set SPACEFISH_DIR_COLOR blue
 set SPACEFISH_PROMPT_ORDER time user host dir git package node ruby golang php rust haskell julia elixir docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char  
