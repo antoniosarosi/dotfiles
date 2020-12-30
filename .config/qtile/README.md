@@ -37,6 +37,14 @@ this line, you should find it inside a list called *primary_widgets*:
  widget.Net(**base(bg='color3'), interface='wlp2s0'),
 ```
 
+If at this point the error still continues, you should check that the ** psutil ** python library is installed
+
+```python
+# you can install the library executing the command
+pip install psutil
+```
+
+
 Once that's done, you can login. But keep in mind keybindings will not work
 unless you have the same programs that I use and the same configs. You can
 either change keybindings or install the software I use and my config files,
