@@ -37,6 +37,13 @@ esta línea, debería estar dentro de una lista llamada *primary_widgets*:
  widget.Net(**base(bg='color3'), interface='wlp2s0'),
 ```
 
+Si en este punto aun sigue el error, debes revisar que este instalada la libreria **psutil** de python
+
+```python
+# para instalar la libreria ejecuta el comando
+pip install psutil
+```
+
 Una vez eso está hecho, puedes iniciar sesión. Pero recuerda que los atajos de
 teclado no funcionarán a no ser que tengas todos los programas que uso yo y las
 mismas configuraciones. Puedes cambiar los atajos de teclado o bien instalar el
