@@ -467,7 +467,7 @@ Exec=/usr/lib/notification-daemon-1.0/notification-daemon
 Test it like so:
 
 ```bash
-notification-send "Hello World"
+notify-send "Hello World"
 ```
 
 ## Xprofile
