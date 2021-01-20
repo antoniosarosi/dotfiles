@@ -1,6 +1,7 @@
 # Env vars
 export PATH=$HOME/.local/bin:$PATH
 export _JAVA_AWT_WM_NONREPARENTING=1
+export QT_STYLE_OVERRIDE=kvantum 
 
 # Screens
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
@@ -24,6 +25,7 @@ xsettingsd &
 # Wallpaper
 nitrogen --restore &
 # Overlay Bar
-xob-pulse-py | xob -s main &
+xob-pulse-py | xob -s pulse &
+xob-brightness-js | xob -s brightness &
 
 
