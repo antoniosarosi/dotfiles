@@ -27,12 +27,12 @@ yay -S universal-ctags-git
 
 Después ejecuta ```:PlugInstall``` dentro de neovim y debería funcionar.
 
-## Vsocde
+## Vscode
 
 Copia los archivos ```settings.json``` y ```keybindings.json``` de mi
 [gist](https://gist.github.com/antoniosarosi/eb8d73a580eaa3e7dc32b0b803b4654d).
 y después instala las extensiones
-(Neovim)[https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim]
+[Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 y
 (Which Key)[https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey].
 
