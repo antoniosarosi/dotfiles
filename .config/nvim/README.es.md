@@ -34,7 +34,7 @@ Copia los archivos ```settings.json``` y ```keybindings.json``` de mi
 y después instala las extensiones
 [Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 y
-(Which Key)[https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey].
+[Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey).
 
 Estos son algunos atajos de teclado que tengo aparte de los que vienen por
 defecto:
