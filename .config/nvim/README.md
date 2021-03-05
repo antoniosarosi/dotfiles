@@ -25,14 +25,19 @@ sudo pacman -S xsel fzf ripgrep fd the_silver_searcher prettier
 yay -S universal-ctags-git
 ```
 
-Then execute ```:PlugInstall``` inside neovim. Finally, if you want to use
-the Vsocde config as well then copy it from my
-[gist](https://gist.github.com/antoniosarosi/eb8d73a580eaa3e7dc32b0b803b4654d).
-You will need to copy ```settings.json``` and ```keybindings.json```.
+Then execute ```:PlugInstall``` inside neovim and it should be ready.
 
-Now open *neovim* and execute *:PlugInstall*. Close *neovim*, and next time
-you open it all my configs should be applied. This are some keybingins besides
-default ones:
+## Vscode
+
+Copy ```settings.json``` and ```keybindings.json``` from my
+[gist](https://gist.github.com/antoniosarosi/eb8d73a580eaa3e7dc32b0b803b4654d).
+and then install the 
+[Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey)
+and
+[Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
+extensions.
+
+This are some keybingins besides default ones:
 
 | Key                    | Action                                 |
 | ---------------------- | -------------------------------------- |

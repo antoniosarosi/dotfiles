@@ -25,14 +25,19 @@ sudo pacman -S xsel fzf ripgrep fd the_silver_searcher prettier
 yay -S universal-ctags-git
 ```
 
-Después ejecuta ```:PlugInstall``` dentro de neovim. Finalmente, si quieres usar
-la configuración de Vscode cópiala de mi
-[gist](https://gist.github.com/antoniosarosi/eb8d73a580eaa3e7dc32b0b803b4654d).
-Necesitarás copiar lo que hay en ```settings.json``` y ```keybindings.json```.
+Después ejecuta ```:PlugInstall``` dentro de neovim y debería funcionar.
 
-Abre *neovim* y ejecuta *:PlugInstall*. Cierra *neovim*, y la próxima vez
-que lo abras, las configuraciones se habrán aplicado. Estos son algunos atajos
-de teclado que tengo aparte de los que vienen por defecto:
+## Vscode
+
+Copia los archivos ```settings.json``` y ```keybindings.json``` de mi
+[gist](https://gist.github.com/antoniosarosi/eb8d73a580eaa3e7dc32b0b803b4654d).
+y después instala las extensiones
+[Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
+y
+[Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey).
+
+Estos son algunos atajos de teclado que tengo aparte de los que vienen por
+defecto:
 
 | Atajo                  | Acción                                  |
 | ---------------------- | --------------------------------------- |
