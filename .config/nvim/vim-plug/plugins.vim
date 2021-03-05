@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
     else
         " Syntax support
         Plug 'sheerun/vim-polyglot'
+        " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         " Autopairs
         Plug 'jiangmiao/auto-pairs'
         " File explorer
@@ -20,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
         " Indent guides
-        Plug 'Yggdroot/indentLine' 
+        " Plug 'Yggdroot/indentLine' 
         " Git integration
         Plug 'mhinz/vim-signify'
         " Autoclose tags

@@ -3,6 +3,7 @@
 # https://github.com/antoniosarosi/dotfiles
 
 from libqtile import layout
+from libqtile.config import Match
 from settings.theme import colors
 
 # Layouts and layout rules
@@ -30,20 +31,13 @@ layouts = [
 
 floating_layout = layout.Floating(
     float_rules=[
-        {'wmclass': 'confirm'},
-        {'wmclass': 'dialog'},
-        {'wmclass': 'download'},
-        {'wmclass': 'error'},
-        {'wmclass': 'file_progress'},
-        {'wmclass': 'notification'},
-        {'wmclass': 'splash'},
-        {'wmclass': 'toolbar'},
-        {'wmclass': 'confirmreset'},
-        {'wmclass': 'makebranch'},
-        {'wmclass': 'maketag'},
-        {'wname': 'branchdialog'},
-        {'wname': 'pinentry'},
-        {'wmclass': 'ssh-askpass'},
+        *layout.Floating.default_float_rules,
+        Match(wm_class='confirmreset'),
+        Match(wm_class='makebranch'),
+        Match(wm_class='maketag'),
+        Match(wm_class='ssh-askpass'),
+        Match(title='branchdialog'),
+        Match(title='pinentry'),
     ],
     border_focus=colors["color4"][0]
 )
