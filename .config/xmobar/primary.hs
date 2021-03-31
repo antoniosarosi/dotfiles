@@ -14,7 +14,7 @@ Config {
         Run Com "battery" [] "battery" 600,
         Run Com "brightness" [] "brightness" 10,
         Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
-        Run Com "/home/antonio/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
+        Run Com "~/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
         Run UnsafeStdinReader
     ],
     alignSep = "}{",
