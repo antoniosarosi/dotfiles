@@ -4,7 +4,7 @@
 
 from libqtile import layout
 from libqtile.config import Match
-from settings.theme import colors
+from .theme import colors
 
 # Layouts and layout rules
 

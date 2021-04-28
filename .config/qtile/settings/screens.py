@@ -7,7 +7,7 @@
 from libqtile.config import Screen
 from libqtile import bar
 from libqtile.log_utils import logger
-from settings.widgets import primary_widgets, secondary_widgets
+from .widgets import primary_widgets, secondary_widgets
 import subprocess
 
 
