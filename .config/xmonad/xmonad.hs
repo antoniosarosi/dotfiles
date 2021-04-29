@@ -189,6 +189,7 @@ myKeys =
     ("M-S-r", spawn "redshift -x"),
     -- Scrot
     ("M-s", spawn "scrot"),
+    ("M-S-s", spawn "scrot -s"),
 
     --------------------- Hardware ---------------------
 

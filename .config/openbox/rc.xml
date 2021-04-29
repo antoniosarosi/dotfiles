@@ -402,6 +402,16 @@
         <command>scrot</command>
       </action>
     </keybind>
+    <!-- Manual screenshot -->
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Scrot -s</name>
+        </startupnotify>
+        <command>scrot -s</command>
+      </action>
+    </keybind>
     <!-- Hardware -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
