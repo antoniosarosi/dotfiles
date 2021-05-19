@@ -195,7 +195,7 @@ teclado que vienen por defecto.
 | **mod + k**          | ventana siguiente                   |
 | **mod + j**          | ventana anterior                    |
 | **mod + w**          | cerrar ventana                      |
-| **mod + [asdfuiop]** | ir al espacio de trabajo [asdfuiop] |
+| **mod + [12345678]** | ir al espacio de trabajo [12345678] |
 | **mod + ctrl + r**   | reiniciar qtile                     |
 | **mod + ctrl + q**   | cerrar sesión                       |
 
