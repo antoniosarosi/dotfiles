@@ -78,10 +78,10 @@
       <name>DEV</name>
       <name>TERM</name>
       <name>REF</name>
-      <name>SYS</name>
+      <name>GIT</name>
+      <name>DOCK</name>
       <name>FS</name>
-      <name>IMG</name>
-      <name>VID</name>
+      <name>MEDIA</name>
       <name>MISC</name>
     </names>
     <popupTime>500</popupTime>

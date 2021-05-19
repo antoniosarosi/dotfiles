@@ -15,14 +15,13 @@ from .keys import mod, keys
 # nf-fae-python, 
 # nf-dev-terminal, 
 # nf-fa-code, 
-# nf-seti-config, 
-# nf-mdi-folder, 
+# nf-oct-git_merge, 
+# nf-linux-docker,
 # nf-mdi-image, 
-# nf-fa-video_camera, 
 # nf-mdi-layers
 
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ",
+    "   ", "   ", "   ", "   ", "  ", "   ", "   ", "   ", "   ",
 ]]
 
 for i, group in enumerate(groups):
