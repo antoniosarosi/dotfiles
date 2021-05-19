@@ -22,5 +22,5 @@ else
     " Themes
     source $HOME/.config/nvim/general/colors.vim
     source $HOME/.config/nvim/themes/airline.vim
-    source $HOME/.config/nvim/themes/onedark.vim
+    source $HOME/.config/nvim/themes/monokai-pro.vim
 endif

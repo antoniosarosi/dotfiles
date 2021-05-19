@@ -42,5 +42,6 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'crusoexia/vim-monokai'
         Plug 'ayu-theme/ayu-vim'
         Plug 'dracula/vim', { 'as': 'dracula' }
+        Plug 'phanviet/vim-monokai-pro'
     endif
 call plug#end()
