@@ -20,6 +20,7 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
@@ -52,6 +53,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 bindkey -v '^?' backward-delete-char
+bindkey '^R' history-incremental-search-backward
 
 # Change cursor shape for different vim modes
 function zle-keymap-select() {
@@ -70,7 +72,12 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q'
 
-# Plugins
+# Plugins (Install them using the commands provided)
+
+# curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -o ~/.sudo.plugin.zsh
+source ~/.sudo.plugin.zsh
+bindkey -M vicmd '^[s' sudo-command-line # ALT + s
+bindkey -M viins '^[s' sudo-command-line # ALT + s
 # sudo pacman -S zsh-syntax-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # sudo pacman -S zsh-syntax-highlighting
