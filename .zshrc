@@ -9,7 +9,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Aliases
-
 alias grep='grep --color=auto'
 alias cat='ccat -G Plaintext="blink" -G Keyword="purple" -G String="darkgreen" -G Punctuation="brown" -G Comment="faint"'
 alias ls='exa --group-directories-first'
@@ -27,6 +26,7 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 
 setopt autocd
 
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # History
@@ -71,7 +71,9 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 
 # Plugins
+# sudo pacman -S zsh-syntax-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# sudo pacman -S zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
