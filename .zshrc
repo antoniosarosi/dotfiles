@@ -38,6 +38,7 @@ HISTFILE=~/.cache/zsh/history
 
 # Autocomplete
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'r:|?=**'
 zmodload zsh/complist
 autoload -Uz compinit
 compinit
