@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias grep='grep --color=auto'
-alias cat='ccat -G Plaintext="blink" -G Keyword="purple" -G String="darkgreen" -G Punctuation="brown" -G Comment="faint"'
+alias cat='bat --style=plain --paging=never'
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
 alias dotfiles="git --git-dir $HOME/.dotfiles/ --work-tree $HOME"
