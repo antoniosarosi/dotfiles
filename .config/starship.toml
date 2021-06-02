@@ -6,6 +6,10 @@ add_newline = false
 
 format = "[$symbol$branch]($style) "
 
+[package]
+
+format = "[$symbol$version]($style) "
+
 [python]
 
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
@@ -17,6 +21,7 @@ format = "[$symbol($version )]($style)"
 [php]
 
 format = "[$symbol($version )]($style)"
+symbol = " "
 
 [java]
 
