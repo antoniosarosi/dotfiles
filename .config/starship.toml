@@ -1,5 +1,7 @@
 scan_timeout = 60
 
+add_newline = false
+
 [git_branch]
 
 format = "[$symbol$branch]($style) "
