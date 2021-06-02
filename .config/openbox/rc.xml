@@ -468,6 +468,16 @@
         <command>openbox --restart</command>
       </action>
     </keybind>
+
+    <keybind key="W-C-q">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Quit</name>
+        </startupnotify>
+        <command>openbox --exit</command>
+      </action>
+    </keybind>
   </keyboard>
 
   <mouse>
