@@ -26,7 +26,7 @@ cp -r dotfiles/.config/spectrwm ~/.config
 
 This config, unlike [Qtile's](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile),
 is pretty simple, Spectrwm doesn't allow much hacking as it is configured with
-a *.conf* file. First, we have an *autostart* script, which launches *trayer*:
+a `.conf` file. First, we have an `autostart` script, which launches `trayer`:
 
 ```bash
 #!/bin/bash
@@ -58,7 +58,7 @@ these dependencies:
 sudo pacman -S pacman-contrib upower brightnessctl pamixer
 ```
 
-Test it with **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
+Test it with [`Xephyr`](https://wiki.archlinux.org/index.php/Xephyr):
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
@@ -66,7 +66,7 @@ DISPLAY=:1 spectrwm
 ```
 
 If the battery doesn't work (if you're on a laptop, obviously), look for this
-line in **baraction.sh**:
+line in `baraction.sh`:
 
 ```bash
 bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
@@ -74,7 +74,7 @@ bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
     sed 's/ *percentage: *//g'`
 ```
 
-You might need to change *battery_BAT1* to the value you see in this output:
+You might need to change `battery_BAT1` to the value you see in this output:
 
 ```bash
 upower -d
@@ -88,14 +88,14 @@ for instructions.
 
 ## Bar format
 
-In **spectrwm.conf** you can find this line:
+In `spectrwm.conf` you can find this line:
 
 ```ini
 bar_format = +|L+@fn=2; +@fn=0;+@fg=1; +D+@fn=1;+@fg=2;+3<+W+|R+@fn=2;+A
 ```
 
-It has a weird syntax, but basically each time you see *"+@fn=X;"* it uses a
-different font, and *"+@fg=X;"* means a different foreground. This is how fonts
+It has a weird syntax, but basically each time you see `+@fn=X;` it uses a
+different font, and `+@fg=X;` means a different foreground. This is how fonts
 and colors are defined:
 
 ```ini
@@ -112,5 +112,5 @@ Read the man page for specific documentation:
 man spectrwm
 ```
 
-Read **spectrwm.conf** and **~/.config/spectrwm/baraction.sh** to understand
+Read `spectrwm.conf` and `~/.config/spectrwm/baraction.sh` to understand
 the rest of the config.

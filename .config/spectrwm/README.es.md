@@ -60,7 +60,7 @@ instalar estas dependencias:
 sudo pacman -S pacman-contrib upower brightnessctl pamixer
 ```
 
-Pruébalo con **[Xephyr](https://wiki.archlinux.org/index.php/Xephyr)**:
+Pruébalo con [`Xephyr`](https://wiki.archlinux.org/index.php/Xephyr):
 
 ```bash
 Xephyr -br -ac -noreset -screen 1280x720 :1 &
@@ -68,7 +68,7 @@ DISPLAY=:1 spectrwm
 ```
 
 Si la batería no funciona (si estás en un portátil, claro),  busca esta línea en
-**baraction.sh**:
+`baraction.sh`:
 
 ```bash
 bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
@@ -76,7 +76,7 @@ bat=`upower -i /org/freedesktop/UPower/devices/battery_BAT1 |
     sed 's/ *percentage: *//g'`
 ```
 
-Puede que necesites cambiar *battery_BAT1* por el valor que veas en esta salida:
+Puede que necesites cambiar `battery_BAT1` por el valor que veas en esta salida:
 
 ```bash
 upower -d
@@ -91,14 +91,14 @@ para las instrucciones.
 
 ## Bar format
 
-En **spectrwm.conf** puedes encontrar esta línea:
+En `spectrwm.conf` puedes encontrar esta línea:
 
 ```ini
 bar_format = +|L+@fn=2; +@fn=0;+@fg=1; +D+@fn=1;+@fg=2;+3<+W+|R+@fn=2;+A
 ```
 
-Tiene una sintaxis extraña, pero básicamente, cada vez que pone "*+@fn=X;*" se
-usa una fuente distinta, y "*+@fg=X;*" significa un color de fuente distinto.
+Tiene una sintaxis extraña, pero básicamente, cada vez que pone `+@fn=X;` se
+usa una fuente distinta, y `+@fg=X;` significa un color de fuente distinto.
 Así es como se definen los colores y fuentes:
 
 ```ini
