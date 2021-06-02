@@ -6,6 +6,7 @@
 # Except for the files and folders we want to track
 !README.md
 !README.es.md
+!pkgs.txt
 !.screenshots
 !.bashrc
 !.zshrc
