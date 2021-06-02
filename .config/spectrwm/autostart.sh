@@ -3,12 +3,12 @@
 # Spectrwm autostart script
 
 trayer                 \
+    --monitor primary  \
     --edge top         \
-    --monitor 1        \
     --widthtype pixel  \
     --width 100        \
     --heighttype pixel \
-    --height 20        \
+    --height 18        \
     --align right      \
     --margin 455       \
     --transparent true \
