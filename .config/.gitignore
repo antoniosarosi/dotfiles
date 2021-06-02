@@ -5,7 +5,7 @@
 # Except for the files and folders we want to track
 !alacritty
 !fish
-!omf
+!starship.toml
 !nvim
 !rofi
 !vifm

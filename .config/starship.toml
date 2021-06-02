@@ -1,0 +1,25 @@
+scan_timeout = 60
+
+[git_branch]
+
+format = "[$symbol$branch]($style) "
+
+[python]
+
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[nodejs]
+
+format = "[$symbol($version )]($style)"
+
+[php]
+
+format = "[$symbol($version )]($style)"
+
+[java]
+
+format = "[${symbol}(${version} )]($style)"
+
+[rust]
+
+format = "[$symbol($version )]($style)"
