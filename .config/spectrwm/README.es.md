@@ -27,8 +27,8 @@ cp -r dotfiles/.config/spectrwm ~/.config
 Esta configuración, a diferencia de la de
 [Qtile](https://github.com/antoniosarosi/dotfiles/tree/master/.config/qtile),
 es bastante sencilla, Spectrwm no deja muchas posibilidades ya que se configura
-con un archivo *.conf*. Primero, tenemos un script para el *autostart*, que
-lanza *trayer*:
+con un archivo `.conf`. Primero, tenemos un script para el `autostart`, que
+lanza `trayer`:
 
 ```bash
 #!/bin/bash
@@ -115,5 +115,5 @@ Para documentación específica:
 man spectrwm
 ```
 
-Lee **spectrwm.conf** y **~/.config/spectrwm/baraction.sh** para entender el
+Lee `spectrwm.conf` y `~/.config/spectrwm/baraction.sh` para entender el
 resto de la configuración.
