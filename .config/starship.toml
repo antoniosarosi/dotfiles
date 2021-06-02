@@ -9,10 +9,12 @@ format = "[$symbol$branch]($style) "
 [package]
 
 format = "[$symbol$version]($style) "
+symbol = " "
 
 [python]
 
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
 
 [nodejs]
 
@@ -26,7 +28,13 @@ symbol = " "
 [java]
 
 format = "[${symbol}(${version} )]($style)"
+symbol = " "
 
 [rust]
 
 format = "[$symbol($version )]($style)"
+
+[golang]
+
+format = "[$symbol($version )]($style)"
+symbol = " "
