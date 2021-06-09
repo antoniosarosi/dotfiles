@@ -111,3 +111,8 @@ fi
 
 [[ -f $fzf ]] && source $fzf
 
+# Functions
+
+math() {
+  echo $(( $@ ))
+}

@@ -2,6 +2,10 @@ scan_timeout = 60
 
 add_newline = false
 
+[directory]
+
+style = "bold blue"
+
 [git_branch]
 
 format = "[$symbol$branch]($style) "
