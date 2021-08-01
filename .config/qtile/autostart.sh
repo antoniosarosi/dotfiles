@@ -1,6 +1,3 @@
 #!/bin/sh
 
-# systray battery icon
-cbatticon -u 5 &
-# systray volume
-volumeicon &
+dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &

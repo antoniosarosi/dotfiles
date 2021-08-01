@@ -7,3 +7,6 @@
 !brightness
 !xob-pulse-py
 !xob-brightness-js
+!asus_backlight.rs
+!asus_battery_threshold.rs
+!intel_turbo.rs

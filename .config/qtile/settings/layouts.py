@@ -3,7 +3,6 @@
 # https://github.com/antoniosarosi/dotfiles
 
 from libqtile import layout
-from libqtile.config import Match
 from .theme import colors
 
 # Layouts and layout rules
@@ -12,7 +11,7 @@ from .theme import colors
 layout_conf = {
     'border_focus': colors['focus'][0],
     'border_width': 1,
-    'margin': 4
+    'margin': 8
 }
 
 layouts = [
@@ -32,12 +31,25 @@ layouts = [
 floating_layout = layout.Floating(
     float_rules=[
         *layout.Floating.default_float_rules,
-        Match(wm_class='confirmreset'),
-        Match(wm_class='makebranch'),
-        Match(wm_class='maketag'),
-        Match(wm_class='ssh-askpass'),
-        Match(title='branchdialog'),
-        Match(title='pinentry'),
+        {'wm_class': 'confirmreset'},
+        {'wm_class': 'makebranch'},
+        {'wm_class': 'maketag'},
+        {'wm_class': 'ssh-askpass'},
+        {'title': 'branchdialog'},
+        {'title': 'pinentry'},
+        {'wmclass': 'Arcolinux-welcome-app.py'},
+        {'wmclass': 'Arcolinux-tweak-tool.py'},
+        {'wmclass': 'Arcolinux-calamares-tool.py'},
+        {'wmclass': 'makebranch'},
+        {'wmclass': 'maketag'},
+        {'wmclass': 'Arandr'},
+        {'wmclass': 'feh'},
+        {'wmclass': 'Galculator'},
+        {'wmclass': 'arcolinux-logout'},
+        {'wmclass': 'xfce4-terminal'},
+        {'wname': 'branchdialog'},
+        {'wname': 'Open File'},
     ],
-    border_focus=colors["color4"][0]
+    border_focus=colors["color4"][0],
+    full_screen_border_width=0,
 )
