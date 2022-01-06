@@ -4,6 +4,7 @@
 
 from libqtile import layout
 from .theme import colors
+from libqtile.config import Match
 
 # Layouts and layout rules
 
@@ -31,24 +32,26 @@ layouts = [
 floating_layout = layout.Floating(
     float_rules=[
         *layout.Floating.default_float_rules,
-        {'wm_class': 'confirmreset'},
-        {'wm_class': 'makebranch'},
-        {'wm_class': 'maketag'},
-        {'wm_class': 'ssh-askpass'},
-        {'title': 'branchdialog'},
-        {'title': 'pinentry'},
-        {'wmclass': 'Arcolinux-welcome-app.py'},
-        {'wmclass': 'Arcolinux-tweak-tool.py'},
-        {'wmclass': 'Arcolinux-calamares-tool.py'},
-        {'wmclass': 'makebranch'},
-        {'wmclass': 'maketag'},
-        {'wmclass': 'Arandr'},
-        {'wmclass': 'feh'},
-        {'wmclass': 'Galculator'},
-        {'wmclass': 'arcolinux-logout'},
-        {'wmclass': 'xfce4-terminal'},
-        {'wname': 'branchdialog'},
-        {'wname': 'Open File'},
+        *[Match(**rules) for rules in [
+            {'wm_class': 'confirmreset'},
+            {'wm_class': 'makebranch'},
+            {'wm_class': 'maketag'},
+            {'wm_class': 'ssh-askpass'},
+            {'title': 'branchdialog'},
+            {'title': 'pinentry'},
+            {'wm_class': 'Arcolinux-welcome-app.py'},
+            {'wm_class': 'Arcolinux-tweak-tool.py'},
+            {'wm_class': 'Arcolinux-calamares-tool.py'},
+            {'wm_class': 'makebranch'},
+            {'wm_class': 'maketag'},
+            {'wm_class': 'Arandr'},
+            {'wm_class': 'feh'},
+            {'wm_class': 'Galculator'},
+            {'wm_class': 'arcolinux-logout'},
+            {'wm_class': 'xfce4-terminal'},
+            {'title': 'branchdialog'},
+            {'title': 'Open File'},
+        ]]
     ],
     border_focus=colors["color4"][0],
     full_screen_border_width=0,

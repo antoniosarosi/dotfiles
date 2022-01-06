@@ -57,7 +57,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "b", lazy.spawn("firefox")),
+    ([mod], "b", lazy.spawn("brave")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("pcmanfm")),
@@ -72,6 +72,11 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),
     ([mod, "shift"], "s", lazy.spawn("scrot -s")),
+
+    # 4K Monitor
+    ([mod, "shift"], "b", lazy.spawn("brave --force-device-scale-factor=1.5")),
+    ([mod, "shift"], "c", lazy.spawn("code --force-device-scale-factor=1.5")),
+
 
     # ------------ Hardware Configs ------------
 

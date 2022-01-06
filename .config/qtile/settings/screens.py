@@ -12,10 +12,15 @@ import subprocess
 
 
 def status_bar(widgets):
-    return bar.Bar(widgets, 24, opacity=0.60)
+    return bar.Bar(widgets, 24, opacity=0.8)
 
 
-screens = [Screen(top=status_bar(primary_widgets))]
+screens = [Screen(top=status_bar(primary_widgets()))]
+
+# This is for my setup only, which has 3 different resolution monitors
+# screens = [Screen(top=status_bar(secondary_widgets()))]
+# screens.append(Screen(top=status_bar(secondary_widgets())))
+# screens.append(Screen(top=bar.Bar(primary_widgets(), 39, opacity=0.8))) # 4K Monitor
 
 xrandr = "xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l"
 
@@ -33,6 +38,5 @@ if command.returncode != 0:
 else:
     connected_monitors = int(command.stdout.decode("UTF-8"))
 
-if connected_monitors > 1:
-    for _ in range(1, connected_monitors):
-        screens.append(Screen(top=status_bar(secondary_widgets)))
+for _ in range(1, connected_monitors):
+    screens.append(Screen(top=status_bar(secondary_widgets())))
