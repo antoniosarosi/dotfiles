@@ -51,6 +51,7 @@ floating_layout = layout.Floating(
             {'wm_class': 'xfce4-terminal'},
             {'title': 'branchdialog'},
             {'title': 'Open File'},
+            {'title': 'ArchLinux Logout'}
         ]]
     ],
     border_focus=colors["color4"][0],

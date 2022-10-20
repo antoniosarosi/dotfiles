@@ -1,8 +1,26 @@
 scan_timeout = 60
 add_newline = false
 
+[username]
+style_user = "green"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+disabled = false
+style = "cyan"
+format = "[$hostname]($style) "
+
+[localip]
+ssh_only = false
+disabled = false
+style = "purple"
+format = "[$localipv4]($style) "
+
 [line_break]
-disabled = true
+disabled = false
 
 [directory]
 style = "bold blue"
