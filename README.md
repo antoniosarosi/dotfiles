@@ -667,7 +667,7 @@ Finally, if you want tranparency and fancy looking things, install a compositor:
 
 ```bash
 sudo pacman -S picom
-# Run it like so, place it in ~/.xrofile
+# Run it like so, place it in ~/.xprofile
 picom &
 ```
 
