@@ -1,7 +1,8 @@
 # Screens
-~/.screenlayout/monitors.sh &
+~/.screenlayout/newskill-and-tuf-27.sh &
 
 nm-applet &
+udiskie -t &
 cbatticon &
 volumeicon &
 nitrogen --restore &
@@ -18,4 +19,8 @@ numlockx on &
 
 ~/.local/bin/intel-turbo off &
 ~/.local/bin/asus-battery-threshold 60 &
-cpupower-gui profile Battery &
+cpupower-gui --balanced &
+
+# PATH
+export PATH=$PATH:$HOME/.local/bin
+source "$HOME/.cargo/env"
