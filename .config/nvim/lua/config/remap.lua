@@ -59,8 +59,13 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
--- Replace selected word
+-- Replace word or text
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("v", "<leader>r", "\"hy:%s/<C-r>h/<C-r>h/g<left><left>")
+
+-- Highlight search
+vim.keymap.set("n", "<leader>s", ":set hlsearch<CR>ma/<C-r><C-w><Esc>`a:set nohlsearch")
+vim.keymap.set("v", "<leader>s", "\"hy:set hlsearch<CR>ma/<C-r>h<Esc>`a:set nohlsearch")
 
 -- Terminal
 vim.keymap.set("n", "<leader>t", ":belowright split +resize-20 | terminal<CR>")
