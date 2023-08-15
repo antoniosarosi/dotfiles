@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   -- Auto-close parenthesis and brackets
   use "windwp/nvim-autopairs"
+  -- Comment lines
+  use "tpope/vim-commentary"
 
   -- Status bar
   use 'nvim-lualine/lualine.nvim'
