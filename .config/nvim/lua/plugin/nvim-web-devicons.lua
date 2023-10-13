@@ -5,6 +5,11 @@ require("nvim-web-devicons").setup {
             icon = "",
             color = "#f1502f",
             name = "Gitignore"
+        },
+        ["go.mod"] = {
+            icon = "󰟓",
+            color = "#ec407a",
+            name = "GoMod",
         }
     },
 }
