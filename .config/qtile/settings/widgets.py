@@ -11,7 +11,7 @@ def base(fg='text', bg='dark'):
 
 
 def separator():
-    return widget.Sep(**base(), linewidth=0, padding=5)
+    return widget.Sep(**base(), linewidth=0, padding=2)
 
 
 def icon(fg='text', bg='dark', fontsize=16, text="?"):
@@ -23,7 +23,7 @@ def icon(fg='text', bg='dark', fontsize=16, text="?"):
     )
 
 
-def powerline(fg="light", bg="dark", fontsize=37, padding=-3):
+def powerline(fg="light", bg="dark", fontsize=60, padding=5):
     return widget.TextBox(
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
@@ -57,7 +57,7 @@ def workspaces(icon_fontsize=19, window_name_font_size=14):
             disable_drag=True
         ),
         separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=window_name_font_size, padding=5),
+        widget.WindowName(**base(fg='focus'), fontsize=window_name_font_size, padding=0),
         separator(),
     ]
 
@@ -141,7 +141,7 @@ def primary_widgets():
 
         powerline('color1', 'color2'),
 
-        icon(bg="color1", text=' '), # Icon: nf-mdi-calendar_clock
+        icon(bg="color1", text=' '), # Icon: nf-mdi-calendar_clock
 
         widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
@@ -161,11 +161,11 @@ def secondary_widgets():
 
         widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
 
-        widget.CurrentLayout(**base(bg='color1'), padding=5),
+        widget.CurrentLayout(**base(bg='color1'), padding=4),
 
         powerline('color2', 'color1'),
 
-        icon(bg="color2", text=' '), # Icon: nf-mdi-calendar_clock
+        icon(bg="color2", text=' '), # Icon: nf-mdi-calendar_clock
 
         widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
 

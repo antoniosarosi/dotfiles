@@ -1,2 +1,9 @@
-__pycache__
-config.json
+/*
+!.gitignore
+
+!settings
+!themes
+!README.md
+!README.es.md
+!autostart.sh
+!config.py

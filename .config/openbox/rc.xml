@@ -8,14 +8,14 @@
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>yes</followMouse>
+    <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
        under the mouse pointer. when followMouse is enabled -->
     <underMouse>no</underMouse>
     <!-- move focus under the mouse, even when the mouse is not moving -->
-    <focusDelay>100</focusDelay>
+    <focusDelay>200</focusDelay>
     <!-- when followMouse is enabled, the mouse must be inside the window for
        this many milliseconds (1000 = 1 sec) before moving focus to it -->
     <raiseOnFocus>no</raiseOnFocus>
@@ -110,20 +110,25 @@
     </font>
   </theme>
   <desktops>
-    <number>9</number>
+    <!-- this stuff is only used at startup, pagers allow you to change them
+       during a session
+
+       these are default values to use when other ones are not already set
+       by other applications, or saved in your session
+
+       use obconf if you want to change these without having to log out
+       and back in -->
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>WWW</name>
-      <name>DEV</name>
-      <name>TERM</name>
-      <name>REF</name>
-      <name>GIT</name>
-      <name>DOCK</name>
-      <name>FS</name>
-      <name>MEDIA</name>
-      <name>MISC</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
     <popupTime>875</popupTime>
+    <!-- The number of milliseconds to show the popup for when switching
+         desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
@@ -171,378 +176,170 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="W-period">
-      <action name="MoveResizeTo">
-        <monitor>1</monitor>
-      </action>
-    </keybind>
-    <keybind key="W-comma">
-      <action name="MoveResizeTo">
-        <monitor>2</monitor>
-      </action>
-    </keybind>
-    <!-- Switch Workspaces -->
+    <!-- Send Window to Workspace N -->
     <keybind key="W-1">
-      <action name="GoToDesktop">
+      <action name="SendToDesktop">
         <to>1</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <keybind key="W-2">
-      <action name="GoToDesktop">
+      <action name="SendToDesktop">
         <to>2</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <keybind key="W-3">
-      <action name="GoToDesktop">
+      <action name="SendToDesktop">
         <to>3</to>
+        <wrap>no</wrap>
       </action>
     </keybind>
     <keybind key="W-4">
-      <action name="GoToDesktop">
-        <to>4</to>
-      </action>
-    </keybind>
-    <keybind key="W-5">
-      <action name="GoToDesktop">
-        <to>5</to>
-      </action>
-    </keybind>
-    <keybind key="W-6">
-      <action name="GoToDesktop">
-        <to>6</to>
-      </action>
-    </keybind>
-    <keybind key="W-7">
-      <action name="GoToDesktop">
-        <to>7</to>
-      </action>
-    </keybind>
-    <keybind key="W-8">
-      <action name="GoToDesktop">
-        <to>8</to>
-      </action>
-    </keybind>
-    <keybind key="W-9">
-      <action name="GoToDesktop">
-        <to>9</to>
-      </action>
-    </keybind>
-    <!-- Send Window to Workspace N -->
-    <keybind key="W-S-1">
-      <action name="SendToDesktop">
-        <to>1</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-2">
-      <action name="SendToDesktop">
-        <to>2</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-3">
-      <action name="SendToDesktop">
-        <to>3</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-4">
       <action name="SendToDesktop">
         <to>4</to>
         <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-5">
-      <action name="SendToDesktop">
-        <to>5</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-6">
-      <action name="SendToDesktop">
-        <to>6</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-7">
-      <action name="SendToDesktop">
-        <to>7</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-8">
-      <action name="SendToDesktop">
-        <to>8</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-S-9">
-      <action name="SendToDesktop">
-        <to>9</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <!-- Close Window -->
-    <keybind key="W-w">
-      <action name="Close"/>
-    </keybind>
-    <!-- Keybindings for window switching -->
-    <keybind key="W-j">
-      <action name="NextWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <keybind key="W-k">
-      <action name="PreviousWindow">
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <!-- Keybindings for window tiling -->
-    <!-- Full Screen -->
-    <keybind key="W-Up">
-      <action name="Maximize"/>
-    </keybind>
-    <!-- MiddleScreen -->
-    <keybind key="W-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>center</x>
-        <y>center</y>
-        <height>90%</height>
-        <width>90%</width>
-      </action>
-    </keybind>
-    <!-- HalfLeftScreen -->
-    <keybind key="W-Left">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- HalfRightScreen -->
-    <keybind key="W-Right">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- HalfUpperScreen -->
-    <keybind key="W-A-Up">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <height>50%</height>
-        <width>100%</width>
-      </action>
-    </keybind>
-    <!-- HalfLowerScreen -->
-    <keybind key="W-A-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <height>50%</height>
-        <width>100%</width>
-      </action>
-    </keybind>
-    <!-- UpperQuarterLeft -->
-    <keybind key="C-W-Up">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>0</y>
-        <height>50%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- LowerQuarterLeft -->
-    <keybind key="C-W-Left">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <y>-0</y>
-        <height>50%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- LowerQuarterRight -->
-    <keybind key="C-W-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>-0</y>
-        <height>50%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- UpperQuarterRight -->
-    <keybind key="C-W-Right">
-      <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo">
-        <x>-0</x>
-        <y>0</y>
-        <height>50%</height>
-        <width>50%</width>
-      </action>
-    </keybind>
-    <!-- Keybindings for running applications -->
-    <!-- Menu  -->
-    <keybind key="W-m">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Rofi</name>
-        </startupnotify>
-        <command>rofi -show drun</command>
-      </action>
-    </keybind>
-    <keybind key="W-S-m">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Rofi Nav</name>
-        </startupnotify>
-        <command>rofi -show</command>
-      </action>
-    </keybind>
-    <!-- Browser -->
-    <keybind key="W-b">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Browser</name>
-        </startupnotify>
-        <command>exo-open --launch WebBrowser</command>
-      </action>
-    </keybind>
-    <keybind key="W-S-b">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Browser Scaled</name>
-        </startupnotify>
-        <command>brave --force-device-scale-factor=1.5</command>
-      </action>
-    </keybind>
-    <!-- File Explorer -->
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>File Explorer</name>
-        </startupnotify>
-        <command>pcmanfm</command>
-      </action>
-    </keybind>
-    <!-- Redshift -->
-    <keybind key="W-r">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Redshift</name>
-        </startupnotify>
-        <command>redshift -O 2400</command>
       </action>
     </keybind>
     <keybind key="W-S-r">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Redshift Off</name>
-        </startupnotify>
-        <command>redshift -x</command>
+        <command>openbox --reconfigure</command>
       </action>
     </keybind>
-    <!-- Terminal  -->
-    <keybind key="W-Return">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Terminal</name>
-        </startupnotify>
-        <command>alacritty</command>
+    <keybind key="W-KP_1">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
       </action>
     </keybind>
-    <!-- Vscode -->
-    <keybind key="W-c">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Code</name>
-        </startupnotify>
-        <command>code</command>
+    <keybind key="W-KP_2">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>-0</y>
+        <width>100%</width>
+        <height>50%</height>
       </action>
     </keybind>
-    <keybind key="W-S-c">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Code</name>
-        </startupnotify>
-        <command>code --force-device-scale-factor=1.5</command>
+    <keybind key="W-KP_3">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>-0</y>
+        <width>50%</width>
+        <height>50%</height>
       </action>
     </keybind>
-    <!-- Scrot -->
-    <keybind key="W-s">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Scrot</name>
-        </startupnotify>
-        <command>scrot</command>
+    <keybind key="W-KP_4">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
       </action>
     </keybind>
-    <!-- Manual screenshot -->
-    <keybind key="W-S-s">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Scrot -s</name>
-        </startupnotify>
-        <command>scrot -s</command>
+    <keybind key="W-KP_5">
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="W-KP_6">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
       </action>
     </keybind>
-    <!-- Hardware -->
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Vol Low</name>
-        </startupnotify>
-        <command>pactl set-sink-volume @DEFAULT_SINK@ -5%</command>
+    <keybind key="W-KP_7">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
       </action>
     </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Vol Low</name>
-        </startupnotify>
-        <command>pactl set-sink-volume @DEFAULT_SINK@ +5%</command>
+    <keybind key="W-KP_8">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>50%</height>
       </action>
     </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Vol Low</name>
-        </startupnotify>
-        <command>pactl set-sink-mute @DEFAULT_SINK@ toggle</command>
+    <keybind key="W-KP_9">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="C-A-Right">
+      <action name="DesktopRight"/>
+    </keybind>
+    <keybind key="C-A-Left">
+      <action name="GoToDesktop">
+        <to>left</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-Up">
+      <action name="GoToDesktop">
+        <to>up</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="C-A-Down">
+      <action name="GoToDesktop">
+        <to>down</to>
+        <wrap>no</wrap>
+      </action>
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="DirectionalCycleWindows"/>
+    </keybind>
+    <keybind key="S-A-Left">
+      <action name="SendToDesktopLeft"/>
+    </keybind>
+    <keybind key="S-A-Right">
+      <action name="SendToDesktopRight"/>
+    </keybind>
+    <keybind key="S-A-Up">
+      <action name="SendToDesktopUp"/>
+    </keybind>
+    <keybind key="S-A-Down">
+      <action name="SendToDesktopDown"/>
+    </keybind>
+    <keybind key="A-Escape">
+      <action name="Lower"/>
+      <action name="FocusToBottom"/>
+      <action name="Unfocus"/>
+    </keybind>
+    <keybind key="A-space">
+      <action name="ShowMenu">
+        <menu>client-menu</menu>
       </action>
     </keybind>
     <keybind key="XF86AudioStop">
@@ -567,56 +364,480 @@
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Vol Low</name>
-        </startupnotify>
-        <command>brightnessctl set +10%</command>
+        <command>xbacklight +10</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Vol Low</name>
-        </startupnotify>
-        <command>brightnessctl set 10%-</command>
+        <command>xbacklight -10</command>
       </action>
     </keybind>
-    <keybind key="W-C-r">
+    <!-- Scrot -->
+    <keybind key="W-s">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Restart</name>
+          <name>Scrot</name>
         </startupnotify>
-        <command>openbox --restart</command>
+        <command>scrot 'ArcoLinux_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)'</command>
       </action>
     </keybind>
-    <keybind key="W-A-r">
+    <!-- Manual screenshot -->
+    <keybind key="C-S-s">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Restart</name>
+          <name>Scrot -s</name>
         </startupnotify>
-        <command>openbox --reconfigure</command>
+        <command>scrot -s -e 'mv $f $$(xdg-user-dir PICTURES)'</command>
       </action>
     </keybind>
-    <keybind key="W-C-q">
+    <keybind key="Print">
       <action name="Execute">
+        <command>scrot 'ArcoLinux_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)'</command>
+      </action>
+    </keybind>
+    <keybind key="A-Print">
+      <action name="Execute">
+        <command>scrot -d 5 'ArcoLinux_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)'</command>
+      </action>
+    </keybind>
+    <keybind key="C-Print">
+      <action name="Execute">
+        <command>xfce4-screenshooter</command>
+      </action>
+    </keybind>
+    <keybind key="W-C-Print">
+      <action name="Execute">
+        <command>flameshot gui</command>
+      </action>
+    </keybind>
+    <keybind key="A-F2">
+      <action name="Execute">
+        <command>xfce4-appfinder --collapsed</command>
         <startupnotify>
-          <enabled>true</enabled>
-          <name>Quit</name>
+          <enabled>yes</enabled>
+          <name>Run Program</name>
         </startupnotify>
-        <command>openbox --exit</command>
+      </action>
+    </keybind>
+    <keybind key="A-F3">
+      <action name="Execute">
+        <command>xfce4-appfinder</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-d">
+      <action name="Execute">
+        <command>dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'</command>
+      </action>
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="A-F5">
+      <action name="Iconify"/>
+    </keybind>
+    <keybind key="A-F6">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <keybind key="A-F8">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="W-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="W-b">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="Execute">
+        <command>exo-open --launch FileManager</command>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>urxvt</command>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>conky-toggle</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Return">
+      <action name="Execute">
+        <command>exo-open --launch TerminalEmulator</command>
+      </action>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>exo-open --launch WebBrowser</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-k">
+      <action name="Execute">
+        <command>archlinux-logout</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>archlinux-logout</command>
+      </action>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>geany</command>
+      </action>
+    </keybind>
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-h">
+      <action name="Execute">
+        <command>urxvt -T 'htop task manager' -e htop</command>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <command>pavucontrol</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-u">
+      <action name="Execute">
+        <command>pavucontrol</command>
       </action>
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Quit</name>
-        </startupnotify>
-        <command>arcolinux-logout</command>
+        <command>archlinux-logout</command>
+      </action>
+    </keybind>
+    <keybind key="W-Escape">
+      <action name="Execute">
+        <command>xkill</command>
+      </action>
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="W-space">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeEast"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <width>50%</width>
+      </action>
+      <action name="MoveToEdgeWest"/>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <width>80%</width>
+        <height>80%</height>
+      </action>
+      <action name="MoveToCenter"/>
+    </keybind>
+    <keybind key="W-A-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <keybind key="W-A-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MaximizeVert"/>
+      <action name="MoveResizeTo">
+        <x>-0</x>
+        <y>0</y>
+        <width>50%</width>
+      </action>
+    </keybind>
+    <keybind key="A-r">
+      <action name="Resize"/>
+    </keybind>
+    <keybind key="A-m">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="A-t">
+      <action name="Execute">
+        <command>variety -t</command>
+      </action>
+    </keybind>
+    <keybind key="A-f">
+      <action name="Execute">
+        <command>variety -f</command>
+      </action>
+    </keybind>
+    <keybind key="A-p">
+      <action name="Execute">
+        <command>variety -p</command>
+      </action>
+    </keybind>
+    <keybind key="A-Left">
+      <action name="Execute">
+        <command>variety -p</command>
+      </action>
+    </keybind>
+    <keybind key="A-n">
+      <action name="Execute">
+        <command>variety -n</command>
+      </action>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="Execute">
+        <command>variety -n</command>
+      </action>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="Execute">
+        <command>variety --resume</command>
+      </action>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="Execute">
+        <command>variety --pause</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-q">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Close"/>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute">
+        <command>alacritty</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-Return">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-F1">
+      <action name="Execute">
+        <command>exo-open --launch webbrowser</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>light -U 10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>light -A 10</command>
+      </action>
+    </keybind>
+    <keybind key="W-F2">
+      <action name="Execute">
+        <command>subl</command>
+      </action>
+    </keybind>
+    <keybind key="W-F3">
+      <action name="Execute">
+        <command>inkscape</command>
+      </action>
+    </keybind>
+    <keybind key="W-F4">
+      <action name="Execute">
+        <command>gimp</command>
+      </action>
+    </keybind>
+    <keybind key="W-F5">
+      <action name="Execute">
+        <command>meld</command>
+      </action>
+    </keybind>
+    <keybind key="W-F6">
+      <action name="Execute">
+        <command>vlc</command>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="Execute">
+        <command>virtualbox</command>
+      </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="W-F9">
+      <action name="Execute">
+        <command>evolution</command>
+      </action>
+    </keybind>
+    <keybind key="W-F10">
+      <action name="Execute">
+        <command>spotify</command>
+      </action>
+    </keybind>
+    <keybind key="W-F11">
+      <action name="Execute">
+        <command>rofi -theme-str 'window {width: 100%;height: 100%;}' -show drun</command>
+      </action>
+    </keybind>
+    <keybind key="W-F12">
+      <action name="Execute">
+        <command>rofi -show drun -font "Noto Sans 13"</command>
+      </action>
+    </keybind>
+    <keybind key="F12">
+      <action name="Execute">
+        <command>xfce4-terminal --drop-down</command>
+      </action>
+    </keybind>
+    <keybind key="C-S-Escape">
+      <action name="Execute">
+        <command>xfce4-taskmanager</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-q">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="C-A-m">
+      <action name="Execute">
+        <command>xfce4-settings-manager</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-r">
+      <action name="Execute">
+        <command>rofi-theme-selector</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-j">
+      <action name="Execute">
+        <command>obmenu3</command>
+      </action>
+      <action name="MaximizeFull"/>
+    </keybind>
+    <keybind key="C-A-a">
+      <action name="Execute">
+        <command>xfce4-appfinder</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-T">
+      <action name="Execute">
+        <command>alacritty</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-d">
+      <action name="ToggleShowDesktop"/>
+    </keybind>
+    <keybind key="C-A-V">
+      <action name="Execute">
+        <command>vivaldi-stable</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-B">
+      <action name="Execute">
+        <command>thunar</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-W">
+      <action name="Execute">
+        <command>arcolinux-welcome-app</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-E">
+      <action name="Execute">
+        <command>archlinux-tweak-tool</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-S">
+      <action name="Execute">
+        <command>spotify</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-C">
+      <action name="Execute">
+        <command>catfish</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-i">
+      <action name="Execute">
+        <command>nitrogen</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-o">
+      <action name="Execute">
+        <command>sh ~/.config/openbox/scripts/picom-toggle.sh</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-y">
+      <action name="Execute">
+        <command>obconf</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-F">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-G">
+      <action name="Execute">
+        <command>chromium</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-p">
+      <action name="Execute">
+        <command>pamac-manager</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-KP_8">
+      <action name="Execute">
+        <command>conky-rotate -n</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-KP_2">
+      <action name="Execute">
+        <command>conky-rotate -p</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-KP_Next">
+      <action name="Execute">
+        <command>conky-rotate -n</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-KP_Prior">
+      <action name="Execute">
+        <command>conky-rotate -p</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Next">
+      <action name="Execute">
+        <command>conky-rotate -n</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Prior">
+      <action name="Execute">
+        <command>conky-rotate -p</command>
       </action>
     </keybind>
   </keyboard>
@@ -633,35 +854,53 @@
     <!-- Set this to TRUE to move the mouse pointer across the desktop when
        switching due to hitting the edge of the screen -->
     <context name="Frame">
-      <mousebind action="Press" button="W-Left">
+      <mousebind action="Press" button="A-Left">
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind action="Click" button="W-Left">
+      <mousebind action="Click" button="A-Left">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="W-Left">
+      <!--
+      <mousebind action="Drag" button="A-Left">
         <action name="Move"/>
       </mousebind>
-      <mousebind action="Press" button="W-Right">
+      //-->
+      <mousebind action="Drag" button="A-Left">
+        <action name="if">
+          <maximized>yes</maximized>
+          <then>
+            <action name="UnmaximizeFull"/>
+            <action name="MoveResizeTo">
+              <x>center</x>
+              <y>current</y>
+            </action>
+            <action name="Move"/>
+          </then>
+          <else>
+            <action name="Move"/>
+          </else>
+        </action>
+      </mousebind>
+      <mousebind action="Press" button="A-Right">
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind action="Drag" button="W-Right">
+      <mousebind action="Drag" button="A-Right">
         <action name="Resize"/>
       </mousebind>
-      <mousebind action="Press" button="W-Middle">
+      <mousebind action="Press" button="A-Middle">
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
       </mousebind>
-      <mousebind action="Click" button="W-Up">
+      <mousebind action="Click" button="A-Up">
         <action name="GoToDesktop">
           <to>previous</to>
         </action>
       </mousebind>
-      <mousebind action="Click" button="W-Down">
+      <mousebind action="Click" button="A-Down">
         <action name="GoToDesktop">
           <to>next</to>
         </action>
@@ -692,8 +931,26 @@
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
+      <!--
       <mousebind action="Drag" button="Left">
         <action name="Move"/>
+      </mousebind>
+      //-->
+      <mousebind action="Drag" button="Left">
+        <action name="if">
+          <maximized>yes</maximized>
+          <then>
+            <action name="UnmaximizeFull"/>
+            <action name="MoveResizeTo">
+              <x>center</x>
+              <y>current</y>
+            </action>
+            <action name="Move"/>
+          </then>
+          <else>
+            <action name="Move"/>
+          </else>
+        </action>
       </mousebind>
       <mousebind action="DoubleClick" button="Left">
         <action name="ToggleMaximizeFull"/>
@@ -708,9 +965,11 @@
           <shaded>no</shaded>
           <then>
             <action name="Shade"/>
+            <!--
             <action name="FocusToBottom"/>
             <action name="Unfocus"/>
             <action name="Lower"/>
+            //-->
           </then>
         </action>
       </mousebind>
@@ -735,7 +994,9 @@
       <mousebind action="Press" button="Left">
         <action name="Focus"/>
         <action name="Raise"/>
+        <!--
         <action name="Unshade"/>
+        //-->
       </mousebind>
       <mousebind action="Press" button="Middle">
         <action name="Lower"/>
@@ -1017,7 +1278,7 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application name="arcolinux-logout">
+    <application name="archlinux-logout">
       <position force="no">
         <monitor>1</monitor>
       </position>

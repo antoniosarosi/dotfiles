@@ -126,4 +126,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 }
 
-@theme "onedark"
+@theme "Arc-Dark-Mantis"
