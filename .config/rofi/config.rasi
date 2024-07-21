@@ -127,3 +127,4 @@ configuration {
 	me-accept-entry: "MouseDPrimary";
 	me-accept-custom: "Control+MouseDPrimary";
 }
+@theme "onedark"
